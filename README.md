@@ -8,7 +8,7 @@
 
 **Domain:** Physics. Free fall, Hooke's law and Kepler's third law (free fall only in the Starter).
 
-**Status:** Starter run on 18 November 2026 (results below). Standard and Ambitious not started. See [What's left](#whats-left).
+**Status:** Plan approved by a co-lead. Starter run on 18 November 2026 (results below). Standard and Ambitious not started. See [What's left](#whats-left).
 
 ## Overview
 
@@ -82,8 +82,8 @@ An earlier run used Gemma 3 1B by mistake (local, through Ollama). It is kept as
 
 **Housekeeping**
 
-- [ ] Get the plan approved by a co-lead. The kit asks for this page to be filled in after approval; it was filled in early.
-- [ ] Add the three co-leads as collaborators (Settings → Collaborators): `lauechlo`, `siyamishra23`, `sebastianmerkatz`.
+- [x] Get the plan approved by a co-lead.
+- [x] Add the three co-leads as collaborators: `lauechlo`, `siyamishra23`, `sebastianmerkatz`. Invited 18 November with write access; each still needs to accept.
 - [ ] Import the run logs (`results/run_log_*.csv`) into the run-log spreadsheet in Drive, keeping its columns.
 - [ ] Paste the links into the Drive data form: the script ([`scripts/generate_items.py`](scripts/generate_items.py)) and the final plan ([`PLAN.md`](PLAN.md)).
 - [ ] Add the mentor's known issues above.
