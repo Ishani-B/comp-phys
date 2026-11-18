@@ -84,7 +84,7 @@ An earlier run used Gemma 3 1B by mistake (local, through Ollama). It is kept as
 
 - [x] Get the plan approved by a co-lead.
 - [x] Add the three co-leads as collaborators: `lauechlo`, `siyamishra23`, `sebastianmerkatz`. Invited 18 November with write access; each still needs to accept.
-- [ ] Import the run logs (`results/run_log_*.csv`) into the run-log spreadsheet in Drive, keeping its columns.
+- [ ] Import [`results/drive_run_log_import.csv`](results/drive_run_log_import.csv) into the run-log spreadsheet in Drive (File → Import). It has the standard run-log columns and one row per model call, all three runs.
 - [ ] Paste the links into the Drive data form: the script ([`scripts/generate_items.py`](scripts/generate_items.py)) and the final plan ([`PLAN.md`](PLAN.md)).
 - [ ] Add the mentor's known issues above.
 
@@ -115,6 +115,9 @@ python3 -m unittest discover tests     # tests the answer parser and grading rul
 python3 scripts/run_openrouter.py --conditions real                  # needs OPENROUTER_API_KEY in .env (never committed)
 python3 scripts/run_openrouter.py --conditions near far --append
 python3 scripts/score.py results/run_log_gemma-4-31b-it.csv
+python3 scripts/export_run_log.py      # one CSV in the standard run-log columns, for Drive
 ```
+
+The run log of record is the spreadsheet in the Drive folder. `results/` keeps a copy here too, with the full scored logs and notes, so the repo can be rerun and checked on its own.
 
 The [glossary](https://github.com/Princeton-AI-Exploration-Lab/kits-catalog/blob/main/GLOSSARY.md) defines the terms used above.
