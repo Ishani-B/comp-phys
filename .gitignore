@@ -1,0 +1,14 @@
+# Local junk
+__pycache__/
+*.pyc
+.venv/
+
+# Never commit secrets. No key, token or password belongs in a repo.
+.env
+*.key
+secrets*
+
+# Editor noise
+.DS_Store
+.vscode/
+.idea/
