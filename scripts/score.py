@@ -71,12 +71,19 @@ def score_row(row):
 
 
 def load_coding(path):
+    """Coding keyed by (run_id, item_id, model). Two runs started in the same second share a
+    run_id, so rows that need it carry a `model` column; rows without one match any model."""
     coding = {}
     if os.path.exists(path):
         with open(path, newline="", encoding="utf-8") as f:
             for r in csv.DictReader(f):
-                coding[(r["run_id"], r["item_id"])] = r
+                coding[(r["run_id"], r["item_id"], r.get("model") or "")] = r
     return coding
+
+
+def lookup_coding(coding, row):
+    return (coding.get((row["run_id"], row["item_id"], row.get("model", "")))
+            or coding.get((row["run_id"], row["item_id"], "")))
 
 
 def summarize(rows):
@@ -160,7 +167,7 @@ def main():
     scored = []
     for r in rows:
         r = {**r, **score_row(r)}
-        c = coding.get((r["run_id"], r["item_id"]))
+        c = lookup_coding(coding, r)
         r["called_out"] = c["called_out"] if c else "not coded"
         scored.append(r)
     base = os.path.splitext(path)[0]

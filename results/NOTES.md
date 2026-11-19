@@ -146,6 +146,37 @@ Design: "Standard run" in `PLAN.md`, locked before any call.
 - *Domain:* the plan expected the most-quoted formulas (free fall, Hooke) to pull more than Kepler. Hooke did (one model), free fall didn't, and Kepler didn't despite being named in almost every reply. With three domains, familiarity and domain can't be separated, as the plan says.
 - *Hypothesis test:* not every distance scores the same (Gemma's Hooke near laws), so the hypothesis isn't cleanly refuted. But the effect is reversed in direction and confined to one model and one domain. Exploratory, 10 items per cell.
 
+## Lab extension: Hooke's law, both models
+
+Design: "Lab extension" in `PLAN.md`, locked before any real call. The Standard's 30 Hooke laws in the virtual lab: each model hangs weights of its choice (0–600 g, up to 8) and predicts the stretch at 700–1600 g. 2 framings (spring story / neutral dial), exact readings, 2 models: 120 episodes, $1.64. Tables: [`lab_hooke_comparison.md`](lab_hooke_comparison.md).
+
+| Model | Setting | Control | Near: mean (median) | Near tracked / between / leaked / hedge | Far tracked | Called out |
+|---|---|---|---|---|---|---|
+| Gemma 4 31B | table (Standard) | 10/10 | 0.12 (0.15) | 5/4/1/0 | 9/10 | 1 (+2 borderline) |
+| Gemma 4 31B | lab, spring story | 10/10 | 0.06 (0.00) | 7/2/0/1 | 10/10 | 2 |
+| Gemma 4 31B | lab, neutral dial | 10/10 | 0.15 (−0.01) | 8/0/2/0 | 10/10 | n/a |
+| Claude Sonnet 4.6 | table (Standard) | 10/10 | −0.18 (−0.16) | 10/0/0/0 | 10/10 | 0 |
+| Claude Sonnet 4.6 | lab, spring story | 10/10 | 0.03 (0.01) | 9/1/0/0 | 10/10 | 19 |
+| Claude Sonnet 4.6 | lab, neutral dial | 10/10 | −0.22 (0.00) | 8/0/0/2 | 10/10 | n/a |
+
+**Letting Gemma measure removes its straight-line default.**
+- *On tables:* Gemma ran a straight-line regression on gently curving spring data.
+- *In the lab:* it fits power laws in both framings, and it never draws a regression line.
+- *Its remaining misses are arithmetic,* and the scores hide that. In all four non-tracked near episodes (2 between in the spring story, 2 leaked with the neutral dial) it stated the *correct* rule, such as "Glims = 0.00635 × Tocks^1.4", exactly the data's law. It then slipped computing a large power like 1300^1.4 by hand, landing near the straight line by coincidence.
+- *Caveat:* the lab also changes the format (several turns, "state the rule you found"), so the effect can't be pinned on choosing measurements alone.
+
+**Claude names Hooke's law in every spring experiment, and almost always rejects it.**
+- *Naming:* in all 30 spring-story episodes it opens with the textbook law as its hypothesis ("likely Hooke's Law: stretch = k × weight"). On tables it never mentioned Hooke.
+- *Rejecting:* after measuring it says plainly when the data break the law, 19 times: "This means the spring does NOT follow Hooke's Law".
+- *The one exception* is the clearest familiar-law pull for Claude anywhere in the project. On HK-N-02 (true exponent 0.7) it tried the right power law, then decided "the linear model actually fits better … consistent with Hooke's Law", and landed halfway to the line (0.46).
+- *Neutral dial:* it never mentions Hooke. Its two hedges are long replies that ran out of tokens trying logarithmic fits.
+
+**How they measured.** Claude takes about 6.5 measurements across the full 0–600 g range, often adding points near zero. Gemma takes about 4 and usually stops around 400 g.
+
+**Against the prediction.**
+- *Gemma:* "if the straight-line default came from being handed a table, measuring removes it in both framings". That is what happened.
+- *Claude:* "Claude tracks throughout" mostly held. There is one familiar-law pull in the spring story, and two hedges with the neutral dial.
+
 ## Consistency check (Gemma 4 31B, default temperature)
 
 Design: "Consistency check" in `PLAN.md`. The 5 sample items, each asked 10 times with temperature and seed left at the provider's defaults. Table: [`consistency_check.md`](consistency_check.md). Cost $0.008.

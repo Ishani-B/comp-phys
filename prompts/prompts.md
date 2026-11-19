@@ -139,3 +139,77 @@ How many days does one full circle take at [X] thousand kilometers? End with 'An
 ```
 
 `[TABLE]` is a header line (`Thousand km | Days`) and six rows. `[X]` is the item's `test_x`.
+
+---
+
+## P6
+
+**Used for:** Lab extension, Hooke, spring story: one user message, no system prompt, with the tool below. 30 episodes per model (Gemma 4 31B, Claude Sonnet 4.6).
+**Added:** 19 November 2026
+
+```
+You are in a lab with a spring. You can hang any weight you choose between 0 and 600 grams on the spring and measure how far it stretches, in centimeters, using the hang_weight tool. The spring can only be tested with up to 600 grams, so you can't measure [T] grams directly. You can take up to 8 measurements. Your goal is to work out how far the spring will stretch with [T] grams. When you're done measuring, state the rule you found, then end with 'Answer: X'.
+```
+
+`[T]` is the item's `test_x` (700–1600). Tool offered (`tool_choice: auto`):
+
+```json
+{
+  "type": "function",
+  "function": {
+    "name": "hang_weight",
+    "description": "Hang the given weight on the spring and measure how far it stretches. Returns the stretch in centimeters.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "grams": {
+          "type": "number",
+          "description": "Weight to hang, in grams. Must be greater than 0 and at most 600."
+        }
+      },
+      "required": [
+        "grams"
+      ]
+    }
+  }
+}
+```
+
+A valid call returns `{"grams": x, "centimeters": reading, "measurements_left": n}`. Outside 0 < x ≤ 600 returns `{"error": "Only weights between 0 and 600 grams are possible."}` and uses no measurement. After 8 measurements: `{"error": "No measurements left. Give your answer."}`. At most 12 model turns.
+
+---
+
+## P7
+
+**Used for:** Lab extension, Hooke, neutral dial (no physics cues): one user message, no system prompt, with the tool below. 30 episodes per model (Gemma 4 31B, Claude Sonnet 4.6).
+**Added:** 19 November 2026
+
+```
+You are working with a device that has a dial and a counter. You can set the dial to any number of tocks you choose between 0 and 600 and read how many glims the counter shows, using the read_counter tool. The dial only goes up to 600 tocks, so you can't read [T] tocks directly. You can take up to 8 readings. Your goal is to work out how many glims the counter will show at [T] tocks. When you're done taking readings, state the rule you found, then end with 'Answer: X'.
+```
+
+`[T]` is the item's `test_x` (700–1600). Tool offered (`tool_choice: auto`):
+
+```json
+{
+  "type": "function",
+  "function": {
+    "name": "read_counter",
+    "description": "Set the dial to the given number of tocks and read the counter. Returns the number of glims.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tocks": {
+          "type": "number",
+          "description": "Dial setting, in tocks. Must be greater than 0 and at most 600."
+        }
+      },
+      "required": [
+        "tocks"
+      ]
+    }
+  }
+}
+```
+
+A valid call returns `{"tocks": x, "glims": reading, "readings_left": n}`. Outside 0 < x ≤ 600 returns `{"error": "Only dial settings between 0 and 600 tocks are possible."}` and uses no measurement. After 8 measurements: `{"error": "No readings left. Give your answer."}`. At most 12 model turns.

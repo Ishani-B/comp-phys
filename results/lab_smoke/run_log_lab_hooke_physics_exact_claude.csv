@@ -1,0 +1,196 @@
+run_id,call_index,timestamp_utc,item_id,framing,readings,law_distance,law_variant,formula,test_t,prompt_id,model,model_served,provider,quantization,temperature,seed,max_tokens,reasoning_setting,response,transcript,measurements,n_measurements,n_repeats,n_invalid,n_merged_calls,n_turns,done_reason,physics_words,prompt_tokens,output_tokens,reasoning_tokens,cost_usd,duration_s,cf_answer,real_answer,t2_fit_answer,quad_fit_answer,domain,test_x,familiar_fit_answer
+20261119T050603Z,1,2026-11-19T05:06:23+00:00,SMOKE-H1,physics,exact,near,smoke_p1.2,y = 2.2 * (x/100)^1.2,9,P6,anthropic/claude-sonnet-4.6,anthropic/claude-sonnet-4.6,Anthropic,n/a,0.0,none,4096,off,"Predicted for 450g: 0.008758 × 450^1.2 = 0.008758 × 1527.1 ≈ **13.37 cm** ✅ (actual: 13.375) — perfect match!
+
+---
+
+## Rule Found
+
+The spring follows a **power law**: **stretch = 0.008758 × grams^1.2** (cm)
+
+This is a slightly super-linear relationship — not Hooke's simple linear law — where stretch scales with weight raised to the power of 1.2.
+
+**Prediction for 900g:**
+- 900^1.2 ≈ 3503.4
+- 0.008758 × 3503.4 ≈ **30.69 cm**
+
+Answer: 30.69","USER: You are in a lab with a spring. You can hang any weight you choose between 0 and 600 grams on the spring and measure how far it stretches, in centimeters, using the hang_weight tool. The spring can only be tested with up to 600 grams, so you can't measure 900 grams directly. You can take up to 8 measurements. Your goal is to work out how far the spring will stretch with 900 grams. When you're done measuring, state the rule you found, then end with 'Answer: X'.
+
+MODEL: I'll systematically measure the spring at several weights to determine the relationship between weight and stretch distance. Let me start with a few measurements spread across the range.
+
+MODEL CALLS hang_weight({""grams"": 100})
+
+MODEL CALLS hang_weight({""grams"": 200})
+
+MODEL CALLS hang_weight({""grams"": 300})
+
+MODEL CALLS hang_weight({""grams"": 600})
+
+TOOL: {""grams"": 100.0, ""centimeters"": 2.2, ""measurements_left"": 7}
+
+TOOL: {""grams"": 200.0, ""centimeters"": 5.054, ""measurements_left"": 6}
+
+TOOL: {""grams"": 300.0, ""centimeters"": 8.222, ""measurements_left"": 5}
+
+TOOL: {""grams"": 600.0, ""centimeters"": 18.889, ""measurements_left"": 4}
+
+MODEL: Interesting! Let me check if this is linear. If stretch = k × grams:
+- 100g → 2.2 cm → k = 0.022
+- 200g → 5.054 cm → k = 0.02527
+- 300g → 8.222 cm → k = 0.02741
+- 600g → 18.889 cm → k = 0.03148
+
+The ratio isn't constant, so it's **not purely linear**. Let me take a few more measurements to identify the pattern (perhaps quadratic or power law).
+
+MODEL CALLS hang_weight({""grams"": 400})
+
+MODEL CALLS hang_weight({""grams"": 500})
+
+TOOL: {""grams"": 400.0, ""centimeters"": 11.612, ""measurements_left"": 3}
+
+TOOL: {""grams"": 500.0, ""centimeters"": 15.177, ""measurements_left"": 2}
+
+MODEL: Let me now test a power law: stretch = a × grams^b. Taking logs:
+
+| grams | cm | ln(g) | ln(cm) |
+|---|---|---|---|
+| 100 | 2.2 | 4.6052 | 0.7885 |
+| 200 | 5.054 | 5.2983 | 1.6201 |
+| 300 | 8.222 | 5.7038 | 2.1070 |
+| 400 | 11.612 | 5.9915 | 2.4520 |
+| 500 | 15.177 | 6.2146 | 2.7194 |
+| 600 | 18.889 | 6.3969 | 2.9387 |
+
+Slope (b) ≈ (2.9387 - 0.7885) / (6.3969 - 4.6052) = 2.1502 / 1.7917 ≈ **1.200**
+
+So b ≈ 1.2, meaning stretch = a × grams^1.2
+
+Using 100g: a = 2.2 / 100^1.2 = 2.2 / 251.19 ≈ 0.008758
+
+Let me verify with 600g: 0.008758 × 600^1.2 = 0.008758 × 2151.8 ≈ **18.85 cm** ✅ (actual: 18.889)
+
+Now predicting 900g:
+- 900^1.2 = e^(1.2 × ln(900)) = e^(1.2 × 6.8024) = e^8.1629 ≈ 3503.4
+- stretch = 0.008758 × 3503.4 ≈ **30.69 cm**
+
+Let me do one more verification measurement to confirm:
+
+MODEL CALLS hang_weight({""grams"": 450})
+
+TOOL: {""grams"": 450.0, ""centimeters"": 13.375, ""measurements_left"": 1}
+
+MODEL: Predicted for 450g: 0.008758 × 450^1.2 = 0.008758 × 1527.1 ≈ **13.37 cm** ✅ (actual: 13.375) — perfect match!
+
+---
+
+## Rule Found
+
+The spring follows a **power law**: **stretch = 0.008758 × grams^1.2** (cm)
+
+This is a slightly super-linear relationship — not Hooke's simple linear law — where stretch scales with weight raised to the power of 1.2.
+
+**Prediction for 900g:**
+- 900^1.2 ≈ 3503.4
+- 0.008758 × 3503.4 ≈ **30.69 cm**
+
+Answer: 30.69","[[100.0, 2.2], [200.0, 5.054], [300.0, 8.222], [600.0, 18.889], [400.0, 11.612], [500.0, 15.177], [450.0, 13.375]]",7,0,0,0,4,stop,,5415,1157,0,0.0336,19.88,30.7265,,,31.4546,hooke,900,26.9255
+20261119T050603Z,2,2026-11-19T05:06:46+00:00,SMOKE-H2,physics,exact,near,smoke_p0.6,y = 1.8 * (x/100)^0.6,13,P6,anthropic/claude-sonnet-4.6,anthropic/claude-sonnet-4.6,Anthropic,n/a,0.0,none,4096,off,"Check 50g: 0.1136 × 50^0.6 = 0.1136 × 10.556 = **1.199** (actual: 1.188 — very close ✓)
+
+The power law **stretch = 0.1136 × grams^0.6** fits all data points excellently.
+
+**For 1300 grams:**
+- 1300^0.6 = 73.84
+- 0.1136 × 73.84 = **8.39 cm**
+
+---
+
+**The Rule:** The spring follows a power law — **stretch (cm) = 0.1136 × weight(g)^0.6** — rather than simple Hooke's Law. The exponent of 0.6 means each doubling of weight produces less than a doubling of stretch.
+
+Answer: 8.39 cm","USER: You are in a lab with a spring. You can hang any weight you choose between 0 and 600 grams on the spring and measure how far it stretches, in centimeters, using the hang_weight tool. The spring can only be tested with up to 600 grams, so you can't measure 1300 grams directly. You can take up to 8 measurements. Your goal is to work out how far the spring will stretch with 1300 grams. When you're done measuring, state the rule you found, then end with 'Answer: X'.
+
+MODEL: I'll systematically measure the spring's stretch at several weights to find the relationship (likely Hooke's Law: stretch = k × weight). Let me take several measurements spread across the range to establish the pattern clearly.
+
+MODEL CALLS hang_weight({""grams"": 100})
+
+MODEL CALLS hang_weight({""grams"": 200})
+
+MODEL CALLS hang_weight({""grams"": 300})
+
+MODEL CALLS hang_weight({""grams"": 400})
+
+MODEL CALLS hang_weight({""grams"": 500})
+
+MODEL CALLS hang_weight({""grams"": 600})
+
+TOOL: {""grams"": 100.0, ""centimeters"": 1.8, ""measurements_left"": 7}
+
+TOOL: {""grams"": 200.0, ""centimeters"": 2.728, ""measurements_left"": 6}
+
+TOOL: {""grams"": 300.0, ""centimeters"": 3.48, ""measurements_left"": 5}
+
+TOOL: {""grams"": 400.0, ""centimeters"": 4.135, ""measurements_left"": 4}
+
+TOOL: {""grams"": 500.0, ""centimeters"": 4.728, ""measurements_left"": 3}
+
+TOOL: {""grams"": 600.0, ""centimeters"": 5.274, ""measurements_left"": 2}
+
+MODEL: Interesting! The relationship is **not** perfectly linear — the stretch increases but at a decreasing rate, suggesting a **logarithmic or square-root** relationship. Let me analyze:
+
+| Grams | Stretch (cm) |
+|-------|-------------|
+| 100 | 1.800 |
+| 200 | 2.728 |
+| 300 | 3.480 |
+| 400 | 4.135 |
+| 500 | 4.728 |
+| 600 | 5.274 |
+
+Let me check if stretch = k × √(grams):
+- 100: k = 1.800/√100 = 1.800/10 = **0.1800**
+- 200: k = 2.728/√200 = 2.728/14.142 = **0.1929**
+- 300: k = 3.480/√300 = 3.480/17.321 = **0.2009**
+- 400: k = 4.135/√400 = 4.135/20 = **0.2068**
+- 500: k = 4.728/√500 = 4.728/22.361 = **0.2115**
+- 600: k = 5.274/√600 = 5.274/24.495 = **0.2153**
+
+Not constant. Let me try **stretch = k × log(grams)**:
+- 100: k = 1.800/log(100) = 1.800/2 = **0.900**
+- 200: k = 2.728/log(200) = 2.728/2.301 = **1.186** — not constant either.
+
+Let me try a **power law**: stretch = a × grams^b. Taking logs: log(stretch) = log(a) + b×log(grams). Using endpoints:
+- log(1.800) = 0.2553, log(100) = 2
+- log(5.274) = 0.7221, log(600) = 2.778
+
+b = (0.7221 - 0.2553)/(2.778 - 2) = 0.4668/0.778 = **~0.600**
+
+So stretch ≈ a × grams^0.6. Let me verify with 100g: a = 1.800/100^0.6 = 1.800/15.849 = **0.1136**
+
+Check 600g: 0.1136 × 600^0.6 = 0.1136 × 46.415 = **5.272** ✓ (actual: 5.274 ✓)
+Check 300g: 0.1136 × 300^0.6 = 0.1136 × 30.779 = **3.497** (actual: 3.480 ✓ close!)
+
+The rule is: **stretch = 0.1136 × grams^0.6**
+
+For 1300 grams: stretch = 0.1136 × 1300^0.6
+
+1300^0.6: log(1300) = 3.1139, × 0.6 = 1.8683, 10^1.8683 = **73.84**
+
+stretch = 0.1136 × 73.84 = **8.388 cm**
+
+Let me take one more measurement to refine the constant:
+
+MODEL CALLS hang_weight({""grams"": 50})
+
+TOOL: {""grams"": 50.0, ""centimeters"": 1.188, ""measurements_left"": 1}
+
+MODEL: Check 50g: 0.1136 × 50^0.6 = 0.1136 × 10.556 = **1.199** (actual: 1.188 — very close ✓)
+
+The power law **stretch = 0.1136 × grams^0.6** fits all data points excellently.
+
+**For 1300 grams:**
+- 1300^0.6 = 73.84
+- 0.1136 × 73.84 = **8.39 cm**
+
+---
+
+**The Rule:** The spring follows a power law — **stretch (cm) = 0.1136 × weight(g)^0.6** — rather than simple Hooke's Law. The exponent of 0.6 means each doubling of weight produces less than a doubling of stretch.
+
+Answer: 8.39 cm","[[100.0, 1.8], [200.0, 2.728], [300.0, 3.48], [400.0, 4.135], [500.0, 4.728], [600.0, 5.274], [50.0, 1.188]]",7,0,0,0,3,stop,,4329,1388,0,0.033807,21.68,8.3876,,,5.4435,hooke,1300,12.8382

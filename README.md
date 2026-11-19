@@ -62,6 +62,10 @@ Locked in `PLAN.md` before any real episode. Gemma 4 31B gets a measurement tool
 - No answer in any cell lands closest to Earth's law. The one "leak" is the quadratic through three noisy points.
 - What the physics story changes is the process. With noise, it makes the model test ½gt² first (8/10 far episodes, against 0/10 neutral), take fewer measurements, and commit instead of hedging (5 against 14 hedges). It also produces explicit call-outs ("This is not a standard gravity problem"), all on linear laws.
 - A pre-registered rerun of the 19 episodes cut off at 4096 tokens, given 16,384, turned 17 hedges into answers. Both framings then track far laws 8–9/10, and the hedge gap between framings mostly disappears. Still no answer reflects Earth's numbers.
+- **Extension, Hooke's law with both models** (120 episodes, pre-registered; the model hangs weights of its choice on a spring):
+  - Measuring for itself removed Gemma's straight-line default from the Standard run. It fits the right curved rule, and its leftover misses are arithmetic slips.
+  - Claude names Hooke's law in all 30 spring-story episodes and rejects it 19 times when the data disagree. It gives in to it once.
+  - Details: [comparison](results/lab_hooke_comparison.md), [notes](results/NOTES.md).
 
 Details: [comparison](results/lab_comparison.md), [notes](results/NOTES.md).
 

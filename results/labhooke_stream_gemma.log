@@ -1,0 +1,67 @@
+run 20261119T050759Z: 30 episodes, hooke, physics framing, exact readings, google/gemma-4-31b-it
+  [1] HK-R-01: 2 measurements, 3 turns, stop, Crusoe
+  [2] HK-R-02: 2 measurements, 2 turns, stop, Crusoe
+  [3] HK-R-03: 2 measurements, 3 turns, stop, Crusoe
+  [4] HK-R-04: 2 measurements, 2 turns, stop, Crusoe
+  [5] HK-R-05: 2 measurements, 3 turns, stop, Crusoe
+  [6] HK-R-06: 2 measurements, 3 turns, stop, Crusoe
+  [7] HK-R-07: 2 measurements, 3 turns, stop, Crusoe
+  [8] HK-R-08: 2 measurements, 2 turns, stop, Crusoe
+  [9] HK-R-09: 2 measurements, 2 turns, stop, Crusoe
+  [10] HK-R-10: 2 measurements, 2 turns, stop, Crusoe
+  [11] HK-N-01: 6 measurements, 7 turns, stop, Crusoe
+  [12] HK-N-02: 6 measurements, 5 turns, stop, Crusoe
+  [13] HK-N-03: 6 measurements, 7 turns, stop, Crusoe
+  [14] HK-N-04: 6 measurements, 4 turns, stop, Crusoe
+  [15] HK-N-05: 4 measurements, 5 turns, stop, Crusoe
+  [16] HK-N-06: 6 measurements, 7 turns, stop, Crusoe
+  [17] HK-N-07: 6 measurements, 7 turns, length, Crusoe
+  [18] HK-N-08: 6 measurements, 4 turns, stop, Crusoe
+  [19] HK-N-09: 6 measurements, 4 turns, stop, Crusoe
+  [20] HK-N-10: 6 measurements, 4 turns, stop, Crusoe
+  [21] HK-F-01: 4 measurements, 4 turns, stop, Crusoe
+  [22] HK-F-02: 3 measurements, 3 turns, stop, Crusoe
+  [23] HK-F-03: 4 measurements, 5 turns, stop, Crusoe
+  [24] HK-F-04: 4 measurements, 3 turns, stop, Crusoe
+  [25] HK-F-05: 3 measurements, 4 turns, stop, Crusoe
+  [26] HK-F-06: 6 measurements, 7 turns, stop, Crusoe
+  [27] HK-F-07: 4 measurements, 5 turns, stop, Crusoe
+  [28] HK-F-08: 4 measurements, 3 turns, stop, Crusoe
+  [29] HK-F-09: 3 measurements, 3 turns, stop, Crusoe
+  [30] HK-F-10: 3 measurements, 3 turns, stop, Crusoe
+Wrote 30 episodes to results/run_log_lab_hooke_physics_exact_gemma.csv
+run 20261119T051305Z: 30 episodes, hooke, neutral framing, exact readings, google/gemma-4-31b-it
+  [1] HK-R-01: 3 measurements, 3 turns, stop, Crusoe
+  [2] HK-R-02: 2 measurements, 2 turns, stop, Crusoe
+  [3] HK-R-03: 2 measurements, 2 turns, stop, Crusoe
+  [4] HK-R-04: 2 measurements, 2 turns, stop, Crusoe
+  [5] HK-R-05: 2 measurements, 2 turns, stop, Crusoe
+  [6] HK-R-06: 3 measurements, 2 turns, stop, Crusoe
+  [7] HK-R-07: 2 measurements, 2 turns, stop, Crusoe
+  [8] HK-R-08: 2 measurements, 2 turns, stop, Crusoe
+  [9] HK-R-09: 3 measurements, 2 turns, stop, Crusoe
+  [10] HK-R-10: 2 measurements, 2 turns, stop, Crusoe
+  [11] HK-N-01: 6 measurements, 4 turns, stop, Crusoe
+  [12] HK-N-02: 6 measurements, 4 turns, stop, Crusoe
+  [13] HK-N-03: 6 measurements, 4 turns, stop, Crusoe
+  [14] HK-N-04: 6 measurements, 4 turns, stop, Crusoe
+  [15] HK-N-05: 6 measurements, 4 turns, stop, Crusoe
+  [16] HK-N-06: 6 measurements, 3 turns, stop, Crusoe
+  [17] HK-N-07: 6 measurements, 4 turns, stop, Crusoe
+  [18] HK-N-08: 6 measurements, 4 turns, stop, Crusoe
+  [19] HK-N-09: 6 measurements, 3 turns, stop, Crusoe
+  [20] HK-N-10: 6 measurements, 4 turns, stop, Crusoe
+  [21] HK-F-01: 6 measurements, 6 turns, stop, Crusoe
+  [22] HK-F-02: 4 measurements, 4 turns, stop, Crusoe
+  [23] HK-F-03: 4 measurements, 3 turns, stop, Crusoe
+  [24] HK-F-04: 6 measurements, 4 turns, stop, Crusoe
+  [25] HK-F-05: 3 measurements, 3 turns, stop, Crusoe
+  [26] HK-F-06: 6 measurements, 3 turns, stop, Crusoe
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [27] HK-F-07: 5 measurements, 4 turns, stop, Crusoe
+  [28] HK-F-08: 4 measurements, 3 turns, stop, Crusoe
+  [29] HK-F-09: 4 measurements, 3 turns, stop, Crusoe
+  [30] HK-F-10: 3 measurements, 3 turns, stop, Crusoe
+Wrote 30 episodes to results/run_log_lab_hooke_neutral_exact_gemma.csv

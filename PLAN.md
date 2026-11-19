@@ -104,6 +104,33 @@ These were not spelled out in the plan above. I fixed them before any output was
 - If one domain shows a bigger pull, that is likely about how often its formula is quoted: free fall and Hooke's law everywhere, Kepler's third law less often in exact numbers.
 - If every domain and distance scores the same, the hypothesis is wrong.
 
+## Lab extension: Hooke's law, both models (pre-registered and locked 19 November 2026, before any real call)
+
+*Mechanics check done: all 8 test episodes ran, both models used the tools, every reply parsed, and per-model settings were logged correctly. Gemma's merged parallel calls were split as in the first lab; Claude made none. No change to the design.*
+
+**Why.** The Standard run's only pull was Gemma on Hooke's near laws. Given a table of gently curving spring data, it ran a straight-line regression, and one reply said "a linear approximation is typically expected". The question here: when the model chooses its own measurements, does it see the curve? And does Claude, which never drifted toward the line on tables, behave the same?
+
+**Design.**
+- *Laws:* the Standard's 30 Hooke laws (`data/hooke_standard.csv`).
+- *Framings:* 2. The spring story (prompt `P6`: "hang any weight between 0 and 600 grams… measure how far it stretches", tool `hang_weight`) and the neutral dial (prompt `P7`: "tocks" and "glims", no physics cues, tool `read_counter`).
+- *Readings:* exact only. The Standard's pull appeared on exact tables, and noise would mix in the control failures seen in the free-fall lab.
+- *Models:* 2. Gemma 4 31B (Crusoe, bf16) and Claude Sonnet 4.6 (Anthropic), both through OpenRouter, temperature 0, thinking off; seed 0 for Gemma only.
+- *Episodes:* 30 × 2 × 2 = 120.
+- *Rules,* as in the first lab: measure anywhere in 0 < weight ≤ 600 g, up to 8 measurements, then predict the stretch at 700–1600 g. At most 12 model turns and 4096 output tokens per turn. Out-of-range calls use no measurement.
+- *Code:* `scripts/lab.py --domain hooke --model gemma|claude`.
+
+**Scoring:** the locked rule.
+- The real-world answer is the Standard's familiar-form answer (a straight line through zero fitted to the 6 table points), so lab and Standard scores line up item by item.
+- *Descriptive:* the straight-line fit and the quadratic fit of the model's *own* readings, which reference the answer lands closest to, which weights it chose, and whether it mentions springs or Hooke's law.
+- *Called out:* the same yes / borderline / no rule, physics framing only.
+
+**Mechanics check:** 8 unscored episodes on two laws not among the 30 (y = 2.2·(x/100)^1.2 asked at 900 g; y = 1.8·(x/100)^0.6 asked at 1300 g) × 2 framings × 2 models, before locking.
+
+**Prediction:**
+- *If the straight-line default came from being handed a table,* choosing its own measurements removes it in both framings.
+- *If it comes from the familiar Hooke form,* the spring story's near scores stay above the neutral framing's.
+- *Claude* tracks throughout.
+
 ## Consistency check (pre-registered 19 November 2026, before any call)
 
 From the plan's methods change of 4 October: "Once the Starter is done, I will rerun a small subset at the default temperature as a consistency check and report how much the answers vary."

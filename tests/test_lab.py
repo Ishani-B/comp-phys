@@ -91,6 +91,23 @@ class LabRules(unittest.TestCase):
         self.assertAlmostEqual(p, f, places=3)
         self.assertAlmostEqual(p, noise_factor(8, 1), places=3)
 
+    def test_hooke_spring_lab(self):
+        from lab import HOOKE_FRAMINGS
+        w = World(2.0, 0.7, 8, "physics", noisy=False, scale=100, t_max=600, framings=HOOKE_FRAMINGS)
+        r = w.measure({"grams": 300})
+        self.assertEqual(r["grams"], 300.0)
+        self.assertEqual(r["centimeters"], round(2.0 * 3 ** 0.7, 3))   # y = c * (x/100)^p
+        self.assertIn("meas", next(k for k in r if k.endswith("_left")))
+        self.assertIn("error", w.measure({"grams": 650}))               # window is 0..600 g
+        self.assertIn("centimeters", w.measure({"grams": 600}))
+        self.assertEqual(w.invalid, 1)
+
+    def test_hooke_neutral_names(self):
+        from lab import HOOKE_FRAMINGS
+        w = World(1.5, 1.4, 9, "neutral", noisy=False, scale=100, t_max=600, framings=HOOKE_FRAMINGS)
+        r = w.measure({"tocks": 200})
+        self.assertEqual(set(r), {"tocks", "glims", "readings_left"})
+
     def test_noise_differs_by_test_time(self):
         self.assertNotEqual(noise_factor(8, 1), noise_factor(9, 1))
 
