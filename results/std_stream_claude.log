@@ -1,0 +1,134 @@
+run 20261119T033806Z: 10 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+  [1] FF-R-01 done (231 tokens, stop, Anthropic)
+  [2] FF-R-02 done (197 tokens, stop, Anthropic)
+  [3] FF-R-03 done (218 tokens, stop, Anthropic)
+  [4] FF-R-04 done (359 tokens, stop, Anthropic)
+  [5] FF-R-05 done (220 tokens, stop, Anthropic)
+  [6] FF-R-06 done (330 tokens, stop, Anthropic)
+  [7] FF-R-07 done (301 tokens, stop, Anthropic)
+  [8] FF-R-08 done (301 tokens, stop, Anthropic)
+  [9] FF-R-09 done (222 tokens, stop, Anthropic)
+  [10] FF-R-10 done (251 tokens, stop, Anthropic)
+Wrote 10 rows to results/run_log_std_claude-sonnet-4.6_freefall.csv; cost $0.0426
+run 20261119T033914Z: 10 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+  [1] HK-R-01 done (158 tokens, stop, Anthropic)
+  [2] HK-R-02 done (139 tokens, stop, Anthropic)
+  [3] HK-R-03 done (116 tokens, stop, Anthropic)
+  [4] HK-R-04 done (115 tokens, stop, Anthropic)
+  [5] HK-R-05 done (82 tokens, stop, Anthropic)
+  [6] HK-R-06 done (193 tokens, stop, Anthropic)
+  [7] HK-R-07 done (94 tokens, stop, Anthropic)
+  [8] HK-R-08 done (110 tokens, stop, Anthropic)
+Traceback (most recent call last):
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 238, in <module>
+    main()
+    ~~~~^^
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 193, in main
+    data = call_with_deadline(payload(it), key)
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 104, in call_with_deadline
+    raise box["error"]
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 94, in work
+    box["data"] = call(payload, key, tries=20)
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 76, in call
+    raise RuntimeError(f"HTTP {e.code}: {detail}") from None
+RuntimeError: HTTP 402: {"error":{"message":"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.","code":402,"metadata":{"reason":"in_flight_budget_exhausted","limit_source":"openrouter_in_flight_budget","remedy_hint":"Retry after your in-flight requests settle (see the Retry-After header). Adding credits at https://openrouter.ai/settings/credits raises your in-flight budget, up to a capped ceiling.","headers":{"Retry-After":"120
+run 20261119T034002Z: 10 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+Traceback (most recent call last):
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 238, in <module>
+    main()
+    ~~~~^^
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 193, in main
+    data = call_with_deadline(payload(it), key)
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 104, in call_with_deadline
+    raise box["error"]
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 94, in work
+    box["data"] = call(payload, key, tries=20)
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 76, in call
+    raise RuntimeError(f"HTTP {e.code}: {detail}") from None
+RuntimeError: HTTP 402: {"error":{"message":"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.","code":402,"metadata":{"reason":"in_flight_budget_exhausted","limit_source":"openrouter_in_flight_budget","remedy_hint":"Retry after your in-flight requests settle (see the Retry-After header). Adding credits at https://openrouter.ai/settings/credits raises your in-flight budget, up to a capped ceiling.","headers":{"Retry-After":"120
+skipping 8 call(s) already in the log
+run 20261119T040641Z: 2 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+  [9] HK-R-09 done (116 tokens, stop, Anthropic)
+  [10] HK-R-10 done (99 tokens, stop, Anthropic)
+Wrote 2 rows to results/run_log_std_claude-sonnet-4.6_hooke.csv; cost $0.0038
+run 20261119T040652Z: 10 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+  [1] KP-R-01 done (462 tokens, stop, Anthropic)
+  [2] KP-R-02 done (529 tokens, stop, Anthropic)
+  [3] KP-R-03 done (457 tokens, stop, Anthropic)
+  [4] KP-R-04 done (511 tokens, stop, Anthropic)
+  [5] KP-R-05 done (530 tokens, stop, Anthropic)
+  [6] KP-R-06 done (542 tokens, stop, Anthropic)
+  [7] KP-R-07 done (563 tokens, stop, Anthropic)
+  [8] KP-R-08 done (514 tokens, stop, Anthropic)
+  [9] KP-R-09 done (534 tokens, stop, Anthropic)
+  [10] KP-R-10 done (422 tokens, stop, Anthropic)
+Wrote 10 rows to results/run_log_std_claude-sonnet-4.6_kepler.csv; cost $0.0794
+=== claude real-law pilot done
+run 20261119T040836Z: 20 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+  [11] FF-N-01 done (248 tokens, stop, Anthropic)
+  [12] FF-N-02 done (178 tokens, stop, Anthropic)
+  [13] FF-N-03 done (269 tokens, stop, Anthropic)
+  [14] FF-N-04 done (268 tokens, stop, Anthropic)
+  [15] FF-N-05 done (307 tokens, stop, Anthropic)
+  [16] FF-N-06 done (271 tokens, stop, Anthropic)
+  [17] FF-N-07 done (266 tokens, stop, Anthropic)
+  [18] FF-N-08 done (268 tokens, stop, Anthropic)
+  [19] FF-N-09 done (238 tokens, stop, Anthropic)
+  [20] FF-N-10 done (308 tokens, stop, Anthropic)
+  [21] FF-F-01 done (281 tokens, stop, Anthropic)
+  [22] FF-F-02 done (268 tokens, stop, Anthropic)
+  [23] FF-F-03 done (157 tokens, stop, Anthropic)
+  [24] FF-F-04 done (146 tokens, stop, Anthropic)
+  [25] FF-F-05 done (158 tokens, stop, Anthropic)
+  [26] FF-F-06 done (174 tokens, stop, Anthropic)
+  [27] FF-F-07 done (133 tokens, stop, Anthropic)
+  [28] FF-F-08 done (147 tokens, stop, Anthropic)
+  [29] FF-F-09 done (297 tokens, stop, Anthropic)
+  [30] FF-F-10 done (289 tokens, stop, Anthropic)
+Wrote 20 rows to results/run_log_std_claude-sonnet-4.6_freefall.csv; cost $0.0758
+run 20261119T041049Z: 20 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+  [11] HK-N-01 done (340 tokens, stop, Anthropic)
+  [12] HK-N-02 done (1271 tokens, stop, Anthropic)
+  [13] HK-N-03 done (1095 tokens, stop, Anthropic)
+  [14] HK-N-04 done (1158 tokens, stop, Anthropic)
+  [15] HK-N-05 done (1295 tokens, stop, Anthropic)
+  [16] HK-N-06 done (1243 tokens, stop, Anthropic)
+  [17] HK-N-07 done (874 tokens, stop, Anthropic)
+  [18] HK-N-08 done (1226 tokens, stop, Anthropic)
+  [19] HK-N-09 done (1122 tokens, stop, Anthropic)
+  [20] HK-N-10 done (1347 tokens, stop, Anthropic)
+  [21] HK-F-01 done (363 tokens, stop, Anthropic)
+  [22] HK-F-02 done (320 tokens, stop, Anthropic)
+  [23] HK-F-03 done (429 tokens, stop, Anthropic)
+  [24] HK-F-04 done (363 tokens, stop, Anthropic)
+  [25] HK-F-05 done (304 tokens, stop, Anthropic)
+  [26] HK-F-06 done (708 tokens, stop, Anthropic)
+  [27] HK-F-07 done (364 tokens, stop, Anthropic)
+  [28] HK-F-08 done (345 tokens, stop, Anthropic)
+  [29] HK-F-09 done (396 tokens, stop, Anthropic)
+  [30] HK-F-10 done (352 tokens, stop, Anthropic)
+Wrote 20 rows to results/run_log_std_claude-sonnet-4.6_hooke.csv; cost $0.2304
+run 20261119T041520Z: 20 calls to anthropic/claude-sonnet-4.6 via anthropic (none), temperature 0.0, reasoning off
+  [11] KP-N-01 done (540 tokens, stop, Anthropic)
+  [12] KP-N-02 done (823 tokens, stop, Anthropic)
+  [13] KP-N-03 done (1149 tokens, stop, Anthropic)
+  [14] KP-N-04 done (1288 tokens, stop, Anthropic)
+  [15] KP-N-05 done (809 tokens, stop, Anthropic)
+  [16] KP-N-06 done (1095 tokens, stop, Anthropic)
+  [17] KP-N-07 done (1023 tokens, stop, Anthropic)
+  [18] KP-N-08 done (921 tokens, stop, Anthropic)
+  [19] KP-N-09 done (765 tokens, stop, Anthropic)
+  [20] KP-N-10 done (1138 tokens, stop, Anthropic)
+  [21] KP-F-01 done (339 tokens, stop, Anthropic)
+  [22] KP-F-02 done (333 tokens, stop, Anthropic)
+  [23] KP-F-03 done (117 tokens, stop, Anthropic)
+  [24] KP-F-04 done (101 tokens, stop, Anthropic)
+  [25] KP-F-05 done (335 tokens, stop, Anthropic)
+  [26] KP-F-06 done (192 tokens, stop, Anthropic)
+  [27] KP-F-07 done (135 tokens, stop, Anthropic)
+  [28] KP-F-08 done (116 tokens, stop, Anthropic)
+  [29] KP-F-09 done (310 tokens, stop, Anthropic)
+  [30] KP-F-10 done (241 tokens, stop, Anthropic)
+Wrote 20 rows to results/run_log_std_claude-sonnet-4.6_kepler.csv; cost $0.1834

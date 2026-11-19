@@ -61,6 +61,58 @@ These were not spelled out in the plan above. I fixed them before any output was
 
 **Prediction, from the main hypothesis:** with weaker evidence, far-counterfactual scores rise above near-counterfactual scores. If every score stays at 0, the ceiling holds even with weaker evidence.
 
+## Standard run (locked 19 November 2026, before any Standard call)
+
+**Question:** does the result hold across three domains and two models?
+
+**Domains:** free fall, Hooke's law, Kepler's third law, each in plain language. 3 law distances × 10 test points = 30 items per domain.
+
+| Domain | Data | Prompt | Real law | Near | Far | Real-world answer |
+|---|---|---|---|---|---|---|
+| Free fall | `data/freefall_starter.csv` (the Starter's items) | `P1` | d = 4.9 t² | changed constant | t³ or linear | Earth's law, 4.9 t² |
+| Hooke | `data/hooke_standard.csv` | `P4` | stretch ∝ weight | exponent 0.7 or 1.4 | exponent 0.5 or 2 | straight line through zero, fitted to the 6 points shown |
+| Kepler | `data/kepler_standard.csv` | `P5` | days ∝ distance^1.5 | exponent 1.2 or 1.8 | exponent 1 or 3 | days ∝ distance^1.5, constant fitted to the 6 points shown |
+
+**Why Hooke and Kepler differ from free fall** (decided by you, 19 November). Neither law has one real-world constant: springs differ, and orbit times depend on the central body. So a changed constant is still real physics. For these two domains the real-world answer is the real law's *form* with its constant fitted to the data shown, and near and far change the exponent. Their scores therefore measure a pull toward the familiar *shape*, while free fall's measures a pull toward Earth's *constant*. They are reported separately.
+- The tables use 6 points at 1 to 6 units (100–600 g; 10,000–60,000 km), and the questions ask about 7 to 16 units.
+- Each item has its own constant, and sub-variants are split across test points as in the Starter.
+- Exponents were chosen so the two reference answers differ by at least 10% on every near and far item.
+- Checked by `scripts/check_standard.py`.
+
+**Models:**
+
+| | Gemma 4 31B | Claude Sonnet 4.6 |
+|---|---|---|
+| Route | OpenRouter, pinned to Crusoe (bf16), no fallback | OpenRouter, pinned to Anthropic (first-party), no fallback |
+| Settings | temperature 0, seed 0, reasoning off, ≤ 4096 output tokens | temperature 0, reasoning (thinking) off, ≤ 4096 output tokens; no seed (Anthropic doesn't support one) |
+| Why this Claude | | Chosen by you. Current Claude models (Opus 5.5 included) reject temperature 0 and can't turn thinking off. Sonnet 4.6 is the newest that matches the Gemma settings exactly. |
+
+**Calls.** Gemma 4 31B on free fall *is* the Starter run (the same items, prompt, model, provider and settings), so it is reused rather than rerun. New calls: Gemma on Hooke and Kepler (60) and Claude on all three domains (90), 150 in all. A new chat for every call.
+
+**Pilot first.** For each domain and model the 10 real-law items run before anything else, checking the model can do the task in that domain. Near and far run after. A domain where a model gets fewer than 5 of 10 real-law items right is still run, but its near and far results are reported as weak evidence.
+
+**Scoring:** the locked grading rule, unchanged.
+- Called out uses the same yes / borderline / no rule. For Hooke and Kepler "real physics" means the familiar law, so a reply that says the data break the expected pattern for springs or orbits counts.
+
+**Outcomes:**
+- For each domain, model and law distance: the mean normalized score, with the median and counts of tracked, between, leaked, hedges and called out beside it.
+- The real-law condition is reported on its own.
+- No claim beyond these three domains.
+
+**Prediction, from the plan:**
+- Far data pulls answers toward the real law more than near data.
+- If one domain shows a bigger pull, that is likely about how often its formula is quoted: free fall and Hooke's law everywhere, Kepler's third law less often in exact numbers.
+- If every domain and distance scores the same, the hypothesis is wrong.
+
+## Consistency check (pre-registered 19 November 2026, before any call)
+
+From the plan's methods change of 4 October: "Once the Starter is done, I will rerun a small subset at the default temperature as a consistency check and report how much the answers vary."
+
+- **Items:** the 5 sample items from the data plan (`FF-R-02`, `FF-N-02`, `FF-N-04`, `FF-F-02`, `FF-F-03`): one real, two near, two far.
+- **Samples:** each asked 10 times, a new chat every time, at the provider's default temperature (temperature and seed left out of the request). 50 calls.
+- **Everything else as in the Starter:** `google/gemma-4-31b-it` on Crusoe (bf16) with no fallback, prompt `P1`, at most 4096 output tokens, reasoning off.
+- **Reported:** for each item, the spread of answers (minimum, maximum, standard deviation), each answer scored by the locked rule, and how many of the 10 get the same label as the temperature-0 Starter answer. Overall: the share of answers that keep the temperature-0 label.
+
 ## Virtual lab (approved and locked)
 
 *Written and approved 18 November 2026. Locked the same evening after the mechanics check (below) and before any of the 120 real episodes. Code: [`scripts/lab.py`](scripts/lab.py), tested by [`tests/test_lab.py`](tests/test_lab.py). Prompts: `P2` and `P3` in [`prompts/prompts.md`](prompts/prompts.md).*

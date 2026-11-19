@@ -105,3 +105,37 @@ You are working with a device that has a dial and a counter. You can set the dia
 ```
 
 Tool replies, sent back as JSON: a valid call returns `{"tocks": t, "glims": reading, "readings_left": n}`. A time outside 0 < t ≤ 6 returns `{"error": "Only dial settings between 0 and 6 tocks are possible."}` and uses no measurement. After 8 valid measurements every call returns `{"error": "No readings left. Give your answer."}`. An unreadable value returns an error and uses no measurement. At most 12 model turns per episode.
+
+---
+
+## P4
+
+**Used for:** Standard run, Hooke items (`data/hooke_standard.csv`), both models. One user message, no system prompt.
+**Added:** 19 November 2026
+
+```
+Weights are hung from a spring. The table shows how far the spring stretches (centimeters) for each weight (grams).
+
+[TABLE]
+
+How far will it stretch with [X] grams? End with 'Answer: X'.
+```
+
+`[TABLE]` is a header line (`Grams | Centimeters`) and six rows. `[X]` is the item's `test_x`.
+
+---
+
+## P5
+
+**Used for:** Standard run, Kepler items (`data/kepler_standard.csv`), both models. One user message, no system prompt.
+**Added:** 19 November 2026
+
+```
+Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+[TABLE]
+
+How many days does one full circle take at [X] thousand kilometers? End with 'Answer: X'.
+```
+
+`[TABLE]` is a header line (`Thousand km | Days`) and six rows. `[X]` is the item's `test_x`.

@@ -8,7 +8,7 @@
 
 **Domain:** Physics. Free fall, Hooke's law and Kepler's third law (free fall only in the Starter).
 
-**Status:** Plan approved by a co-lead. Starter, a harder-evidence pilot and a virtual lab (the model runs its own experiments) run on 18–19 November 2026 (results below). Standard and Ambitious not started. See [What's left](#whats-left).
+**Status:** Plan approved by a co-lead. Starter, a harder-evidence pilot and a virtual lab (the model runs its own experiments) run on 18–19 November 2026, then the Standard run (3 domains × 2 models) and the consistency check on 19 November (results below). Ambitious not started. See [What's left](#whats-left).
 
 ## Overview
 
@@ -73,6 +73,25 @@ Details: [comparison](results/lab_comparison.md), [notes](results/NOTES.md).
 | **Method** | Three relationships: free fall, Hooke's law, Kepler's third law, each in plain language. Per domain and model: 3 law distances × 10 test predictions = 30 calls. 3 domains × 2 models (Gemma 4 31B, Claude via API) = 180 calls. Pilot first: about 5 real-law calls per domain per model, to check each model can do the task in each domain. Afterwards, rerun a small subset at the default temperature as a consistency check. |
 | **Outcomes** | For each domain, model and law distance: the mean normalized score, plus separate counts of hedges and called-out responses. The real-law condition reported on its own as the control. No claim beyond these three domains: domain and how well-known the formula is are tied together by how the domains were picked, so three domains can't separate those explanations. |
 
+**As run (19 November 2026):**
+- **Models:** Gemma 4 31B (Crusoe, bf16) and Claude Sonnet 4.6 (Anthropic), both through OpenRouter at temperature 0 with thinking off. Current Claude models reject temperature 0, so Sonnet 4.6 is the newest that matches.
+- **Hooke and Kepler:** neither law has a single real-world constant, so their "real-world answer" is the familiar form (straight line; distance^1.5) fitted to the data, and near and far change the exponent.
+- **Free fall on Gemma** reuses the Starter. 150 new calls, $0.65.
+
+**Result:**
+- *Controls:* 10/10 in all six cells.
+- *Free fall and Kepler:* both models track every near and far law.
+  - On Kepler they name the law in nearly every reply ("According to Kepler's Third Law…", "T ∝ r^(3/2)"), test it, find the misfit and follow the data.
+  - Gemma often says so outright ("this is not a simple Keplerian orbit").
+- *Hooke:* the only pull is Gemma on the near laws (mean 0.12; 4 between, 1 leaked).
+  - It's concentrated on the sublinear laws, where Gemma runs a straight-line regression on gently curving data; one reply says "a linear approximation is typically expected".
+  - Claude's Hooke departures go the other way: a quadratic fit that overshoots away from the line.
+- *Against the prediction:* near pulled more than far, the opposite of the prediction. Far laws look obviously different, so they get fitted exactly; near laws look almost familiar, which is where the familiar form creeps in.
+
+Details: [comparison](results/standard_comparison.md), [notes](results/NOTES.md).
+
+**Consistency check:** 5 sample items × 10 samples at the default temperature (Gemma 4 31B). All 50 answers match the temperature-0 answer, though every reply is worded differently, so the Starter's result doesn't depend on temperature 0. Details: [consistency check](results/consistency_check.md).
+
 ### Ambitious: Does the pull toward real physics appear when the evidence is weaker?
 
 *Draft, not yet in the plan. Written after the Starter hit a ceiling (every score 0 with clean data). Revise or replace it.*
@@ -111,15 +130,16 @@ Details: [comparison](results/lab_comparison.md), [notes](results/NOTES.md).
 
 - [ ] Hand-check a random sample of the answer key, as the data form promises.
 - [ ] Decide the two borderline called-out cases (FF-F-09, FF-F-10).
-- [ ] Consistency check: rerun a small subset at the default temperature and report how much the answers vary.
+- [x] Consistency check: rerun a small subset at the default temperature and report how much the answers vary. (50/50 answers unchanged.)
 - [ ] Decide whether the Gemma 3 1B run goes in the write-up, and if so how to report its out-of-range scores.
 
 **Standard**
 
-- [ ] Decide whether to fix the design issues first: the "on a planet" wording (a new prompt ID if changed), and a third reference answer.
-- [ ] Write the Hooke's law and Kepler items and their plain-language prompts; declare them in `data/DATA.md` and `prompts/prompts.md`.
-- [ ] Choose the Claude model and record its exact version. Ask a co-lead how API access and keys are handled. (`scripts/run_openrouter.py` can also reach Claude through OpenRouter with `--model`.)
-- [ ] Run the pilot (about 5 real-law calls per domain per model), then the 180 calls, then scoring.
+- [x] Decide whether to fix the design issues first. Kept the `P1` wording; Hooke and Kepler use familiar-form references (your call, 19 November).
+- [x] Write the Hooke's law and Kepler items and their plain-language prompts (`P4`, `P5`); declared in `data/DATA.md` and `prompts/prompts.md`.
+- [x] Choose the Claude model: Claude Sonnet 4.6 through OpenRouter, provider Anthropic, temperature 0, thinking off.
+- [x] Run the pilot (all 10 real-law items per domain and model), then the near and far items (150 new calls; Gemma free fall reused from the Starter), then scoring.
+- [ ] Decide the borderline called-out cases from the Standard run (Kepler especially), listed in `results/called_out_coding.csv`.
 
 **Write-up**
 

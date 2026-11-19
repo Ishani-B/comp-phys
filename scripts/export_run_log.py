@@ -38,7 +38,15 @@ SCORED = [
     ("run_log_lab_neutral_noisy_scored.csv", "lab"),
     ("run_log_lab_physics_noisy_cap16k_scored.csv", "lab-rerun"),
     ("run_log_lab_neutral_noisy_cap16k_scored.csv", "lab-rerun"),
+    ("run_log_gemma-4-31b-it_consistency_scored.csv", "consistency"),
+    ("run_log_std_gemma4-31b_hooke_scored.csv", "standard"),
+    ("run_log_std_gemma4-31b_kepler_scored.csv", "standard"),
+    ("run_log_std_claude-sonnet-4.6_freefall_scored.csv", "standard"),
+    ("run_log_std_claude-sonnet-4.6_hooke_scored.csv", "standard"),
+    ("run_log_std_claude-sonnet-4.6_kepler_scored.csv", "standard"),
 ]
+# Consistency check and Standard rows, no header, for appending.
+STD_APPEND = os.path.join(RESULTS, "drive_run_log_standard_append.csv")
 RERUN_APPEND = os.path.join(RESULTS, "drive_run_log_lab_rerun_append.csv")
 PILOT = {"noisy-6", "exact-3"}
 # Lab rows alone, no header, for appending. One row per episode; an episode holds several model calls.
@@ -71,7 +79,7 @@ def score_and_label(r):
 
 
 def main():
-    rows, pilot_rows, lab_rows, rerun_rows = [], [], [], []
+    rows, pilot_rows, lab_rows, rerun_rows, std_rows = [], [], [], [], []
     for name, evidence in SCORED:
         path = os.path.join(RESULTS, name)
         if not os.path.exists(path):
@@ -117,6 +125,8 @@ def main():
                     lab_rows.append(row)
                 if evidence == "lab-rerun":
                     rerun_rows.append(row)
+                if evidence in ("standard", "consistency"):
+                    std_rows.append(row)
     with open(OUT, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
@@ -128,6 +138,9 @@ def main():
     with open(RERUN_APPEND, "w", newline="", encoding="utf-8") as f:
         csv.DictWriter(f, fieldnames=COLUMNS).writerows(rerun_rows)  # no header: for appending
     print(f"{len(rerun_rows)} lab rerun rows to {os.path.relpath(RERUN_APPEND, ROOT)}")
+    with open(STD_APPEND, "w", newline="", encoding="utf-8") as f:
+        csv.DictWriter(f, fieldnames=COLUMNS).writerows(std_rows)  # no header: for appending
+    print(f"{len(std_rows)} consistency + Standard rows to {os.path.relpath(STD_APPEND, ROOT)}")
     print(f"Wrote {len(rows)} rows to {os.path.relpath(OUT, ROOT)}, {len(pilot_rows)} pilot rows to "
           f"{os.path.relpath(PILOT_APPEND, ROOT)} and {len(lab_rows)} lab rows to {os.path.relpath(LAB_APPEND, ROOT)} "
           f"(append files have no header)")

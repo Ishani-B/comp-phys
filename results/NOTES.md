@@ -108,6 +108,50 @@ Because the control fails under noise, the noisy cells' counterfactual scores ar
 
 **Net result of the lab, with the rerun:** the physics story changes how the model experiments (its first guess, how much it measures, how quickly it commits) but not where it ends up. When the model controls its own evidence, it follows the world's law, not real physics, as long as it has room to finish reasoning.
 
+## Standard run: three domains, two models
+
+Design: "Standard run" in `PLAN.md`, locked before any call.
+- *Models:* Gemma 4 31B (Crusoe, bf16) and Claude Sonnet 4.6 (Anthropic), both through OpenRouter, temperature 0, thinking off.
+- *Hooke and Kepler:* the "real-world answer" is the familiar form fitted to the data (a straight line through zero; distance^1.5), because neither law has one real-world constant. Near and far change the exponent.
+- *Calls:* free fall on Gemma reuses the Starter. 150 new calls, $0.65. Tables: [`standard_comparison.md`](standard_comparison.md).
+
+| Domain | Model | Control | Near: mean (median) | Near tracked / between / leaked | Far: mean | Far tracked | Called out |
+|---|---|---|---|---|---|---|---|
+| Free fall | Gemma 4 31B | 10/10 | 0.00 (0.00) | 10/0/0 | 0.00 | 10/10 | 0 (+2 borderline) |
+| Free fall | Claude Sonnet 4.6 | 10/10 | 0.00 (0.00) | 10/0/0 | 0.00 | 10/10 | 0 |
+| Hooke | Gemma 4 31B | 10/10 | 0.12 (0.15) | 5/4/1 | 0.03 | 9/10 | 1 (+2 borderline) |
+| Hooke | Claude Sonnet 4.6 | 10/10 | −0.18 (−0.16) | 10/0/0 | 0.00 | 10/10 | 0 |
+| Kepler | Gemma 4 31B | 10/10 | −0.05 (0.00) | 10/0/0 | 0.00 | 10/10 | 8 (+5 borderline) |
+| Kepler | Claude Sonnet 4.6 | 10/10 | −0.13 (0.00) | 10/0/0 | 0.00 | 10/10 | 0 (+9 borderline) |
+
+**Both models can do all three tasks.** Every real-law control is 10/10, and nothing hedged.
+
+**Free fall and Kepler: the data win every time.**
+- *Free fall:* Claude, like Gemma, tracks all 20 near and far laws. It never mentions gravity.
+- *Kepler, the familiar law is named constantly and still overruled:* Gemma opens near replies with "According to Kepler's Third Law…", Claude with "T ∝ r^(3/2)". Both test it, see the misfit and fit the data's exponent.
+- *Gemma often says so outright:* 8 yes call-outs, such as "this is not a simple Keplerian orbit (perhaps the planet's mass is not the only factor…)". Claude marks Kepler ✗ and moves on (9 borderline).
+- *Mostly on near laws:* both models cite Kepler mainly when the exponent (1.2, 1.8) is close to 1.5. The familiar law gets invoked when the data look close to it.
+- *Odd scores are arithmetic, not pull:* Claude's KP-N-04 (−1.28) is a slip in fitting the constant, and Gemma's −0.29 and −0.31 are overshoots away from Kepler.
+
+**Hooke: the only pull, and only Gemma on near laws.**
+- *Gemma:* near mean 0.12, with 4 between and 1 leaked (HK-N-10, 0.84). It is concentrated on the sublinear laws (exponent 0.7): 4 of 5 drift toward the straight line, 3 land closest to it.
+  - Its method there is a straight-line regression (y = mx + b) on gently curving data.
+  - One reply gives the reason: "in standard textbook problems of this type, a linear approximation is typically expected" (HK-N-05).
+  - Two others explain the curve as a real spring "approaching its elastic limit", and one calls out the mismatch: "If the relationship were linear (Hooke's Law)… not linear".
+- *Claude:* never drifts toward the line. On the superlinear laws (1.4) it fits a quadratic polynomial, which bends more than a 1.4 power, so it overshoots by 4–12% *away* from the line. 6 of its 10 near answers land closest to the quadratic fit. The rule labels them tracked (negative scores). This is a polynomial habit, not a familiar-law pull.
+- *Caveat:* the Standard has no neutral-framing control, so Gemma's straight-line default can't be fully separated from a generic habit of running linear regression on nearly straight data. The explicit "linear approximation is typically expected" points to the familiar form.
+
+**Against the prediction:**
+- *Near pulled more than far,* the opposite of what was predicted. Far laws (quadratic, square root, cubic, linear) look obviously different from the familiar law, so both models fit them exactly. Near laws look *almost* familiar, and that is where the familiar form (Gemma, Hooke) or the reflex of naming the familiar law (Kepler) shows up.
+- *Domain:* the plan expected the most-quoted formulas (free fall, Hooke) to pull more than Kepler. Hooke did (one model), free fall didn't, and Kepler didn't despite being named in almost every reply. With three domains, familiarity and domain can't be separated, as the plan says.
+- *Hypothesis test:* not every distance scores the same (Gemma's Hooke near laws), so the hypothesis isn't cleanly refuted. But the effect is reversed in direction and confined to one model and one domain. Exploratory, 10 items per cell.
+
+## Consistency check (Gemma 4 31B, default temperature)
+
+Design: "Consistency check" in `PLAN.md`. The 5 sample items, each asked 10 times with temperature and seed left at the provider's defaults. Table: [`consistency_check.md`](consistency_check.md). Cost $0.008.
+
+**All 50 answers are identical to the temperature-0 answer** (50/50 same label, standard deviation 0 on every item), yet every reply is worded differently: 50 distinct replies, 180 to 619 tokens. The provider really sampled, and the model still lands on the same number every time. The Starter's result does not depend on temperature 0.
+
 ## Gemma 3 1B (earlier run, smaller model)
 
 | Condition | Result |

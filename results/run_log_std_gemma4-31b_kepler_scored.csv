@@ -1,0 +1,1226 @@
+run_id,call_index,timestamp_utc,item_id,law_distance,law_variant,test_t,prompt_id,model,model_served,provider,quantization,generation_id,temperature,seed,max_tokens,reasoning_setting,response,reasoning_text,done_reason,prompt_tokens,output_tokens,reasoning_tokens,cost_usd,duration_s,cf_answer,real_answer,answer_value,parse_status,pct_error,norm_score,outside_0_1,label,called_out
+20261119T034430Z,1,2026-11-19T03:44:38+00:00,KP-R-01,real,real,7,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795059871-IyycD3agxtO0mVdSQM9X,0.0,0,4096,off,"To find the number of days for a moon at 70 thousand kilometers, we can look for a pattern in the data provided. This relationship follows Kepler's Third Law of Planetary Motion, which states that the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis ($r^3$).
+
+Let's check the ratio $T^2 / r^3$ for the given values:
+- For $r = 10$: $1.2^2 / 10^3 = 1.44 / 1000 = 0.00144$
+- For $r = 20$: $3.39^2 / 20^3 \approx 11.49 / 8000 \approx 0.001436$
+- For $r = 30$: $6.24^2 / 30^3 \approx 38.94 / 27000 \approx 0.001442$
+- For $r = 40$: $9.6^2 / 40^3 = 92.16 / 64000 = 0.00144$
+- For $r = 50$: $13.42^2 / 50^3 \approx 180.1 / 125000 \approx 0.00144$
+- For $r = 60$: $17.64^2 / 60^3 \approx 311.17 / 216000 \approx 0.00144$
+
+The ratio is constant at approximately $0.00144$. We can use this to find the time ($T$) for $r = 70$:
+$T^2 / 70^3 = 0.00144$
+$T^2 = 0.00144 \times 70^3$
+$T^2 = 0.00144 \times 343,000$
+$T^2 = 493.92$
+$T = \sqrt{493.92} \approx 22.22$
+
+Alternatively, we can look at the increments in days:
+- 10 to 20: +2.19
+- 20 to 30: +2.85
+- 30 to 40: +3.36
+- 40 to 50: +3.82
+- 50 to 60: +4.22
+The increase in the ""gap"" is roughly 0.5 to 0.6 per step. Following this trend, the next gap should be approximately $4.22 + 0.4 = 4.62$ (or slightly more).
+$17.64 + 4.6 = 22.24$.
+
+Both methods point to approximately 22.2.
+
+Answer: 22.22",,stop,129,705,0,0.00030006,7.53,22.2243,22.2288,22.22,ok,0.04,,,correct,no
+20261119T034430Z,2,2026-11-19T03:45:00+00:00,KP-R-02,real,real,8,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795059896-jOaMGhNPLJrgY5yd6GAR,0.0,0,4096,off,"To find the number of days for a moon at 80 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis (distance $d^3$).
+The formula is: $T^2 \propto d^3$ or $T = k \cdot d^{1.5}$
+
+Let's test this with the given data:
+- For $d = 10$: $10^{1.5} \approx 31.62$. $1.5 / 31.62 \approx 0.0474$
+- For $d = 20$: $20^{1.5} \approx 89.44$. $4.24 / 89.44 \approx 0.0474$
+- For $d = 30$: $30^{1.5} \approx 164.32$. $7.79 / 164.32 \approx 0.0474$
+- For $d = 40$: $40^{1.5} \approx 252.98$. $12 / 252.98 \approx 0.0474$
+- For $d = 50$: $50^{1.5} \approx 353.55$. $16.77 / 353.55 \approx 0.0474$
+- For $d = 60$: $60^{1.5} \approx 464.76$. $22.05 / 464.76 \approx 0.0474$
+
+The constant $k$ is approximately $0.0474$. Now we apply this to $d = 80$:
+$T = 0.0474 \times 80^{1.5}$
+$80^{1.5} = \sqrt{80^3} = \sqrt{512,000} \approx 715.54$
+$T = 0.0474 \times 715.54 \approx 33.91$
+
+Alternatively, we can use a ratio from a known point (e.g., $d=20, T=4.24$):
+$\frac{T_{80}}{T_{20}} = (\frac{80}{20})^{1.5}$
+$T_{80} = 4.24 \times 4^{1.5}$
+$4^{1.5} = (\sqrt{4})^3 = 2^3 = 8$
+$T_{80} = 4.24 \times 8 = 33.92$
+
+Checking with $d=40, T=12$:
+$T_{80} = 12 \times (\frac{80}{40})^{1.5}$
+$T_{80} = 12 \times 2^{1.5}$
+$2^{1.5} \approx 2.8284$
+$T_{80} = 12 \times 2.8284 = 33.94$
+
+Rounding to the nearest hundredth based on the table's precision:
+
+Answer: 33.94",,stop,128,795,0,0.00033592,19.39,33.9411,33.9428,33.94,ok,0.01,,,correct,no
+20261119T034430Z,3,2026-11-19T03:50:25+00:00,KP-R-03,real,real,9,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060220-OPyyh8MeqC0ZPYLMGcfu,0.0,0,4096,off,"To find the number of days for a moon at 90 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis (distance $d^3$).
+The formula is: $T^2 \propto d^3$ or $T = k \cdot \sqrt{d^3}$ (where $k$ is a constant).
+
+Let's test this with the given data:
+- For $d = 10$: $10^3 = 1000$. $\sqrt{1000} \approx 31.62$. $T = 2$. Ratio $T/\sqrt{d^3} = 2 / 31.62 \approx 0.0632$.
+- For $d = 40$: $40^3 = 64,000$. $\sqrt{64,000} \approx 252.98$. $T = 16$. Ratio $T/\sqrt{d^3} = 16 / 252.98 \approx 0.0632$.
+
+The relationship is consistent. We can use the ratio from $d=10$ to find $T$ for $d=90$:
+$\frac{T_1}{d_1^{1.5}} = \frac{T_2}{d_2^{1.5}}$
+
+$\frac{2}{10^{1.5}} = \frac{T}{90^{1.5}}$
+$T = 2 \cdot (\frac{90}{10})^{1.5}$
+$T = 2 \cdot 9^{1.5}$
+
+Since $9^{1.5} = (\sqrt{9})^3 = 3^3 = 27$:
+$T = 2 \cdot 27 = 54$
+
+Alternatively, checking the ratio of distances:
+The distance increases from 10 to 90 (a factor of 9).
+According to the law $T \propto d^{1.5}$, the time increases by a factor of $9^{1.5} = 27$.
+$2 \text{ days} \times 27 = 54 \text{ days}$.
+
+Answer: 54",,stop,127,540,0,0.00023378,321.86,54,53.9959,54.0,ok,0.01,,,correct,no
+20261119T034430Z,4,2026-11-19T03:50:50+00:00,KP-R-04,real,real,10,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060243-MfxL4xSIdYq4Pw0vyQM3,0.0,0,4096,off,"To find the number of days for a moon at 100 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis (distance $d^3$).
+The formula is: $T^2 \propto d^3$ or $T = k \cdot d^{1.5}$
+
+Let's test this with the given data:
+- For $d = 10$: $10^{1.5} \approx 31.62$. $2.5 / 31.62 \approx 0.079$
+- For $d = 20$: $20^{1.5} \approx 89.44$. $7.07 / 89.44 \approx 0.079$
+- For $d = 40$: $40^{1.5} \approx 252.98$. $20 / 252.98 \approx 0.079$
+
+The constant $k$ is approximately $0.079$. We can also find the relationship by comparing the distance of 100 thousand km to the distance of 10 thousand km:
+The distance increases by a factor of 10 ($\frac{100}{10} = 10$).
+Since $T \propto d^{1.5}$, the time will increase by a factor of $10^{1.5}$.
+
+$10^{1.5} = 10 \times \sqrt{10} \approx 10 \times 3.1622 = 31.622$
+
+Now, multiply the time at 10 thousand km by this factor:
+$T_{100} = 2.5 \times 31.622$
+$T_{100} = 79.055$
+
+Alternatively, using the data point for 40 thousand km:
+$\frac{T_{100}}{T_{40}} = (\frac{100}{40})^{1.5}$
+$T_{100} = 20 \times (2.5)^{1.5}$
+$T_{100} = 20 \times \sqrt{2.5^3} = 20 \times \sqrt{15.625}$
+$T_{100} \approx 20 \times 3.9528 = 79.056$
+
+Rounding to a reasonable precision based on the table:
+Answer: 79.06",,stop,130,613,0,0.0002634,21.84,79.0569,79.0534,79.06,ok,0.01,,,correct,no
+20261119T034430Z,5,2026-11-19T03:51:20+00:00,KP-R-05,real,real,11,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060269-CPiZVoMpqDg1HuyI4I2Z,0.0,0,4096,off,"To find the number of days for a moon at 110 thousand kilometers, we can look for a mathematical relationship between the distance ($r$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis ($r^3$):
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+Let's test this with the given data:
+- For $r = 10$: $10^{1.5} \approx 31.62$. $T = 3$. Ratio $k = 3 / 31.62 \approx 0.09487$
+- For $r = 20$: $20^{1.5} \approx 89.44$. $T = 8.49$. Ratio $k = 8.49 / 89.44 \approx 0.0949$
+- For $r = 40$: $40^{1.5} \approx 252.98$. $T = 24$. Ratio $k = 24 / 252.98 \approx 0.09487$
+- For $r = 60$: $60^{1.5} \approx 464.76$. $T = 44.09$. Ratio $k = 44.09 / 464.76 \approx 0.09487$
+
+The relationship is consistent. Now we apply this to $r = 110$:
+$T = k \cdot (110)^{1.5}$
+$T \approx 0.09487 \cdot (110 \cdot \sqrt{110})$
+$T \approx 0.09487 \cdot (110 \cdot 10.488)$
+$T \approx 0.09487 \cdot 1153.69$
+$T \approx 109.5$
+
+Alternatively, using the ratio from $r=10$:
+$\frac{T_{110}}{T_{10}} = (\frac{110}{10})^{1.5}$
+$T_{110} = 3 \cdot (11)^{1.5}$
+$T_{110} = 3 \cdot \sqrt{11^3}$
+$T_{110} = 3 \cdot \sqrt{1331}$
+$T_{110} \approx 3 \cdot 36.4828$
+$T_{110} \approx 109.448$
+
+Rounding to two decimal places as per the table's precision:
+
+Answer: 109.45",,stop,128,659,0,0.00028152,27.43,109.4486,109.4485,109.45,ok,0.0,,,correct,no
+20261119T034430Z,6,2026-11-19T03:52:17+00:00,KP-R-06,real,real,12,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060329-7HBvJb8ea27X4uLZfpRn,0.0,0,4096,off,"To find the number of days for a moon at 120 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis (distance $d^3$).
+The formula is: $T^2 \propto d^3$ or $T = k \cdot d^{1.5}$
+
+Let's test this with the given data:
+- For $d = 10$: $10^{1.5} \approx 31.62$. $3.5 / 31.62 \approx 0.1107$
+- For $d = 20$: $20^{1.5} \approx 89.44$. $9.9 / 89.44 \approx 0.1107$
+- For $d = 30$: $30^{1.5} \approx 164.32$. $18.19 / 164.32 \approx 0.1107$
+- For $d = 40$: $40^{1.5} \approx 252.98$. $28 / 252.98 \approx 0.1107$
+- For $d = 50$: $50^{1.5} \approx 353.55$. $39.13 / 353.55 \approx 0.1107$
+- For $d = 60$: $60^{1.5} \approx 464.76$. $51.44 / 464.76 \approx 0.1107$
+
+The constant $k$ is approximately $0.1107$.
+
+Now, we calculate the time for $d = 120$:
+$T = 0.1107 \times (120)^{1.5}$
+$120^{1.5} = 120 \times \sqrt{120} \approx 120 \times 10.95445 \approx 1314.53$
+$T \approx 0.1107 \times 1314.53 \approx 145.52$
+
+Alternatively, we can use a ratio from a known point (e.g., $d=60$):
+$\frac{T_{120}}{T_{60}} = (\frac{120}{60})^{1.5}$
+$T_{120} = 51.44 \times (2)^{1.5}$
+$T_{120} = 51.44 \times \sqrt{8}$
+$T_{120} = 51.44 \times 2.8284$
+$T_{120} \approx 145.48$
+
+Rounding to a reasonable precision based on the table:
+$145.5$
+
+Answer: 145.5",,stop,129,727,0,0.00030886,53.93,145.4923,145.4938,145.5,ok,0.0,,,correct,no
+20261119T034430Z,7,2026-11-19T03:55:00+00:00,KP-R-07,real,real,13,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060492-LRe3Cf66Y0MUpBIKMXgp,0.0,0,4096,off,"To find the number of days for a moon at 130 thousand kilometers, we can look for a mathematical relationship between the distance ($r$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis ($r^3$):
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+Let's test this with the given data:
+- For $r = 10$: $10^{1.5} \approx 31.62$. $T = 4$. Ratio $k = 4 / 31.62 \approx 0.1265$
+- For $r = 20$: $20^{1.5} \approx 89.44$. $T = 11.31$. Ratio $k = 11.31 / 89.44 \approx 0.1265$
+- For $r = 30$: $30^{1.5} \approx 164.32$. $T = 20.78$. Ratio $k = 20.78 / 164.32 \approx 0.1265$
+- For $r = 40$: $40^{1.5} \approx 252.98$. $T = 32$. Ratio $k = 32 / 252.98 \approx 0.1265$
+
+The relationship is consistent. Now we apply this to $r = 130$:
+$T = k \cdot (130)^{1.5}$
+$T = 0.1265 \cdot (130 \cdot \sqrt{130})$
+$\sqrt{130} \approx 11.40175$
+$130^{1.5} \approx 130 \cdot 11.40175 \approx 1482.23$
+
+Now multiply by the constant $k$:
+$T \approx 0.1265 \cdot 1482.23 \approx 187.5$
+
+Alternatively, using the ratio from the first data point:
+$\frac{T_{130}}{T_{10}} = (\frac{130}{10})^{1.5}$
+$T_{130} = 4 \cdot (13)^{1.5}$
+$13^{1.5} = 13 \cdot \sqrt{13} \approx 13 \cdot 3.60555 \approx 46.872$
+$T_{130} = 4 \cdot 46.872 = 187.488$
+
+Rounding to a reasonable precision based on the table:
+Answer: 187.49",,stop,129,677,0,0.00028886,159.72,187.4887,187.4869,187.49,ok,0.0,,,correct,no
+20261119T034430Z,8,2026-11-19T03:56:43+00:00,KP-R-08,real,real,14,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060594-PZ2h2hgP5A3Cqu270Odx,0.0,0,4096,off,"To find the number of days for a moon at 140 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($t$).
+
+Looking at the data:
+- For $d = 10$, $t = 5$
+- For $d = 40$, $t = 40$
+
+If we check the ratio $t/d$:
+- $5/10 = 0.5$
+- $14.14/20 \approx 0.707$
+- $25.98/30 \approx 0.866$
+- $40/40 = 1.0$
+- $55.9/50 \approx 1.118$
+- $73.48/60 \approx 1.225$
+
+The ratio is increasing. Let's check if $t$ is proportional to $d^{1.5}$ (which follows Kepler's Third Law, where $T^2 \propto a^3$):
+- For $d = 10$: $10^{1.5} = \sqrt{1000} \approx 31.62$. To get $t=5$, the constant is $5/31.62 \approx 0.158$.
+- For $d = 40$: $40^{1.5} = \sqrt{64000} \approx 252.98$. To get $t=40$, the constant is $40/252.98 \approx 0.158$.
+
+The relationship is $t = k \cdot d^{1.5}$.
+Using the point $(40, 40)$:
+$40 = k \cdot 40^{1.5}$
+$k = \frac{40}{40\sqrt{40}} = \frac{1}{\sqrt{40}}$
+
+Now, calculate $t$ for $d = 140$:
+$t = \frac{1}{\sqrt{40}} \cdot 140^{1.5}$
+$t = \frac{140\sqrt{140}}{\sqrt{40}}$
+$t = 140 \cdot \sqrt{\frac{140}{40}}$
+$t = 140 \cdot \sqrt{3.5}$
+$\sqrt{3.5} \approx 1.8708$
+$t = 140 \cdot 1.8708 = 261.912$
+
+Alternatively, using the ratio from $d=40$ to $d=140$:
+$\frac{t_{140}}{t_{40}} = (\frac{140}{40})^{1.5}$
+$t_{140} = 40 \cdot (3.5)^{1.5}$
+$t_{140} = 40 \cdot 3.5 \cdot \sqrt{3.5}$
+$t_{140} = 140 \cdot 1.8708 \approx 261.9$
+
+Answer: 261.9",,stop,128,730,0,0.00030992,100.23,261.916,261.9044,261.9,ok,0.0,,,correct,no
+20261119T034430Z,9,2026-11-19T03:57:40+00:00,KP-R-09,real,real,15,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060652-KIke6OkfqehsPlGFv9Nk,0.0,0,4096,off,"To find the number of days for a moon to complete one full circle at 150 thousand kilometers, we can use Kepler's Third Law of Planetary Motion. Kepler's Third Law states that the square of the orbital period ($T$) is proportional to the cube of the semi-major axis (distance $r$):
+
+$T^2 \propto r^3$ or $T = k \cdot r^{3/2}$
+
+Let's verify this with the data provided:
+- For $r = 10$, $T = 6$. $6^2 / 10^3 = 36 / 1000 = 0.036$
+- For $r = 20$, $T = 16.97$. $16.97^2 / 20^3 \approx 288 / 8000 = 0.036$
+- For $r = 30$, $T = 31.18$. $31.18^2 / 30^3 \approx 972 / 27000 = 0.036$
+- For $r = 40$, $T = 48$. $48^2 / 40^3 = 2304 / 64000 = 0.036$
+
+The constant $k^2$ is $0.036$. We can use the ratio method to find the period for $r = 150$:
+
+$\frac{T_2^2}{T_1^2} = \frac{r_2^3}{r_1^3}$
+
+Using $r_1 = 10$ and $T_1 = 6$:
+$\frac{T_2^2}{6^2} = \frac{150^3}{10^3}$
+$\frac{T_2^2}{36} = (\frac{150}{10})^3$
+$\frac{T_2^2}{36} = 15^3$
+$\frac{T_2^2}{36} = 3375$
+$T_2^2 = 3375 \times 36$
+$T_2^2 = 121500$
+$T_2 = \sqrt{121500}$
+$T_2 \approx 348.568$
+
+Alternatively, using $T = \sqrt{0.036 \times r^3}$:
+$T = \sqrt{0.036 \times 150^3}$
+$T = \sqrt{0.036 \times 3375000}$
+$T = \sqrt{121500}$
+$T \approx 348.57$
+
+Answer: 348.57",,stop,129,656,0,0.00028046,53.62,348.5685,348.5642,348.57,ok,0.0,,,correct,no
+20261119T034430Z,10,2026-11-19T03:58:08+00:00,KP-R-10,real,real,16,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795060678-XYkKsQXfRvYyQAAUYsLA,0.0,0,4096,off,"To find the number of days for a moon at 160 thousand kilometers, we can look for a mathematical relationship between the distance ($r$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis ($r^3$):
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+Let's test this with the data provided:
+- For $r = 10$: $10^{1.5} \approx 31.62$. $8 / 31.62 \approx 0.253$
+- For $r = 20$: $20^{1.5} \approx 89.44$. $22.63 / 89.44 \approx 0.253$
+- For $r = 30$: $30^{1.5} \approx 164.32$. $41.57 / 164.32 \approx 0.253$
+- For $r = 40$: $40^{1.5} \approx 252.98$. $64 / 252.98 \approx 0.253$
+- For $r = 50$: $50^{1.5} \approx 353.55$. $89.44 / 353.55 \approx 0.253$
+- For $r = 60$: $60^{1.5} \approx 464.76$. $117.58 / 464.76 \approx 0.253$
+
+The constant $k$ is approximately $0.253$. Now we apply this to $r = 160$:
+$T = 0.253 \times (160)^{1.5}$
+
+First, calculate $160^{1.5}$:
+$160^{1.5} = \sqrt{160^3} = \sqrt{4,096,000} \approx 2023.86$
+
+Now, multiply by the constant:
+$T = 0.253 \times 2023.86 \approx 512.03$
+
+Alternatively, we can use a ratio from the first data point ($r=10, T=8$):
+$\frac{T_2}{T_1} = (\frac{r_2}{r_1})^{1.5}$
+$T_2 = 8 \times (\frac{160}{10})^{1.5}$
+$T_2 = 8 \times (16)^{1.5}$
+$T_2 = 8 \times (\sqrt{16})^3$
+$T_2 = 8 \times 4^3$
+$T_2 = 8 \times 64$
+$T_2 = 512$
+
+Answer: 512",,stop,130,712,0,0.000303,25.27,512,512.0068,512.0,ok,0.0,,,correct,no
+20261119T041432Z,11,2026-11-19T04:14:40+00:00,KP-N-01,near,near_smaller_exponent,7,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061672-NztwAG4KHKiRwkzaWqV1,0.0,0,4096,off,"To find the number of days for a moon at 70 thousand kilometers, we can look for a pattern in the data provided.
+
+First, let's look at the increase in days as the distance increases by 10 thousand km:
+- From 10 to 20: $2.76 - 1.2 = 1.56$
+- From 20 to 30: $4.48 - 2.76 = 1.72$
+- From 30 to 40: $6.33 - 4.48 = 1.85$
+- From 40 to 50: $8.28 - 6.33 = 1.95$
+- From 50 to 60: $10.3 - 8.28 = 2.02$
+
+The amount of increase is growing steadily:
+- $1.72 - 1.56 = 0.16$
+- $1.85 - 1.72 = 0.13$
+- $1.95 - 1.85 = 0.10$
+- $2.02 - 1.95 = 0.07$
+
+Alternatively, we can check if the data follows Kepler's Third Law, which states that the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis ($r^3$): $T^2 \propto r^3$ or $T \propto r^{1.5}$.
+
+Let's test this ratio ($T / r^{1.5}$):
+- For 10: $1.2 / 10^{1.5} \approx 1.2 / 31.62 \approx 0.0379$
+- For 20: $2.76 / 20^{1.5} \approx 2.76 / 89.44 \approx 0.0308$ (Wait, the data provided is slightly different from a perfect Keplerian curve, but let's check the trend).
+
+Looking at the increments again: $1.56, 1.72, 1.85, 1.95, 2.02$.
+The difference between the increments is decreasing: $0.16, 0.13, 0.10, 0.07$.
+Following this pattern, the next difference should be approximately $0.04$.
+Next increment $\approx 2.02 + 0.04 = 2.06$.
+Estimated value for 70: $10.3 + 2.06 = 12.36$.
+
+Let's check the ratio $T/r$ for the last few points:
+- $8.28 / 50 = 0.1656$
+- $10.3 / 60 = 0.1716$
+The ratio is increasing by roughly $0.006$.
+For 70: $0.1716 + 0.006 = 0.1776$.
+$0.1776 \times 70 = 12.432$.
+
+Comparing the growth of the increments ($1.56 \to 1.72 \to 1.85 \to 1.95 \to 2.02$), the increase is slowing down. A reasonable next step is approximately $2.1$.
+$10.3 + 2.1 = 12.4$.
+
+Answer: 12.4",,stop,128,825,0,0.00034792,7.91,12.3965,13.7275,12.4,ok,,0.0026,,tracked,yes
+20261119T041432Z,12,2026-11-19T04:14:58+00:00,KP-N-02,near,near_smaller_exponent,8,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061683-63VoVBAUVvcg7kBw0e2X,0.0,0,4096,off,"To find the number of days for a moon at 80 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period is proportional to the cube of the semi-major axis (distance):
+$T^2 \propto d^3$ or $T = k \cdot d^{1.5}$
+
+Let's test this relationship with the given data:
+- For $d = 10$: $10^{1.5} \approx 31.62$. $1.5 / 31.62 \approx 0.0474$
+- For $d = 20$: $20^{1.5} \approx 89.44$. $3.45 / 89.44 \approx 0.0385$ (Wait, the ratio isn't perfectly constant, let's check the growth pattern).
+
+Let's look at the ratio of $T$ to $d$:
+- $1.5 / 10 = 0.15$
+- $3.45 / 20 = 0.1725$
+- $5.61 / 30 = 0.187$
+- $7.92 / 40 = 0.198$
+- $10.35 / 50 = 0.207$
+- $12.88 / 60 = 0.2146$
+
+The ratio is increasing linearly. Let's check the difference in $T$ for every 10 units of $d$:
+- $3.45 - 1.5 = 1.95$
+- $5.61 - 3.45 = 2.16$
+- $7.92 - 5.61 = 2.31$
+- $10.35 - 7.92 = 2.43$
+- $12.88 - 10.35 = 2.53$
+
+The increase in the number of days is growing by roughly $0.1$ to $0.15$ each time.
+Let's project the differences:
+- Difference from 50 to 60: $2.53$
+- Estimated difference from 60 to 70: $2.53 + 0.11 \approx 2.64$
+- Estimated difference from 70 to 80: $2.64 + 0.11 \approx 2.75$
+
+Calculation for 70: $12.88 + 2.64 = 15.52$
+Calculation for 80: $15.52 + 2.75 = 18.27$
+
+Alternatively, using the $T = k \cdot d^{1.5}$ formula more precisely:
+If $T = 12.88$ at $d = 60$, then for $d = 80$:
+$T_{80} = T_{60} \cdot (80/60)^{1.5}$
+$T_{80} = 12.88 \cdot (1.333)^{1.5}$
+$T_{80} = 12.88 \cdot 1.5396 \approx 19.82$
+
+Let's re-examine the table for a simpler pattern. The values closely follow $T \approx 0.04 \cdot d^{1.5}$ (roughly).
+$0.04 \cdot 80^{1.5} = 0.04 \cdot 715.54 = 28.6$ (Too high).
+
+Let's look at the second-order differences:
+$2.16 - 1.95 = 0.21$
+$2.31 - 2.16 = 0.15$
+$2.43 - 2.31 = 0.12$
+$2.53 - 2.43 = 0.10$
+The second difference is decreasing. If we assume the difference increases by $\approx 0.1$ each step:
+$d=70: 12.88 + 2.63 = 15.51$
+$d=80: 15.51 + 2.73 = 18.24$
+
+Checking the $T^2/d^3$ ratio for the last entry:
+$12.88^2 / 60^3 = 165.89 / 216000 = 0.000768$
+For $d=80$:
+$T^2 = 0.000768 \cdot 80^3 = 0.000768 \cdot 512000 = 393.216$
+$T = \sqrt{393.216} \approx 19.83$
+
+However, looking at the linear trend of the differences ($1.95, 2.16, 2.31, 2.43, 2.53$), the growth is slowing.
+$2.53 + 0.10 = 2.63$
+$2.63 + 0.10 = 2.73$
+$12.88 + 2.63 + 2.73 = 18.24$
+
+Rounding to a reasonable precision based on the table:
+Answer: 18.24",,stop,130,1307,0,0.000541,14.9,18.1886,20.9743,18.24,ok,,0.0185,,tracked,borderline
+20261119T041432Z,13,2026-11-19T04:15:36+00:00,KP-N-03,near,near_larger_exponent,9,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061701-bscn96DPl9ztNHmVLPd3,0.0,0,4096,off,"To find the number of days for a moon at 90 thousand kilometers, we can look for a mathematical relationship between the distance ($r$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis ($r^3$):
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+Let's test this relationship using the data provided:
+1. For $r = 10$: $10^{1.5} \approx 31.62$. $T = 2$. Ratio $k = 2 / 31.62 \approx 0.0632$
+2. For $r = 20$: $20^{1.5} \approx 89.44$. $T = 6.96$. Ratio $k = 6.96 / 89.44 \approx 0.0778$
+3. For $r = 30$: $30^{1.5} \approx 164.32$. $T = 14.45$. Ratio $k = 14.45 / 164.32 \approx 0.0879$
+4. For $r = 60$: $60^{1.5} \approx 464.76$. $T = 50.32$. Ratio $k = 50.32 / 464.76 \approx 0.108$
+
+Since the ratio $k$ is increasing, the relationship is not a simple Keplerian orbit (perhaps due to other forces or a specific pattern in the problem set). Let's look at the growth of $T$ relative to $r$:
+- $r=10 \to 20$ (x2): $T$ increases by $6.96/2 = 3.48$
+- $r=20 \to 30$ (x1.5): $T$ increases by $14.45/6.96 \approx 2.07$
+- $r=30 \to 40$ (x1.33): $T$ increases by $24.25/14.45 \approx 1.68$
+- $r=40 \to 50$ (x1.25): $T$ increases by $36.24/24.25 \approx 1.49$
+- $r=50 \to 60$ (x1.2): $T$ increases by $50.32/36.24 \approx 1.39$
+
+Alternatively, let's check the differences in $T$:
+- $6.96 - 2 = 4.96$
+- $14.45 - 6.96 = 7.49$
+- $24.25 - 14.45 = 9.80$
+- $36.24 - 24.25 = 11.99$
+- $50.32 - 36.24 = 14.08$
+
+The differences between the days are increasing linearly:
+- $7.49 - 4.96 = 2.53$
+- $9.80 - 7.49 = 2.31$
+- $11.99 - 9.80 = 2.19$
+- $14.08 - 11.99 = 2.09$
+
+The second difference is roughly constant (averaging around 2.3). Let's project the first differences:
+- For $r=70$: $14.08 + 2.0 \approx 16.08 \to T = 50.32 + 16.08 = 66.40$
+- For $r=80$: $16.08 + 2.0 \approx 18.08 \to T = 66.40 + 18.08 = 84.48$
+- For $r=90$: $18.08 + 2.0 \approx 20.08 \to T = 84.48 + 20.08 = 104.56$
+
+Let's check the $T^2 \propto r^3$ again with a different approach. If we calculate $T/r^{1.5}$ for the last point: $50.32 / 464.76 \approx 0.108$.
+For $r=90$: $T = 0.108 \times 90^{1.5} = 0.108 \times 853.8 \approx 92.2$.
+
+However, looking at the sequence of $T$ values: 2, 6.96, 14.45, 24.25, 36.24, 50.32...
+These values closely follow the formula $T = 0.014 \cdot r^2 + 0.06 \cdot r$:
+- $10: 1.4 + 0.6 = 2$
+- $20: 5.6 + 1.2 = 6.8$
+- $30: 12.6 + 1.8 = 14.4$
+- $40: 22.4 + 2.4 = 24.8$
+- $50: 35 + 3.0 = 38$
+- $60: 50.4 + 3.6 = 54$
+
+Actually, the most accurate fit for this specific data set is $T \approx 0.013 \cdot r^2 + 0.7$:
+- $10: 1.3 + 0.7 = 2$
+- $20: 5.2 + 0.7 = 5.9$ (too low)
+
+Let's use the second-order difference method again more carefully:
+$D1: 4.96, 7.49, 9.80, 11.99, 14.08$
+$D2: 2.53, 2.31, 2.19, 2.09$ (Average $D2 \approx 2.28$)
+$D1$ for $70 = 14.08 + 2.0 = 16.08$
+$D1$ for $80 = 16.08 + 2.0 = 18.08$
+$D1$ for $90 = 18.08 + 2.0 = 20.08$
+$T(90) = 50.32 + 16.08 + 18.08 + 20.08 = 104.56$
+
+Checking $T = 0.014 r^2 - 0.2r + 2.6$:
+$60: 0.014(3600) - 12 + 2.6 = 50.4 - 12 + 2.6 = 41$ (No)
+
+Let's try $T = a \cdot r^{1.6}$:
+$60^{1.6} \approx 704 \to 50.32/704 \approx 0.071$
+$90^{1.6} \approx 1355 \to 1355 \times 0.071 \approx 96.2$
+
+Re-evaluating the $T^2$ vs $r^3$ ratio:
+$10^3/2^2 = 1000/4 = 250$
+$20^3/6.96^2 = 8000/48.44 = 165$
+$30^3/14.45^2 = 27000/208.8 = 129$
+$40^3/24.25^2 = 64000/588 = 108$
+$50^3/36.24^2 = 125000/1313 = 95$
+$60^3/50.32^2 = 216000/2532 = 85$
+
+The ratio $r^3/T^2$ is decreasing. Let's look at $T$ again: $2, 6.96, 14.45, 24.25, 36.24, 50.32$.
+The values are very close to $T = 0.014 \cdot r^2 - 0.1 \cdot r + 1.6$
+$60: 0.014(3600) - 6 + 1.6 = 50.4 - 6 + 1.6 = 46$ (No)
+
+Let's use the quadratic $T = Ar^2 + Br + C$:
+$100A + 10B + C = 2$
+$400A + 20B + C = 6.96$
+$900A + 30B + C = 14.45$
+Subtracting: $300A + 10B = 4.96$; $500A + 10B = 7.49$
+$200A = 2.53 \to A = 0.01265$
+$10B = 4.96 - 3.795 = 1.165 \to B = 0.1165$
+$C = 2 - 1.265 - 1.165 = -0.43$
+Check for $r=60$: $0.01265(3600) + 0.1165(60) - 0.43 = 45.54 + 6.99 - 0.43 = 52.1$ (Close)
+For $r=90$: $0.01265(8100) + 0.1165(90) - 0.43 = 102.465 + 10.485 - 0.43 = 112.52$
+
+Using the $D2$ method again: $50.32 + 16.08 + 18.08 + 20.08 = 104.56$.
+Given the options usually found in these problems, $104.56$ or $112$ are likely. Let's refine $D2$: $2.53, 2.31, 2.19, 2.09$. The $D2$ is dropping by $\approx 0.15$ each time.
+$D1(70) = 14.08 + 1.94 = 16.02$
+$D1(80) = 16.02 + 1.79 = 17.81$
+$D1(90) = 17.81 + 1.64 = 19.45$
+$T(90) = 50.32 + 16.02 + 17.81 + 19.45 = 103.6$
+
+Rounding to a reasonable figure based on the trend:
+Answer: 103.6 (or approx 104)
+
+Answer: 103.6",,stop,130,2795,0,0.0011362,35.19,104.3918,87.8875,103.6,ok,,0.048,,tracked,yes
+20261119T041432Z,14,2026-11-19T04:16:07+00:00,KP-N-04,near,near_larger_exponent,10,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061739-NdiuZw3zO5CN4FZdSwG1,0.0,0,4096,off,"To find the number of days for a moon at 100 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis (distance $d^3$).
+The formula is: $T^2 \propto d^3$ or $T = k \cdot d^{1.5}$
+
+Let's test this with the given data:
+- For $d = 10$: $10^{1.5} \approx 31.62$. $2.5 / 31.62 \approx 0.079$
+- For $d = 20$: $20^{1.5} \approx 89.44$. $8.71 / 89.44 \approx 0.097$ (Wait, let's check the ratio $T^2/d^3$)
+
+Calculating $T^2 / d^3$:
+- $2.5^2 / 10^3 = 6.25 / 1000 = 0.00625$
+- $8.71^2 / 20^3 = 75.86 / 8000 \approx 0.00948$
+- $18.06^2 / 30^3 = 326.16 / 27000 \approx 0.0120$
+- $30.31^2 / 40^3 = 918.70 / 64000 \approx 0.0143$
+
+The ratio is not constant, meaning this is not a simple Keplerian orbit or there is a different pattern. Let's look at the growth of $T$ relative to $d$:
+- $d=10 \to 20$ (2x): $T$ increases by $8.71/2.5 \approx 3.48$
+- $d=20 \to 30$ (1.5x): $T$ increases by $18.06/8.71 \approx 2.07$
+- $d=30 \to 40$ (1.33x): $T$ increases by $30.31/18.06 \approx 1.68$
+
+Let's check if $T$ follows a polynomial pattern.
+Looking at the differences:
+$d=10 \to 20: \Delta T = 6.21$
+$d=20 \to 30: \Delta T = 9.35$
+$d=30 \to 40: \Delta T = 12.25$
+$d=40 \to 50: \Delta T = 15.00$
+$d=50 \to 60: \Delta T = 17.59$
+
+The second differences (change in $\Delta T$):
+$9.35 - 6.21 = 3.14$
+$12.25 - 9.35 = 2.90$
+$15.00 - 12.25 = 2.75$
+$17.59 - 15.00 = 2.59$
+
+The second difference is roughly constant (averaging around 2.8). This suggests a quadratic relationship: $T = ad^2 + bd + c$.
+Using $d=10, T=2.5$ and $d=60, T=62.89$:
+$62.89 = a(3600) + 60b + c$
+$2.5 = a(100) + 10b + c$
+Subtracting: $60.39 = 3500a + 50b \implies 1.2078 = 70a + b$
+
+Let's test $T = 0.015d^2 + 0.25d - 4$:
+$d=10: 1.5 + 2.5 - 4 = 0$ (Too low)
+Let's try $T = 0.015d^2 + 0.1d$:
+$d=10: 1.5 + 1 = 2.5$ (Correct!)
+$d=20: 0.015(400) + 0.1(20) = 6 + 2 = 8$ (Close to 8.71)
+$d=30: 0.015(900) + 0.1(30) = 13.5 + 3 = 16.5$ (Close to 18.06)
+$d=60: 0.015(3600) + 0.1(60) = 54 + 6 = 60$ (Close to 62.89)
+
+Let's refine the quadratic $T = ad^2 + bd + c$.
+Using $d=40, T=30.31$ and $d=50, T=45.3$ and $d=60, T=62.89$:
+$\Delta_1 = 14.99, \Delta_2 = 17.59$. Second diff = $2.6$.
+$2a = 0.026 \implies a = 0.013$ (per 10 units). For $d$ in thousands: $a = 0.013 / 100 = 0.00013$? No.
+Let $x = d/10$.
+$x=1, T=2.5$
+$x=2, T=8.71$
+$x=3, T=18.06$
+$x=4, T=30.31$
+$x=5, T=45.3$
+$x=6, T=62.89$
+Differences: $6.21, 9.35, 12.25, 14.99, 17.59$
+Second differences: $3.14, 2.90, 2.74, 2.60$
+Average second difference $\approx 2.845$.
+$2a = 2.845 \implies a = 1.4225$.
+$T = 1.4225x^2 + bx + c$.
+For $x=1: 1.4225 + b + c = 2.5 \implies b+c = 1.0775$
+For $x=2: 1.4225(4) + 2b + c = 8.71 \implies 5.69 + 2b + c = 8.71 \implies 2b+c = 3.02$
+Subtracting: $b = 1.9425$.
+Then $c = 1.0775 - 1.9425 = -0.865$.
+Check for $x=6$: $1.4225(36) + 1.9425(6) - 0.865 = 51.21 + 11.655 - 0.865 = 62$. (Very close to 62.89).
+
+For $d=100$, $x=10$:
+$T = 1.4225(100) + 1.9425(10) - 0.865$
+$T = 142.25 + 19.425 - 0.865 = 160.81$.
+
+Let's try a simpler power law $T = k \cdot d^n$.
+$\log(T) = \log(k) + n \log(d)$
+$\log(2.5) = 0.3979, \log(10) = 1$
+$\log(62.89) = 1.7986, \log(60) = 1.778$
+$n = (1.7986 - 0.3979) / (1.778 - 1) = 1.4007 / 0.778 \approx 1.799$
+If $n \approx 1.8$:
+$T = k \cdot d^{1.8}$
+$2.5 = k \cdot 10^{1.8} \implies k = 2.5 / 63.09 \approx 0.0396$
+For $d=100$: $T = 0.0396 \cdot 100^{1.8} = 0.0396 \cdot 3981 \approx 157.6$.
+
+Let's check $d=60$ with $n=1.8$: $0.0396 \cdot 60^{1.8} = 0.0396 \cdot 2154 \approx 85$ (Too high).
+The power $n$ is decreasing. Let's use the quadratic $x=10$ again.
+$T(6) = 62.89, T(5) = 45.3, T(4) = 30.31$
+$\Delta_1 = 17.59, \Delta_2 = 14.99, \Delta_3 = 12.25$
+$\Delta\Delta_1 = 2.6, \Delta\Delta_2 = 2.74$
+Continuing the pattern of $\Delta T$:
+$x=7: 17.59 + 2.4 \approx 20.0 \to T=82.9$
+$x=8: 20.0 + 2.2 \approx 22.2 \to T=105.1$
+$x=9: 22.2 + 2.0 \approx 24.2 \to T=129.3$
+$x=10: 24.2 + 1.8 \approx 26.0 \to T=155.3$
+
+Wait, let's check $T = 0.15d^2 + 0.1d - 10$ or similar.
+Actually, looking at $T^2/d^3$ again: $0.006, 0.009, 0.012, 0.014, 0.016, 0.018$.
+It's increasing linearly! $T^2/d^3 = 0.003x + 0.003$ (where $x=d/10$).
+For $d=100, x=10$: $T^2/100^3 = 0.003(10) + 0.003 = 0.033$
+$T^2 = 0.033 \cdot 1,000,000 = 33,000 \implies T = \sqrt{33000} \approx 181$.
+
+Let's try $T = 0.015d^2 + 0.1d$ again.
+$d=60: 0.015(3600) + 6 = 54+6 = 60$.
+$d=100: 0.015(10000) + 10 = 150 + 10 = 160$.
+
+Answer: 160.81 (approx 161) or 155. Let's use the quadratic $x=10$ result.
+$T = 1.4225(100) + 1.9425(10) - 0.865 = 160.81$.
+
+Answer: 160.81",,stop,132,2877,0,0.00116928,27.81,157.7393,128.6579,160.81,ok,,-0.1056,yes,tracked,yes
+20261119T041432Z,15,2026-11-19T04:16:25+00:00,KP-N-05,near,near_smaller_exponent,11,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061770-AAkY4Yo59htvmz5xGOQ5,0.0,0,4096,off,"To find the number of days for a moon at 110 thousand kilometers, we can look for a mathematical relationship between the distance ($r$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period is proportional to the cube of the semi-major axis (distance):
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+Let's test this with the given data:
+- For $r = 10$: $10^{1.5} \approx 31.62$. $T = 3$. Ratio $k = 3 / 31.62 \approx 0.0948$
+- For $r = 20$: $20^{1.5} \approx 89.44$. $T = 6.89$. Ratio $k = 6.89 / 89.44 \approx 0.077$
+- For $r = 60$: $60^{1.5} \approx 464.76$. $T = 25.76$. Ratio $k = 25.76 / 464.76 \approx 0.055$
+
+Since the ratio $k$ is not constant, this is likely a linear approximation problem or a specific pattern. Let's look at the rate of change (slope) between the points:
+- 10 to 20: $(6.89 - 3) / 10 = 0.389$
+- 20 to 30: $(11.21 - 6.89) / 10 = 0.432$
+- 30 to 40: $(15.83 - 11.21) / 10 = 0.462$
+- 40 to 50: $(20.7 - 15.83) / 10 = 0.487$
+- 50 to 60: $(25.76 - 20.7) / 10 = 0.506$
+
+The increase in days per 10k km is increasing linearly. Let's find the increase in the slope:
+- $0.432 - 0.389 = 0.043$
+- $0.462 - 0.432 = 0.030$
+- $0.487 - 0.462 = 0.025$
+- $0.506 - 0.487 = 0.019$
+
+Alternatively, we can check if $T$ follows a quadratic trend $T = ar^2 + br + c$.
+Using points (10, 3), (30, 11.21), (60, 25.76):
+1) $100a + 10b + c = 3$
+2) $900a + 30b + c = 11.21$
+3) $3600a + 60b + c = 25.76$
+
+Subtract (1) from (2): $800a + 20b = 8.21 \Rightarrow 40a + b = 0.4105$
+Subtract (2) from (3): $2700a + 30b = 14.55 \Rightarrow 90a + b = 0.485$
+Subtract these results: $50a = 0.0745 \Rightarrow a = 0.00149$
+$b = 0.4105 - 40(0.00149) = 0.4105 - 0.0596 = 0.3509$
+$c = 3 - 100(0.00149) - 10(0.3509) = 3 - 0.149 - 3.509 = -0.658$
+
+Now calculate for $r = 110$:
+$T = 0.00149(110^2) + 0.3509(110) - 0.658$
+$T = 0.00149(12100) + 38.599 - 0.658$
+$T = 18.029 + 38.599 - 0.658 = 55.97$
+
+Rounding to a reasonable precision based on the table:
+$T \approx 56$
+
+Answer: 56",,stop,130,1105,0,0.0004602,14.5,53.308,67.6218,56.0,ok,,0.1881,,tracked,borderline
+20261119T041432Z,16,2026-11-19T04:16:39+00:00,KP-N-06,near,near_larger_exponent,12,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061788-iWEXLqn6sOb2PIMcbzY6,0.0,0,4096,off,"To find the number of days for a moon at 120 thousand kilometers, we can look for a mathematical relationship between the distance ($d$) and the time ($T$).
+
+According to Kepler's Third Law of Planetary Motion, the square of the orbital period ($T^2$) is proportional to the cube of the semi-major axis (distance $d^3$). This is expressed as:
+$T^2 \propto d^3$ or $T = k \cdot d^{1.5}$
+
+Let's test this relationship with the provided data:
+- For $d = 10$: $10^{1.5} \approx 31.62$. $3.5 / 31.62 \approx 0.1107$
+- For $d = 20$: $20^{1.5} \approx 89.44$. $12.19 / 89.44 \approx 0.1363$ (Wait, let's check the ratio $T^2/d^3$)
+
+Calculating $T^2/d^3$:
+- $3.5^2 / 10^3 = 12.25 / 1000 = 0.01225$
+- $12.19^2 / 20^3 = 148.5961 / 8000 \approx 0.01857$
+- $25.29^2 / 30^3 = 639.5841 / 27000 \approx 0.02368$
+The ratio is not constant, meaning this is not a simple Keplerian orbit or there is a different pattern.
+
+Let's look at the ratio of the distance increase:
+The distance increases from 60 to 120, which is a factor of 2.
+If we look at the relationship between $d$ and $T$ in the table:
+- $d=10 \to 20$ (factor of 2): $T$ goes from $3.5 \to 12.19$ (factor of $\approx 3.48$)
+- $d=20 \to 40$ (factor of 2): $T$ goes from $12.19 \to 42.44$ (factor of $\approx 3.48$)
+- $d=30 \to 60$ (factor of 2): $T$ goes from $25.29 \to 88.05$ (factor of $\approx 3.48$)
+
+The pattern is consistent: when the distance doubles, the time increases by a factor of approximately 3.48.
+
+To find the time for $d = 120$:
+Since 120 is double the distance of 60:
+$T_{120} = T_{60} \times 3.481$
+$T_{120} = 88.05 \times 3.481 \approx 306.5$
+
+Alternatively, using the power law $T = a \cdot d^b$:
+$\log(12.19/3.5) / \log(20/10) = \log(3.4828) / \log(2) \approx 1.8$
+Let's check $d=60$ using $T = 3.5 \cdot (d/10)^{1.8}$:
+$3.5 \cdot (6)^{1.8} = 3.5 \cdot 25.14 \approx 88.0$ (This matches perfectly).
+
+Now calculate for $d = 120$:
+$T = 3.5 \cdot (120/10)^{1.8}$
+$T = 3.5 \cdot (12)^{1.8}$
+$12^{1.8} \approx 87.58$
+$T = 3.5 \cdot 87.58 = 306.53$
+
+Rounding to a reasonable precision based on the table:
+$88.05 \times (120/60)^{1.8} = 88.05 \times 2^{1.8} = 88.05 \times 3.482 \approx 306.6$
+
+Answer: 306.6",,stop,134,1016,0,0.00042516,10.82,306.6156,236.7873,306.6,ok,,0.0002,,tracked,yes
+20261119T041432Z,17,2026-11-19T04:16:59+00:00,KP-N-07,near,near_larger_exponent,13,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061802-xOdfZPSnc8pr15kLBLLc,0.0,0,4096,off,"To find the number of days for a moon at 130 thousand kilometers, we can use Kepler's Third Law of Planetary Motion, which states that the square of the orbital period ($T$) is proportional to the cube of the semi-major axis ($r$):
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+First, let's verify this relationship using the provided data:
+- For $r = 10$: $10^{1.5} \approx 31.62$. $T = 4$. Ratio $k = 4 / 31.62 \approx 0.1265$
+- For $r = 20$: $20^{1.5} \approx 89.44$. $T = 13.93$. Ratio $k = 13.93 / 89.44 \approx 0.1557$
+- For $r = 60$: $60^{1.5} \approx 464.76$. $T = 100.63$. Ratio $k = 100.63 / 464.76 \approx 0.2165$
+
+Wait, the ratio $k$ is increasing, meaning the relationship isn't a simple $T^2 \propto r^3$ based on these specific numbers, or there is a different pattern. Let's look at the growth of $T$ relative to $r$:
+- $r=10 \to 20$ (2x): $T$ increases by $13.93/4 \approx 3.48$
+- $r=20 \to 30$ (1.5x): $T$ increases by $28.9/13.93 \approx 2.07$
+- $r=30 \to 40$ (1.33x): $T$ increases by $48.5/28.9 \approx 1.68$
+- $r=40 \to 50$ (1.25x): $T$ increases by $72.48/48.5 \approx 1.49$
+- $r=50 \to 60$ (1.2x): $T$ increases by $100.63/72.48 \approx 1.39$
+
+Let's check if $T$ follows a polynomial pattern.
+$T(10) = 4$
+$T(20) = 13.93$
+$T(30) = 28.9$
+$T(40) = 48.5$
+$T(50) = 72.48$
+$T(60) = 100.63$
+
+Looking at the second differences:
+$13.93 - 4 = 9.93$
+$28.9 - 13.93 = 14.97$ (Diff: 5.04)
+$48.5 - 28.9 = 19.6$ (Diff: 4.63)
+$72.48 - 48.5 = 23.98$ (Diff: 4.38)
+$100.63 - 72.48 = 28.15$ (Diff: 4.17)
+
+The second difference is roughly constant (averaging around 4.5). This suggests a quadratic relationship: $T = ar^2 + br + c$.
+Using $r=10, 30, 50$:
+1) $100a + 10b + c = 4$
+2) $900a + 30b + c = 28.9$
+3) $2500a + 50b + c = 72.48$
+
+(2)-(1): $800a + 20b = 24.9 \implies 40a + b = 1.245$
+(3)-(2): $1600a + 20b = 43.58 \implies 80a + b = 2.179$
+Subtracting these: $40a = 0.934 \implies a = 0.02335$
+$b = 1.245 - 40(0.02335) = 1.245 - 0.934 = 0.311$
+$c = 4 - 100(0.02335) - 10(0.311) = 4 - 2.335 - 3.11 = -1.445$
+
+Now calculate for $r = 130$:
+$T = 0.02335(130^2) + 0.311(130) - 1.445$
+$T = 0.02335(16900) + 40.43 - 1.445$
+$T = 394.615 + 40.43 - 1.445 = 433.6$
+
+Alternatively, checking the trend of the first difference:
+$D_1: 9.93, 14.97, 19.6, 23.98, 28.15$
+The difference increases by $\approx 4.5$ every 10 units.
+For $r=130$, we have 7 more steps of 10 from $r=60$.
+The differences would be: $32.3, 36.5, 40.7, 44.9, 49.1, 53.3, 57.5$ (approx).
+Sum of differences from 60 to 130: $32.3 + 36.5 + 40.7 + 44.9 + 49.1 + 53.3 + 57.5 = 314.3$
+$T(130) = 100.63 + 314.3 = 414.93$
+
+Let's refine the quadratic $T = 0.025r^2 + 0.2r - 0.5$ (approx):
+$T(60) = 0.025(3600) + 12 - 0.5 = 90 + 11.5 = 101.5$ (Close to 100.63)
+$T(130) = 0.025(16900) + 0.2(130) - 0.5 = 422.5 + 26 - 0.5 = 448$
+
+Using the most consistent quadratic fit $a \approx 0.023, b \approx 0.3, c \approx -1.4$:
+$T(130) \approx 0.023(16900) + 0.3(130) - 1.4 = 388.7 + 39 - 1.4 = 426.3$
+
+Given the options usually found in such problems, the value is approximately 430-440. Re-calculating $T = 0.02335(16900) + 0.311(130) - 1.445 = 433.6$.
+
+Answer: 433.6",,stop,131,1805,0,0.00074034,16.97,404.7231,305.1338,433.6,ok,,-0.29,yes,tracked,yes
+20261119T041432Z,18,2026-11-19T04:17:32+00:00,KP-N-08,near,near_larger_exponent,14,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061837-zbe47WvmjlwlK17wccsl,0.0,0,4096,off,"To find the number of days for a moon to complete one full circle at 140 thousand kilometers, we can use Kepler's Third Law of Planetary Motion. Kepler's Third Law states that the square of the orbital period ($T$) is proportional to the cube of the semi-major axis (distance $r$):
+
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+Let's verify this with the provided data:
+- For $r = 10$: $10^{1.5} \approx 31.62$. $T = 5$. Ratio $k = 5 / 31.62 \approx 0.158$
+- For $r = 20$: $20^{1.5} \approx 89.44$. $T = 17.41$. Ratio $k = 17.41 / 89.44 \approx 0.195$
+- For $r = 60$: $60^{1.5} \approx 464.76$. $T = 125.79$. Ratio $k = 125.79 / 464.76 \approx 0.271$
+
+Wait, the ratio $k$ is increasing, meaning the relationship isn't a simple $T^2 \propto r^3$ based on a single center of mass, or the data follows a specific polynomial trend. Let's look at the growth of $T$ relative to $r$:
+- $r=10 \to 20$ (2x): $T$ increases by $17.41/5 \approx 3.48$
+- $r=20 \to 40$ (2x): $T$ increases by $60.63/17.41 \approx 3.48$
+- $r=30 \to 60$ (2x): $T$ increases by $125.79/36.12 \approx 3.48$
+
+The data shows a consistent scaling factor: when the distance doubles, the period increases by a factor of approximately $3.48$.
+Mathematically, $2^x = 3.48$. $\log_2(3.48) \approx 1.8$. So $T \propto r^{1.8}$.
+
+Let's use the point $r = 40, T = 60.63$ to find $T$ at $r = 140$:
+$T_{140} = T_{40} \times (\frac{140}{40})^{1.8}$
+$T_{140} = 60.63 \times (3.5)^{1.8}$
+
+Calculating $3.5^{1.8}$:
+$3.5^1 = 3.5$
+$3.5^2 = 12.25$
+$3.5^{1.8} \approx 9.56$
+
+$T_{140} \approx 60.63 \times 9.56 \approx 579.6$
+
+Alternatively, using the point $r = 60, T = 125.79$:
+$T_{140} = 125.79 \times (\frac{140}{60})^{1.8}$
+$T_{140} = 125.79 \times (2.333)^{1.8}$
+$2.333^{1.8} \approx 4.63$
+$T_{140} \approx 125.79 \times 4.63 \approx 582.4$
+
+Checking the trend again: $T$ seems to follow $T \approx 0.05 \times r^{1.8}$ (approx).
+For $r=60$: $0.05 \times 60^{1.8} \approx 0.05 \times 2515 \approx 125.75$.
+For $r=140$: $0.05 \times 140^{1.8} \approx 0.05 \times 9050 \approx 452.5$.
+
+Let's re-evaluate the ratio $T/r$:
+10: 0.5
+20: 0.87
+30: 1.20
+40: 1.51
+50: 1.81
+60: 2.09
+The difference in $T/r$ is roughly $0.32$ per 10 units of $r$.
+For $r=140$, $T/r \approx 0.5 + (13 \times 0.32) = 0.5 + 4.16 = 4.66$.
+$T = 140 \times 4.66 = 652.4$.
+
+Let's check the second difference of $T$:
+5, 17.41, 36.12, 60.63, 90.6, 125.79
+Diffs: 12.41, 18.71, 24.51, 29.97, 35.19
+2nd Diffs: 6.3, 5.8, 5.46, 5.22 (roughly constant $\approx 5.7$)
+This suggests a quadratic: $T = ar^2 + br + c$.
+Using $r=10, 30, 50$:
+1) $100a + 10b + c = 5$
+2) $900a + 30b + c = 36.12$
+3) $2500a + 50b + c = 90.6$
+(2)-(1): $800a + 20b = 31.12 \implies 40a + b = 1.556$
+(3)-(2): $1600a + 20b = 54.48 \implies 80a + b = 2.724$
+Subtracting these: $40a = 1.168 \implies a = 0.0292$
+$b = 1.556 - 40(0.0292) = 1.556 - 1.168 = 0.388$
+$c = 5 - 100(0.0292) - 10(0.388) = 5 - 2.92 - 3.88 = -1.8$
+
+For $r=140$:
+$T = 0.0292(140^2) + 0.388(140) - 1.8$
+$T = 0.0292(19600) + 54.32 - 1.8$
+$T = 572.32 + 54.32 - 1.8 = 624.84$
+
+Rounding to a reasonable figure based on the pattern:
+Answer: 624.84",,stop,132,1708,0,0.00070168,30.81,578.0967,426.268,624.84,ok,,-0.3079,yes,tracked,borderline
+20261119T041432Z,19,2026-11-19T04:17:52+00:00,KP-N-09,near,near_smaller_exponent,15,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061855-CYGL6fwrNoRrxesp4N0H,0.0,0,4096,off,"To find the number of days for a moon to complete one full circle at 150 thousand kilometers, we can use Kepler's Third Law of Planetary Motion. Kepler's Third Law states that the square of the orbital period ($T$) is proportional to the cube of the semi-major axis (distance $r$):
+
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+Let's verify this with the provided data:
+- For $r = 10$, $T = 6$. $k = 6 / (10^{1.5}) \approx 6 / 31.62 \approx 0.1897$
+- For $r = 20$, $T = 13.78$. $k = 13.78 / (20^{1.5}) \approx 13.78 / 89.44 \approx 0.1541$ (Wait, let's check the ratio $T^2/r^3$)
+
+Calculating $T^2/r^3$ for the data points:
+- $6^2 / 10^3 = 36 / 1000 = 0.036$
+- $13.78^2 / 20^3 = 189.88 / 8000 \approx 0.0237$
+- $22.42^2 / 30^3 = 502.65 / 27000 \approx 0.0186$
+- $31.67^2 / 40^3 = 1002.98 / 64000 \approx 0.0156$
+
+Since the ratio is not constant, this is not a simple Keplerian orbit (perhaps the planet's mass is not the only factor or the ""circles"" are defined differently). Let's look for a linear or polynomial trend in the data provided:
+- $r=10 \to 20$: $\Delta T = 7.78$
+- $r=20 \to 30$: $\Delta T = 8.64$
+- $r=30 \to 40$: $\Delta T = 9.25$
+- $r=40 \to 50$: $\Delta T = 9.72$
+- $r=50 \to 60$: $\Delta T = 10.12$
+
+The increase in days ($\Delta T$) is increasing linearly. Let's find the second difference:
+- $8.64 - 7.78 = 0.86$
+- $9.25 - 8.64 = 0.61$
+- $9.72 - 9.25 = 0.47$
+- $10.12 - 9.72 = 0.40$
+
+Alternatively, let's check if $T$ is proportional to $r^n$.
+$\log(6) \approx 0.778, \log(10) = 1$
+$\log(51.51) \approx 1.712, \log(60) \approx 1.778$
+Slope $\approx (1.712 - 0.778) / (1.778 - 1) = 0.934 / 0.778 \approx 1.2$
+
+Let's test $T = a \cdot r^{1.2}$:
+- $10^{1.2} \approx 15.85 \to 6/15.85 \approx 0.378$
+- $60^{1.2} \approx 136.6 \to 51.51/136.6 \approx 0.377$
+
+This fits very well. Now we apply $T = 0.377 \cdot r^{1.2}$ for $r = 150$:
+$T = 0.377 \cdot (150)^{1.2}$
+$150^{1.2} \approx 408.3$
+$T \approx 0.377 \cdot 408.3 \approx 153.9$
+
+Let's check the linear trend of the first differences again. The differences are $7.78, 8.64, 9.25, 9.72, 10.12$.
+The average increase in the difference is about $0.58$ per 10 units.
+If we project this to 150:
+$T(60) = 51.51$
+$\Delta T(60-70) \approx 10.5$
+$\Delta T(70-80) \approx 10.9$
+...
+$\Delta T(140-150) \approx 10.12 + 9(0.5) \approx 14.6$
+Sum of $\Delta T$ from 60 to 150 (9 intervals): $\approx 9 \times \frac{10.5 + 14.6}{2} \approx 9 \times 12.55 \approx 113$
+$51.51 + 113 \approx 164.5$
+
+Re-evaluating $T = a \cdot r^{1.2}$ more precisely:
+$a = 6 / 10^{1.2} = 0.3785$
+$T = 0.3785 \cdot 150^{1.2} = 0.3785 \cdot 408.3 \approx 154.6$
+
+Checking $T = a \cdot r^{1.15}$:
+$10^{1.15} = 14.12 \to a = 0.425$
+$60^{1.15} = 112.5 \to a = 0.457$ (Not as consistent)
+
+Using the power law $T = 0.378 \cdot r^{1.2}$ is the most consistent fit for the provided data.
+$150^{1.2} \approx 408.3$
+$0.378 \times 408.3 \approx 154.3$
+
+Answer: 154.3",,stop,132,1505,0,0.00062048,16.21,154.6895,215.3362,154.3,ok,,-0.0064,yes,tracked,yes
+20261119T041432Z,20,2026-11-19T04:18:11+00:00,KP-N-10,near,near_smaller_exponent,16,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061875-l2H93BNL3j8osI1Eq04X,0.0,0,4096,off,"To find the number of days for a moon to complete one full circle at 160 thousand kilometers, we can use Kepler's Third Law of Planetary Motion. Kepler's Third Law states that the square of the orbital period ($T$) is proportional to the cube of the semi-major axis (distance $r$):
+$T^2 \propto r^3$ or $T = k \cdot r^{1.5}$
+
+First, let's verify this relationship using the provided data:
+- For $r = 10$: $10^{1.5} \approx 31.62$. $T = 8$. Ratio $k = 8 / 31.62 \approx 0.253$
+- For $r = 20$: $20^{1.5} \approx 89.44$. $T = 18.38$. Ratio $k = 18.38 / 89.44 \approx 0.205$ (Wait, let's check the ratio $T^2/r^3$)
+
+Let's calculate $T^2/r^3$ for the data points:
+- $8^2 / 10^3 = 64 / 1000 = 0.064$
+- $18.38^2 / 20^3 = 337.82 / 8000 \approx 0.042$
+- $29.9^2 / 30^3 = 894.01 / 27000 \approx 0.033$
+- $42.22^2 / 40^3 = 1782.53 / 64000 \approx 0.028$
+
+Since the ratio is not constant, this is not a simple Keplerian orbit (perhaps the planet's mass is not the only factor or the ""circles"" are defined differently). Let's look for a linear or polynomial trend in the data provided.
+
+Looking at the increase in Days ($\Delta T$):
+- 10 to 20: $18.38 - 8 = 10.38$
+- 20 to 30: $29.9 - 18.38 = 11.52$
+- 30 to 40: $42.22 - 29.9 = 12.32$
+- 40 to 50: $55.19 - 42.22 = 12.97$
+- 50 to 60: $68.69 - 55.19 = 13.50$
+
+The rate of increase is increasing slightly. Let's look at the second difference:
+- $11.52 - 10.38 = 1.14$
+- $12.32 - 11.52 = 0.80$
+- $12.97 - 12.32 = 0.65$
+- $13.50 - 12.97 = 0.53$
+
+The second difference is decreasing. Let's try a power law fit $T = a \cdot r^b$.
+$\ln(T) = \ln(a) + b \ln(r)$
+- $\ln(8) \approx 2.079, \ln(10) \approx 2.303$
+- $\ln(68.69) \approx 4.231, \ln(60) \approx 4.094$
+Slope $b = (4.231 - 2.079) / (4.094 - 2.303) = 2.152 / 1.791 \approx 1.196$
+
+Let's test $T = a \cdot r^{1.2}$:
+- $10^{1.2} \approx 15.85 \rightarrow a = 8/15.85 \approx 0.505$
+- $60^{1.2} \approx 136.4 \rightarrow a = 68.69/136.4 \approx 0.503$
+
+The relationship is approximately $T = 0.504 \cdot r^{1.2}$.
+For $r = 160$:
+$T = 0.504 \cdot (160)^{1.2}$
+$160^{1.2} = (160^1) \cdot (160^{0.2}) \approx 160 \cdot 2.759 \approx 441.44$
+$T = 0.504 \cdot 441.44 \approx 222.48$
+
+Alternatively, checking the trend of the first difference:
+The difference increases by roughly $0.6$ to $1.1$ per 10 units. If we assume the first difference $\Delta T$ grows linearly:
+$\Delta T$ for $50 \to 60$ is $13.50$.
+If $\Delta T$ increases by $\approx 0.5$ every 10km:
+$60 \to 70: 14.0$
+$70 \to 80: 14.5$
+...
+$150 \to 160: 13.5 + (10 \times 0.5) = 18.5$
+Sum of $\Delta T$ from $60$ to $160$ (10 intervals):
+Average $\Delta T = (14.0 + 18.5) / 2 = 16.25$
+Total increase $= 16.25 \times 10 = 162.5$
+$T = 68.69 + 162.5 = 231.19$
+
+Let's refine the power law $T = a \cdot r^b$ using $r=10, T=8$ and $r=60, T=68.69$:
+$b = \log(68.69/8) / \log(60/10) = \log(8.586) / \log(6) = 0.934 / 0.778 \approx 1.199$
+$a = 8 / 10^{1.199} = 8 / 15.81 \approx 0.506$
+For $r=160$: $T = 0.506 \cdot 160^{1.199} \approx 0.506 \cdot 439.5 \approx 222.3$
+
+Rounding to a reasonable figure based on the data's precision:
+Answer: 222.3",,stop,131,1614,0,0.00066394,16.86,222.8609,316.3265,222.3,ok,,-0.006,yes,tracked,yes
+20261119T041432Z,21,2026-11-19T04:18:17+00:00,KP-F-01,far,far_cubic,7,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061895-wgc5IM8n4bo5cvrAH36n,0.0,0,4096,off,"To find the number of days for a moon at 70 thousand kilometers, we look for a pattern in the relationship between the distance ($d$) and the time ($t$).
+
+Let's analyze the data:
+- For $d = 10$, $t = 1.2$
+- For $d = 20$, $t = 9.6$
+- For $d = 30$, $t = 32.4$
+- For $d = 40$, $t = 76.8$
+- For $d = 50$, $t = 150$
+- For $d = 60$, $t = 259.2$
+
+Let's check the ratio $t / d^3$:
+- $1.2 / 10^3 = 1.2 / 1000 = 0.0012$
+- $9.6 / 20^3 = 9.6 / 8000 = 0.0012$
+- $32.4 / 30^3 = 32.4 / 27000 = 0.0012$
+- $76.8 / 40^3 = 76.8 / 64000 = 0.0012$
+- $150 / 50^3 = 150 / 125000 = 0.0012$
+- $259.2 / 60^3 = 259.2 / 216000 = 0.0012$
+
+The pattern is $t = 0.0012 \times d^3$. (This is consistent with Kepler's Third Law, where the square of the period is proportional to the cube of the distance, though in this specific mathematical table provided, the relationship is simplified to $t \propto d^3$).
+
+Now, apply this formula for $d = 70$:
+$t = 0.0012 \times 70^3$
+$t = 0.0012 \times 343,000$
+$t = 1.2 \times 343$
+$t = 411.6$
+
+Answer: 411.6",,stop,127,534,0,0.00023138,2.97,411.6,264.4746,411.6,ok,,0.0,,tracked,borderline
+20261119T041432Z,22,2026-11-19T04:19:58+00:00,KP-F-02,far,far_cubic,8,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795061991-yD4uBPOVkaqFbK78LXlB,0.0,0,4096,off,"To find the number of days for a moon at 80 thousand kilometers, we need to determine the relationship between the distance ($d$) and the time ($t$).
+
+Let's look at the data provided:
+- For $d = 10$, $t = 1.5$
+- For $d = 20$, $t = 12$
+- For $d = 30$, $t = 40.5$
+- For $d = 40$, $t = 96$
+- For $d = 50$, $t = 187.5$
+- For $d = 60$, $t = 324$
+
+Let's test if there is a power relationship. We can check the ratio $t/d^n$.
+If $n=3$:
+- $1.5 / 10^3 = 1.5 / 1000 = 0.0015$
+- $12 / 20^3 = 12 / 8000 = 0.0015$
+- $40.5 / 30^3 = 40.5 / 27000 = 0.0015$
+- $96 / 40^3 = 96 / 64000 = 0.0015$
+- $187.5 / 50^3 = 187.5 / 125000 = 0.0015$
+- $324 / 60^3 = 324 / 216000 = 0.0015$
+
+The relationship is consistent: $t = 0.0015 \times d^3$.
+
+Now, we calculate the time for $d = 80$:
+$t = 0.0015 \times 80^3$
+$t = 0.0015 \times 512,000$
+$t = 1.5 \times 512$
+$t = 768$
+
+Answer: 768",,stop,124,494,0,0.00021496,97.3,768,403.9075,768.0,ok,,0.0,,tracked,no
+20261119T041432Z,23,2026-11-19T04:20:04+00:00,KP-F-03,far,far_linear,9,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062001-4hKE7yz2BWRiGy7tJuFF,0.0,0,4096,off,"To find the number of days it takes for a moon to complete one full circle at 90 thousand kilometers, we can look for a pattern in the provided table:
+
+*   10 thousand km $\rightarrow$ 2 days
+*   20 thousand km $\rightarrow$ 4 days
+*   30 thousand km $\rightarrow$ 6 days
+*   40 thousand km $\rightarrow$ 8 days
+*   50 thousand km $\rightarrow$ 10 days
+*   60 thousand km $\rightarrow$ 12 days
+
+By observing the relationship between the distance (thousand km) and the time (days), we can see that the number of days is always one-fifth of the distance:
+$10 \div 5 = 2$
+$20 \div 5 = 4$
+$30 \div 5 = 6$
+$40 \div 5 = 8$
+$50 \div 5 = 10$
+$60 \div 5 = 12$
+
+Using this pattern for 90 thousand kilometers:
+$90 \div 5 = 18$
+
+Answer: 18",,stop,113,254,0,0.00011742,3.35,18,24.2851,18.0,ok,,0.0,,tracked,no
+20261119T041432Z,24,2026-11-19T04:20:11+00:00,KP-F-04,far,far_linear,10,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062007-q6GrLRsvADvSQTrzqFRj,0.0,0,4096,off,"To find the number of days it takes for a moon to complete one full circle at 100 thousand kilometers, we can look for a pattern or a ratio in the provided table.
+
+1.  **Analyze the relationship between distance and days:**
+    *   At 10 thousand km: 2.5 days
+    *   At 20 thousand km: 5 days
+    *   At 30 thousand km: 7.5 days
+    *   At 40 thousand km: 10 days
+    *   At 50 thousand km: 12.5 days
+    *   At 60 thousand km: 15 days
+
+2.  **Calculate the ratio (Days per Thousand km):**
+    *   $2.5 \div 10 = 0.25$
+    *   $5 \div 20 = 0.25$
+    *   $7.5 \div 30 = 0.25$
+    *   $10 \div 40 = 0.25$
+    *   $12.5 \div 50 = 0.25$
+    *   $15 \div 60 = 0.25$
+
+The relationship is linear: the number of days is always 0.25 times the distance in thousands of kilometers.
+
+3.  **Apply the ratio to 100 thousand kilometers:**
+    *   $\text{Days} = 100 \times 0.25$
+    *   $\text{Days} = 25$
+
+Answer: 25",,stop,121,360,0,0.00016094,4.27,25,35.5539,25.0,ok,,0.0,,tracked,no
+20261119T041432Z,25,2026-11-19T04:20:20+00:00,KP-F-05,far,far_cubic,11,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062014-9QG85iO0BBIPet37D5A9,0.0,0,4096,off,"To find the number of days for a moon at 110 thousand kilometers, we need to determine the relationship between the distance ($d$) and the time ($t$).
+
+Let's look at the data provided:
+- For $d = 10$, $t = 3$
+- For $d = 20$, $t = 24$
+- For $d = 30$, $t = 81$
+- For $d = 40$, $t = 192$
+- For $d = 50$, $t = 375$
+- For $d = 60$, $t = 648$
+
+We can test if there is a power relationship. Let's divide $t$ by $d^3$:
+- $3 / 10^3 = 3 / 1000 = 0.003$
+- $24 / 20^3 = 24 / 8000 = 0.003$
+- $81 / 30^3 = 81 / 27000 = 0.003$
+- $192 / 40^3 = 192 / 64000 = 0.003$
+- $375 / 50^3 = 375 / 125000 = 0.003$
+- $648 / 60^3 = 648 / 216000 = 0.003$
+
+The relationship is consistent: $t = 0.003 \times d^3$. (This is consistent with Kepler's Third Law, which states that the square of the orbital period is proportional to the cube of the semi-major axis, though the specific numbers here follow a $t \propto d^3$ pattern for this specific dataset).
+
+Now, we calculate the time for $d = 110$:
+$t = 0.003 \times (110)^3$
+$t = 0.003 \times 1,331,000$
+$t = 3 \times 1,331$
+$t = 3,993$
+
+Answer: 3993",,stop,120,524,0,0.0002264,5.51,3993,1302.4645,3993.0,ok,,0.0,,tracked,borderline
+20261119T041432Z,26,2026-11-19T04:20:27+00:00,KP-F-06,far,far_linear,12,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062023-PFRDC1a4RBNW948ERZur,0.0,0,4096,off,"To find the number of days it takes for a moon to complete one full circle at 120 thousand kilometers, we can look for a pattern in the provided table:
+
+*   10 thousand km $\rightarrow$ 3.5 days
+*   20 thousand km $\rightarrow$ 7 days ($3.5 \times 2$)
+*   30 thousand km $\rightarrow$ 10.5 days ($3.5 \times 3$)
+*   40 thousand km $\rightarrow$ 14 days ($3.5 \times 4$)
+*   50 thousand km $\rightarrow$ 17.5 days ($3.5 \times 5$)
+*   60 thousand km $\rightarrow$ 21 days ($3.5 \times 6$)
+
+The relationship is linear: the number of days is equal to the distance (in thousands of km) multiplied by 0.35 (or $3.5 \div 10$).
+
+To find the value for 120 thousand kilometers:
+$120 \times 0.35 = 42$
+Alternatively, since 120 is double 60:
+$21 \times 2 = 42$
+
+Answer: 42",,stop,122,272,0,0.00012588,4.23,42,65.4315,42.0,ok,,0.0,,tracked,no
+20261119T041432Z,27,2026-11-19T04:20:33+00:00,KP-F-07,far,far_linear,13,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062030-P4DfUPARcH60rcZ8lX9H,0.0,0,4096,off,"To find the number of days it takes for a moon to complete one full circle at 130 thousand kilometers, we first look for a pattern in the provided table:
+
+*   At 10 thousand km, it takes 4 days.
+*   At 20 thousand km, it takes 8 days.
+*   At 30 thousand km, it takes 12 days.
+*   At 40 thousand km, it takes 16 days.
+*   At 50 thousand km, it takes 20 days.
+*   At 60 thousand km, it takes 24 days.
+
+We can determine the relationship between the distance ($D$) and the time in days ($T$) by dividing the days by the distance:
+$4 / 10 = 0.4$
+$8 / 20 = 0.4$
+$12 / 30 = 0.4$
+$16 / 40 = 0.4$
+$20 / 50 = 0.4$
+$24 / 60 = 0.4$
+
+The pattern shows that the number of days is always 0.4 times the distance in thousands of kilometers ($T = 0.4 \times D$).
+
+To find the time for 130 thousand kilometers:
+$T = 0.4 \times 130$
+$T = 52$
+
+Answer: 52",,stop,116,321,0,0.00014464,2.88,52,84.3183,52.0,ok,,0.0,,tracked,no
+20261119T041432Z,28,2026-11-19T04:20:39+00:00,KP-F-08,far,far_linear,14,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062036-SqqGPkh1tupa6u7BbFML,0.0,0,4096,off,"To find the number of days it takes for a moon to complete one full circle at 140 thousand kilometers, we can look for a pattern in the provided table:
+
+*   10 thousand km $\rightarrow$ 5 days
+*   20 thousand km $\rightarrow$ 10 days
+*   30 thousand km $\rightarrow$ 15 days
+*   40 thousand km $\rightarrow$ 20 days
+*   50 thousand km $\rightarrow$ 25 days
+*   60 thousand km $\rightarrow$ 30 days
+
+By observing the relationship between the distance (thousand km) and the time (days), we can see that the number of days is always half of the distance:
+$10 \div 2 = 5$
+$20 \div 2 = 10$
+$30 \div 2 = 15$
+$40 \div 2 = 20$
+$50 \div 2 = 25$
+$60 \div 2 = 30$
+
+Using this pattern for a distance of 140 thousand kilometers:
+$140 \div 2 = 70$
+
+Answer: 70",,stop,117,264,0,0.00012198,2.77,70,117.7901,70.0,ok,,0.0,,tracked,no
+20261119T041432Z,29,2026-11-19T04:20:47+00:00,KP-F-09,far,far_cubic,15,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062042-MhD4ph385X9C1XQFyy7Z,0.0,0,4096,off,"To find the number of days it takes for a moon to complete one full circle at 150 thousand kilometers, we need to determine the relationship between the distance ($d$) and the time ($t$).
+
+Let's analyze the data provided:
+- For $d = 10$, $t = 6$
+- For $d = 20$, $t = 48$
+- For $d = 30$, $t = 162$
+- For $d = 40$, $t = 384$
+- For $d = 50$, $t = 750$
+- For $d = 60$, $t = 1296$
+
+We can look for a pattern by dividing $t$ by $d$:
+- $6 / 10 = 0.6$
+- $48 / 20 = 2.4$
+- $162 / 30 = 5.4$
+- $384 / 40 = 9.6$
+- $750 / 50 = 15$
+- $1296 / 60 = 21.6$
+
+The ratio $t/d$ is increasing. Let's check if $t$ is proportional to $d^3$ (which follows Kepler's Third Law, where $T^2 \propto a^3$, but here the data suggests a different power relationship).
+Let's test $t = k \cdot d^3$:
+- $10^3 = 1000 \rightarrow 6 / 1000 = 0.006$
+- $20^3 = 8000 \rightarrow 48 / 8000 = 0.006$
+- $30^3 = 27000 \rightarrow 162 / 27000 = 0.006$
+- $40^3 = 64000 \rightarrow 384 / 64000 = 0.006$
+- $50^3 = 125000 \rightarrow 750 / 125000 = 0.006$
+- $60^3 = 216000 \rightarrow 1296 / 216000 = 0.006$
+
+The relationship is consistently $t = 0.006 \cdot d^3$.
+
+Now, we calculate the time for $d = 150$:
+$t = 0.006 \cdot (150)^3$
+$t = 0.006 \cdot 3,375,000$
+$t = 6 \cdot 3,375$
+$t = 20,250$
+
+Answer: 20250",,stop,122,662,0,0.00028188,5.61,20250,4148.0479,20250.0,ok,,0.0,,tracked,yes
+20261119T041432Z,30,2026-11-19T04:20:56+00:00,KP-F-10,far,far_cubic,16,P5,google/gemma-4-31b-it,google/gemma-4-31b-it,Crusoe,bf16,gen-1795062050-Lp8Q0DZHJ3vGzE2pPVzj,0.0,0,4096,off,"To find the number of days it takes for a moon to complete one full circle at 160 thousand kilometers, we need to determine the relationship between the distance ($d$) and the time in days ($t$).
+
+Let's examine the data provided:
+- For $d = 10$, $t = 8$
+- For $d = 20$, $t = 64$
+- For $d = 30$, $t = 216$
+- For $d = 40$, $t = 512$
+- For $d = 50$, $t = 1000$
+- For $d = 60$, $t = 1728$
+
+We can look for a pattern by dividing the distance by 10 and seeing how it relates to the days:
+- $10/10 = 1 \rightarrow 1^3 = 1$. To get 8, we multiply by 8: $8 \times 1^3 = 8$.
+- $20/10 = 2 \rightarrow 2^3 = 8$. To get 64, we multiply by 8: $8 \times 2^3 = 64$.
+- $30/10 = 3 \rightarrow 3^3 = 27$. To get 216, we multiply by 8: $8 \times 3^3 = 216$.
+- $40/10 = 4 \rightarrow 4^3 = 64$. To get 512, we multiply by 8: $8 \times 4^3 = 512$.
+- $50/10 = 5 \rightarrow 5^3 = 125$. To get 1000, we multiply by 8: $8 \times 5^3 = 1000$.
+- $60/10 = 6 \rightarrow 6^3 = 216$. To get 1728, we multiply by 8: $8 \times 6^3 = 1728$.
+
+The formula for the number of days is $t = 8 \times (\frac{d}{10})^3$.
+Alternatively, this can be simplified to $t = 8 \times \frac{d^3}{1000} = \frac{d^3}{125} = (\frac{d}{5})^3$.
+
+Now, we apply this formula to $d = 160$:
+$t = (\frac{160}{5})^3$
+$t = 32^3$
+
+Calculating $32^3$:
+$32 \times 32 = 1024$
+$1024 \times 32 = 32768$
+
+Answer: 32768",,stop,123,645,0,0.00027522,5.42,32768,6092.9216,32768.0,ok,,0.0,,tracked,no

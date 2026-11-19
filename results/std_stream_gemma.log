@@ -1,0 +1,119 @@
+run 20261119T033806Z: 10 calls to google/gemma-4-31b-it via crusoe (bf16), temperature 0.0, reasoning off
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [1] HK-R-01 done (316 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [2] HK-R-02 done (395 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [3] HK-R-03 done (322 tokens, stop, Crusoe)
+  [4] HK-R-04 done (342 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [5] HK-R-05 done (322 tokens, stop, Crusoe)
+  [6] HK-R-06 done (379 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [7] HK-R-07 done (428 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [8] HK-R-08 done (357 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [9] HK-R-09 done (392 tokens, stop, Crusoe)
+  [10] HK-R-10 done (350 tokens, stop, Crusoe)
+Wrote 10 rows to results/run_log_std_gemma4-31b_hooke.csv; cost $0.0016
+run 20261119T034430Z: 10 calls to google/gemma-4-31b-it via crusoe (bf16), temperature 0.0, reasoning off
+  [1] KP-R-01 done (705 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [2] KP-R-02 done (795 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 60s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 75s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 90s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [3] KP-R-03 done (540 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [4] KP-R-04 done (613 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [5] KP-R-05 done (659 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [6] KP-R-06 done (727 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 60s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [7] KP-R-07 done (677 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [8] KP-R-08 done (730 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [9] KP-R-09 done (656 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [10] KP-R-10 done (712 tokens, stop, Crusoe)
+Wrote 10 rows to results/run_log_std_gemma4-31b_kepler.csv; cost $0.0029
+run 20261119T040426Z: 20 calls to google/gemma-4-31b-it via crusoe (bf16), temperature 0.0, reasoning off
+  [11] HK-N-01 done (797 tokens, stop, Crusoe)
+  [12] HK-N-02 done (631 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [13] HK-N-03 done (1568 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 60s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [14] HK-N-04 done (1488 tokens, stop, Crusoe)
+  [15] HK-N-05 done (987 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [16] HK-N-06 done (1541 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [17] HK-N-07 done (832 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [18] HK-N-08 done (1487 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [19] HK-N-09 done (848 tokens, stop, Crusoe)
+  [20] HK-N-10 done (680 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [21] HK-F-01 done (505 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [22] HK-F-02 done (497 tokens, stop, Crusoe)
+  [23] HK-F-03 done (517 tokens, stop, Crusoe)
+  [24] HK-F-04 done (709 tokens, stop, Crusoe)
+  [25] HK-F-05 done (492 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [26] HK-F-06 done (661 tokens, stop, Crusoe)
+  [27] HK-F-07 done (555 tokens, stop, Crusoe)
+  [28] HK-F-08 done (421 tokens, stop, Crusoe)
+  [29] HK-F-09 done (593 tokens, stop, Crusoe)
+  [30] HK-F-10 done (635 tokens, stop, Crusoe)
+Wrote 20 rows to results/run_log_std_gemma4-31b_hooke.csv; cost $0.0069
+run 20261119T041432Z: 20 calls to google/gemma-4-31b-it via crusoe (bf16), temperature 0.0, reasoning off
+  [11] KP-N-01 done (825 tokens, stop, Crusoe)
+  [12] KP-N-02 done (1307 tokens, stop, Crusoe)
+  [13] KP-N-03 done (2795 tokens, stop, Crusoe)
+  [14] KP-N-04 done (2877 tokens, stop, Crusoe)
+  [15] KP-N-05 done (1105 tokens, stop, Crusoe)
+  [16] KP-N-06 done (1016 tokens, stop, Crusoe)
+  [17] KP-N-07 done (1805 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [18] KP-N-08 done (1708 tokens, stop, Crusoe)
+  [19] KP-N-09 done (1505 tokens, stop, Crusoe)
+  [20] KP-N-10 done (1614 tokens, stop, Crusoe)
+  [21] KP-F-01 done (534 tokens, stop, Crusoe)
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [22] KP-F-02 done (494 tokens, stop, Crusoe)
+  [23] KP-F-03 done (254 tokens, stop, Crusoe)
+  [24] KP-F-04 done (360 tokens, stop, Crusoe)
+  [25] KP-F-05 done (524 tokens, stop, Crusoe)
+  [26] KP-F-06 done (272 tokens, stop, Crusoe)
+  [27] KP-F-07 done (321 tokens, stop, Crusoe)
+  [28] KP-F-08 done (264 tokens, stop, Crusoe)
+  [29] KP-F-09 done (662 tokens, stop, Crusoe)
+  [30] KP-F-10 done (645 tokens, stop, Crusoe)
+Wrote 20 rows to results/run_log_std_gemma4-31b_kepler.csv; cost $0.0087

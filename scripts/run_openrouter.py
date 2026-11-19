@@ -82,6 +82,30 @@ def call(payload, key, tries=10):
             raise
 
 
+def call_with_deadline(payload, key, deadline=900, attempts=3):
+    """call() with a hard overall deadline: urllib's timeout only bounds silence between chunks,
+    so a stalled connection can hang for hours. Abandon an attempt after `deadline` seconds and retry."""
+    import threading
+    for attempt in range(1, attempts + 1):
+        box = {}
+
+        def work():
+            try:
+                box["data"] = call(payload, key, tries=20)
+            except Exception as e:  # surfaced below
+                box["error"] = e
+        th = threading.Thread(target=work, daemon=True)
+        th.start()
+        th.join(deadline)
+        if th.is_alive():
+            print(f"    request hung for {deadline}s, retrying ({attempt}/{attempts})")
+            continue
+        if "error" in box:
+            raise box["error"]
+        return box["data"]
+    raise TimeoutError(f"request hung {attempts} times")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="google/gemma-4-31b-it")
@@ -96,6 +120,11 @@ def main():
     ap.add_argument("--max-tokens", type=int, default=4096)
     ap.add_argument("--reasoning", choices=["off", "on"], default="off")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--only", nargs="+", help="run only these item_ids")
+    ap.add_argument("--repeats", type=int, default=1, help="ask each item this many times")
+    ap.add_argument("--default-temperature", action="store_true",
+                    help="leave temperature and seed out of the request (provider defaults)")
+    ap.add_argument("--no-seed", action="store_true", help="leave seed out (providers that don't support it)")
     args = ap.parse_args()
 
     slug = args.model.split("/")[-1]
@@ -105,9 +134,12 @@ def main():
     with open(args.data, newline="", encoding="utf-8") as f:
         items = list(csv.DictReader(f))
     queue = [it for cond in args.conditions for it in items if it["law_distance"] == cond]
+    if args.only:
+        queue = [it for it in queue if it["item_id"] in set(args.only)]
+    queue = [it for it in queue for _ in range(args.repeats)]
 
     def payload(it):
-        return {
+        p = {
             "model": args.model,
             "messages": [{"role": "user", "content": it["prompt"]}],  # new context every call
             "temperature": args.temperature,
@@ -122,6 +154,14 @@ def main():
             },
             "usage": {"include": True},
         }
+        if args.default_temperature:
+            p.pop("temperature")
+            p.pop("seed")
+        if args.no_seed:
+            p.pop("seed", None)
+        if args.quantization == "none":  # provider publishes no quantization (e.g. Anthropic)
+            p["provider"].pop("quantizations")
+        return p
 
     if args.dry_run:
         print(json.dumps(payload(queue[0]), indent=2))
@@ -135,13 +175,23 @@ def main():
         with open(out, newline="", encoding="utf-8") as f:
             done = [r["item_id"] for r in csv.DictReader(f)]
         existing = len(done)
-        skipped = [it["item_id"] for it in queue if it["item_id"] in done]
-        queue = [it for it in queue if it["item_id"] not in done]  # resume: never call an item twice
+        # Resume: skip as many copies of each item as are already logged (one copy unless --repeats).
+        remaining = {}
+        for iid in done:
+            remaining[iid] = remaining.get(iid, 0) + 1
+        new_queue, skipped = [], 0
+        for it in queue:
+            if remaining.get(it["item_id"], 0) > 0:
+                remaining[it["item_id"]] -= 1
+                skipped += 1
+            else:
+                new_queue.append(it)
+        queue = new_queue
         if skipped:
-            print(f"skipping {len(skipped)} item(s) already in the log: {', '.join(skipped)}")
+            print(f"skipping {skipped} call(s) already in the log")
     mode = "a" if args.append and os.path.exists(out) else "w"
     print(f"run {run_id}: {len(queue)} calls to {args.model} via {args.provider} ({args.quantization}), "
-          f"temperature {args.temperature}, reasoning {args.reasoning}")
+          f"temperature {'default' if args.default_temperature else args.temperature}, reasoning {args.reasoning}")
 
     total_cost = 0.0
     with open(out, mode, newline="", encoding="utf-8") as f:
@@ -150,7 +200,7 @@ def main():
             writer.writeheader()
         for i, it in enumerate(queue, start=existing + 1):
             t0 = time.time()
-            data = call(payload(it), key)
+            data = call_with_deadline(payload(it), key)
             choice = data["choices"][0]
             msg = choice.get("message", {})
             usage = data.get("usage", {}) or {}
@@ -172,8 +222,8 @@ def main():
                 "provider": data.get("provider", ""),
                 "quantization": args.quantization,
                 "generation_id": data.get("id", ""),
-                "temperature": args.temperature,
-                "seed": args.seed,
+                "temperature": "default" if args.default_temperature else args.temperature,
+                "seed": "none" if (args.default_temperature or args.no_seed) else args.seed,
                 "max_tokens": args.max_tokens,
                 "reasoning_setting": args.reasoning,
                 "response": msg.get("content") or "",

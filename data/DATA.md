@@ -57,5 +57,25 @@ Columns are the Starter's, plus:
 
 Item IDs are `FFNZ-…` (noisy) and `FFSP-…` (sparse). `cf_answer` still comes from the noise-free law.
 
+## Standard run: Hooke's law and Kepler's third law
+
+Generated 19 November 2026 by [`scripts/generate_standard.py`](../scripts/generate_standard.py) (no randomness) and checked by [`scripts/check_standard.py`](../scripts/check_standard.py). Design: "Standard run" in [`PLAN.md`](../PLAN.md). Free fall reuses `freefall_starter.csv`.
+
+| File | Items | SHA-256 |
+|---|---|---|
+| [`hooke_standard.csv`](hooke_standard.csv) | 30: weight (g) → spring stretch (cm) | `fffb7a87463f82ccdd4e5ee6de5e02a82fa3fa98a4f1adda6ae1a126f35507cd` |
+| [`kepler_standard.csv`](kepler_standard.csv) | 30: distance (thousand km) → days per full circle | `5991688a8e3e6d45ba1a924a07e1e9ad5c6ade0e2e2e487b3ace86fe365ff300` |
+
+Columns are the Starter's, with these differences:
+
+| Column | Meaning |
+|---|---|
+| `formula` | y = c · (x/scale)^p, scale 100 g (Hooke) or 10 thousand km (Kepler) |
+| `test_x` | The value asked about (700–1600 g, or 70–160 thousand km) |
+| `test_t` | The same point in scaled units (7–16), the role T plays in the Starter |
+| `real_answer` | The real law's form with its constant fitted (least squares) to the 6 points shown: a straight line through zero for Hooke, distance^1.5 for Kepler. There is no single real-world constant for either law. |
+
+Item IDs are `HK-…` and `KP-…`. Shown values are rounded to 2 decimals; `cf_answer` comes from the exact law.
+
 [Declaring your data](https://github.com/Princeton-AI-Exploration-Lab/kits-catalog/blob/main/GITHUB.md#declaring-your-data)
 explains each field and how to compute the checksum.

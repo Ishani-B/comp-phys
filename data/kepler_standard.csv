@@ -1,0 +1,331 @@
+item_id,domain,law_distance,law_variant,formula,coefficient,exponent,table,test_x,test_t,cf_answer,real_answer,prompt_id,prompt
+KP-R-01,kepler,real,real,y = 1.2 * (x/10)^1.5,1.2,1.5,10: 1.2; 20: 3.39; 30: 6.24; 40: 9.6; 50: 13.42; 60: 17.64,70,7,22.2243,22.2288,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 1.2
+20 | 3.39
+30 | 6.24
+40 | 9.6
+50 | 13.42
+60 | 17.64
+
+How many days does one full circle take at 70 thousand kilometers? End with 'Answer: X'."
+KP-R-02,kepler,real,real,y = 1.5 * (x/10)^1.5,1.5,1.5,10: 1.5; 20: 4.24; 30: 7.79; 40: 12; 50: 16.77; 60: 22.05,80,8,33.9411,33.9428,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 1.5
+20 | 4.24
+30 | 7.79
+40 | 12
+50 | 16.77
+60 | 22.05
+
+How many days does one full circle take at 80 thousand kilometers? End with 'Answer: X'."
+KP-R-03,kepler,real,real,y = 2 * (x/10)^1.5,2,1.5,10: 2; 20: 5.66; 30: 10.39; 40: 16; 50: 22.36; 60: 29.39,90,9,54,53.9959,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 2
+20 | 5.66
+30 | 10.39
+40 | 16
+50 | 22.36
+60 | 29.39
+
+How many days does one full circle take at 90 thousand kilometers? End with 'Answer: X'."
+KP-R-04,kepler,real,real,y = 2.5 * (x/10)^1.5,2.5,1.5,10: 2.5; 20: 7.07; 30: 12.99; 40: 20; 50: 27.95; 60: 36.74,100,10,79.0569,79.0534,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 2.5
+20 | 7.07
+30 | 12.99
+40 | 20
+50 | 27.95
+60 | 36.74
+
+How many days does one full circle take at 100 thousand kilometers? End with 'Answer: X'."
+KP-R-05,kepler,real,real,y = 3 * (x/10)^1.5,3,1.5,10: 3; 20: 8.49; 30: 15.59; 40: 24; 50: 33.54; 60: 44.09,110,11,109.4486,109.4485,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 3
+20 | 8.49
+30 | 15.59
+40 | 24
+50 | 33.54
+60 | 44.09
+
+How many days does one full circle take at 110 thousand kilometers? End with 'Answer: X'."
+KP-R-06,kepler,real,real,y = 3.5 * (x/10)^1.5,3.5,1.5,10: 3.5; 20: 9.9; 30: 18.19; 40: 28; 50: 39.13; 60: 51.44,120,12,145.4923,145.4938,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 3.5
+20 | 9.9
+30 | 18.19
+40 | 28
+50 | 39.13
+60 | 51.44
+
+How many days does one full circle take at 120 thousand kilometers? End with 'Answer: X'."
+KP-R-07,kepler,real,real,y = 4 * (x/10)^1.5,4,1.5,10: 4; 20: 11.31; 30: 20.78; 40: 32; 50: 44.72; 60: 58.79,130,13,187.4887,187.4869,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 4
+20 | 11.31
+30 | 20.78
+40 | 32
+50 | 44.72
+60 | 58.79
+
+How many days does one full circle take at 130 thousand kilometers? End with 'Answer: X'."
+KP-R-08,kepler,real,real,y = 5 * (x/10)^1.5,5,1.5,10: 5; 20: 14.14; 30: 25.98; 40: 40; 50: 55.9; 60: 73.48,140,14,261.916,261.9044,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 5
+20 | 14.14
+30 | 25.98
+40 | 40
+50 | 55.9
+60 | 73.48
+
+How many days does one full circle take at 140 thousand kilometers? End with 'Answer: X'."
+KP-R-09,kepler,real,real,y = 6 * (x/10)^1.5,6,1.5,10: 6; 20: 16.97; 30: 31.18; 40: 48; 50: 67.08; 60: 88.18,150,15,348.5685,348.5642,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 6
+20 | 16.97
+30 | 31.18
+40 | 48
+50 | 67.08
+60 | 88.18
+
+How many days does one full circle take at 150 thousand kilometers? End with 'Answer: X'."
+KP-R-10,kepler,real,real,y = 8 * (x/10)^1.5,8,1.5,10: 8; 20: 22.63; 30: 41.57; 40: 64; 50: 89.44; 60: 117.58,160,16,512,512.0068,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 8
+20 | 22.63
+30 | 41.57
+40 | 64
+50 | 89.44
+60 | 117.58
+
+How many days does one full circle take at 160 thousand kilometers? End with 'Answer: X'."
+KP-N-01,kepler,near,near_smaller_exponent,y = 1.2 * (x/10)^1.2,1.2,1.2,10: 1.2; 20: 2.76; 30: 4.48; 40: 6.33; 50: 8.28; 60: 10.3,70,7,12.3965,13.7275,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 1.2
+20 | 2.76
+30 | 4.48
+40 | 6.33
+50 | 8.28
+60 | 10.3
+
+How many days does one full circle take at 70 thousand kilometers? End with 'Answer: X'."
+KP-N-02,kepler,near,near_smaller_exponent,y = 1.5 * (x/10)^1.2,1.5,1.2,10: 1.5; 20: 3.45; 30: 5.61; 40: 7.92; 50: 10.35; 60: 12.88,80,8,18.1886,20.9743,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 1.5
+20 | 3.45
+30 | 5.61
+40 | 7.92
+50 | 10.35
+60 | 12.88
+
+How many days does one full circle take at 80 thousand kilometers? End with 'Answer: X'."
+KP-N-03,kepler,near,near_larger_exponent,y = 2 * (x/10)^1.8,2,1.8,10: 2; 20: 6.96; 30: 14.45; 40: 24.25; 50: 36.24; 60: 50.32,90,9,104.3918,87.8875,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 2
+20 | 6.96
+30 | 14.45
+40 | 24.25
+50 | 36.24
+60 | 50.32
+
+How many days does one full circle take at 90 thousand kilometers? End with 'Answer: X'."
+KP-N-04,kepler,near,near_larger_exponent,y = 2.5 * (x/10)^1.8,2.5,1.8,10: 2.5; 20: 8.71; 30: 18.06; 40: 30.31; 50: 45.3; 60: 62.89,100,10,157.7393,128.6579,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 2.5
+20 | 8.71
+30 | 18.06
+40 | 30.31
+50 | 45.3
+60 | 62.89
+
+How many days does one full circle take at 100 thousand kilometers? End with 'Answer: X'."
+KP-N-05,kepler,near,near_smaller_exponent,y = 3 * (x/10)^1.2,3,1.2,10: 3; 20: 6.89; 30: 11.21; 40: 15.83; 50: 20.7; 60: 25.76,110,11,53.308,67.6218,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 3
+20 | 6.89
+30 | 11.21
+40 | 15.83
+50 | 20.7
+60 | 25.76
+
+How many days does one full circle take at 110 thousand kilometers? End with 'Answer: X'."
+KP-N-06,kepler,near,near_larger_exponent,y = 3.5 * (x/10)^1.8,3.5,1.8,10: 3.5; 20: 12.19; 30: 25.29; 40: 42.44; 50: 63.42; 60: 88.05,120,12,306.6156,236.7873,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 3.5
+20 | 12.19
+30 | 25.29
+40 | 42.44
+50 | 63.42
+60 | 88.05
+
+How many days does one full circle take at 120 thousand kilometers? End with 'Answer: X'."
+KP-N-07,kepler,near,near_larger_exponent,y = 4 * (x/10)^1.8,4,1.8,10: 4; 20: 13.93; 30: 28.9; 40: 48.5; 50: 72.48; 60: 100.63,130,13,404.7231,305.1338,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 4
+20 | 13.93
+30 | 28.9
+40 | 48.5
+50 | 72.48
+60 | 100.63
+
+How many days does one full circle take at 130 thousand kilometers? End with 'Answer: X'."
+KP-N-08,kepler,near,near_larger_exponent,y = 5 * (x/10)^1.8,5,1.8,10: 5; 20: 17.41; 30: 36.12; 40: 60.63; 50: 90.6; 60: 125.79,140,14,578.0967,426.268,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 5
+20 | 17.41
+30 | 36.12
+40 | 60.63
+50 | 90.6
+60 | 125.79
+
+How many days does one full circle take at 140 thousand kilometers? End with 'Answer: X'."
+KP-N-09,kepler,near,near_smaller_exponent,y = 6 * (x/10)^1.2,6,1.2,10: 6; 20: 13.78; 30: 22.42; 40: 31.67; 50: 41.39; 60: 51.51,150,15,154.6895,215.3362,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 6
+20 | 13.78
+30 | 22.42
+40 | 31.67
+50 | 41.39
+60 | 51.51
+
+How many days does one full circle take at 150 thousand kilometers? End with 'Answer: X'."
+KP-N-10,kepler,near,near_smaller_exponent,y = 8 * (x/10)^1.2,8,1.2,10: 8; 20: 18.38; 30: 29.9; 40: 42.22; 50: 55.19; 60: 68.69,160,16,222.8609,316.3265,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 8
+20 | 18.38
+30 | 29.9
+40 | 42.22
+50 | 55.19
+60 | 68.69
+
+How many days does one full circle take at 160 thousand kilometers? End with 'Answer: X'."
+KP-F-01,kepler,far,far_cubic,y = 1.2 * (x/10)^3,1.2,3,10: 1.2; 20: 9.6; 30: 32.4; 40: 76.8; 50: 150; 60: 259.2,70,7,411.6,264.4746,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 1.2
+20 | 9.6
+30 | 32.4
+40 | 76.8
+50 | 150
+60 | 259.2
+
+How many days does one full circle take at 70 thousand kilometers? End with 'Answer: X'."
+KP-F-02,kepler,far,far_cubic,y = 1.5 * (x/10)^3,1.5,3,10: 1.5; 20: 12; 30: 40.5; 40: 96; 50: 187.5; 60: 324,80,8,768,403.9075,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 1.5
+20 | 12
+30 | 40.5
+40 | 96
+50 | 187.5
+60 | 324
+
+How many days does one full circle take at 80 thousand kilometers? End with 'Answer: X'."
+KP-F-03,kepler,far,far_linear,y = 2 * (x/10)^1,2,1,10: 2; 20: 4; 30: 6; 40: 8; 50: 10; 60: 12,90,9,18,24.2851,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 2
+20 | 4
+30 | 6
+40 | 8
+50 | 10
+60 | 12
+
+How many days does one full circle take at 90 thousand kilometers? End with 'Answer: X'."
+KP-F-04,kepler,far,far_linear,y = 2.5 * (x/10)^1,2.5,1,10: 2.5; 20: 5; 30: 7.5; 40: 10; 50: 12.5; 60: 15,100,10,25,35.5539,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 2.5
+20 | 5
+30 | 7.5
+40 | 10
+50 | 12.5
+60 | 15
+
+How many days does one full circle take at 100 thousand kilometers? End with 'Answer: X'."
+KP-F-05,kepler,far,far_cubic,y = 3 * (x/10)^3,3,3,10: 3; 20: 24; 30: 81; 40: 192; 50: 375; 60: 648,110,11,3993,1302.4645,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 3
+20 | 24
+30 | 81
+40 | 192
+50 | 375
+60 | 648
+
+How many days does one full circle take at 110 thousand kilometers? End with 'Answer: X'."
+KP-F-06,kepler,far,far_linear,y = 3.5 * (x/10)^1,3.5,1,10: 3.5; 20: 7; 30: 10.5; 40: 14; 50: 17.5; 60: 21,120,12,42,65.4315,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 3.5
+20 | 7
+30 | 10.5
+40 | 14
+50 | 17.5
+60 | 21
+
+How many days does one full circle take at 120 thousand kilometers? End with 'Answer: X'."
+KP-F-07,kepler,far,far_linear,y = 4 * (x/10)^1,4,1,10: 4; 20: 8; 30: 12; 40: 16; 50: 20; 60: 24,130,13,52,84.3183,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 4
+20 | 8
+30 | 12
+40 | 16
+50 | 20
+60 | 24
+
+How many days does one full circle take at 130 thousand kilometers? End with 'Answer: X'."
+KP-F-08,kepler,far,far_linear,y = 5 * (x/10)^1,5,1,10: 5; 20: 10; 30: 15; 40: 20; 50: 25; 60: 30,140,14,70,117.7901,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 5
+20 | 10
+30 | 15
+40 | 20
+50 | 25
+60 | 30
+
+How many days does one full circle take at 140 thousand kilometers? End with 'Answer: X'."
+KP-F-09,kepler,far,far_cubic,y = 6 * (x/10)^3,6,3,10: 6; 20: 48; 30: 162; 40: 384; 50: 750; 60: 1296,150,15,20250,4148.0479,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 6
+20 | 48
+30 | 162
+40 | 384
+50 | 750
+60 | 1296
+
+How many days does one full circle take at 150 thousand kilometers? End with 'Answer: X'."
+KP-F-10,kepler,far,far_cubic,y = 8 * (x/10)^3,8,3,10: 8; 20: 64; 30: 216; 40: 512; 50: 1000; 60: 1728,160,16,32768,6092.9216,P5,"Moons travel in circles around a planet. The table shows how many days one full circle takes for a moon at each distance from the planet (thousands of kilometers).
+
+Thousand km | Days
+10 | 8
+20 | 64
+30 | 216
+40 | 512
+50 | 1000
+60 | 1728
+
+How many days does one full circle take at 160 thousand kilometers? End with 'Answer: X'."
