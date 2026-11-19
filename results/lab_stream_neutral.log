@@ -1,0 +1,71 @@
+run 20261118T223645Z: 30 episodes, neutral framing, exact readings
+  [1] FF-R-01: 6 measurements, 2 turns, stop, Crusoe
+  [2] FF-R-02: 4 measurements, 2 turns, stop, Crusoe
+  [3] FF-R-03: 4 measurements, 3 turns, stop, Crusoe
+  [4] FF-R-04: 3 measurements, 2 turns, stop, Crusoe
+  [5] FF-R-05: 4 measurements, 3 turns, stop, Crusoe
+  [6] FF-R-06: 3 measurements, 2 turns, stop, Crusoe
+  [7] FF-R-07: 4 measurements, 3 turns, stop, Crusoe
+  [8] FF-R-08: 4 measurements, 3 turns, stop, Crusoe
+  [9] FF-R-09: 3 measurements, 2 turns, stop, Crusoe
+  [10] FF-R-10: 4 measurements, 2 turns, stop, Crusoe
+  [11] FF-N-01: 6 measurements, 2 turns, stop, Crusoe
+  [12] FF-N-02: 4 measurements, 2 turns, stop, Crusoe
+  [13] FF-N-03: 3 measurements, 2 turns, stop, Crusoe
+  [14] FF-N-04: 3 measurements, 2 turns, stop, Crusoe
+  [15] FF-N-05: 4 measurements, 3 turns, stop, Crusoe
+  [16] FF-N-06: 3 measurements, 2 turns, stop, Crusoe
+  [17] FF-N-07: 3 measurements, 2 turns, stop, Crusoe
+  [18] FF-N-08: 4 measurements, 3 turns, stop, Crusoe
+  [19] FF-N-09: 3 measurements, 2 turns, stop, Crusoe
+  [20] FF-N-10: 4 measurements, 2 turns, stop, Crusoe
+  [21] FF-F-01: 6 measurements, 2 turns, stop, Crusoe
+  [22] FF-F-02: 4 measurements, 2 turns, stop, Crusoe
+  [23] FF-F-03: 3 measurements, 2 turns, stop, Crusoe
+  [24] FF-F-04: 3 measurements, 2 turns, stop, Crusoe
+  [25] FF-F-05: 3 measurements, 2 turns, stop, Crusoe
+Traceback (most recent call last):
+  File "/Users/ishanibakshi/princetonailaba/scripts/lab.py", line 344, in <module>
+    main()
+    ~~~~^^
+  File "/Users/ishanibakshi/princetonailaba/scripts/lab.py", line 322, in main
+    ep = run_episode(it, framing, noisy, key, raw)
+  File "/Users/ishanibakshi/princetonailaba/scripts/lab.py", line 221, in run_episode
+    data = call(payload, key)
+  File "/Users/ishanibakshi/princetonailaba/scripts/run_openrouter.py", line 76, in call
+    raise RuntimeError(f"HTTP {e.code}: {detail}") from None
+RuntimeError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok","provider_name":"Crusoe","is_byok":false,"limit_source":"upstream_provider_shared_pool","remedy_hint":"Retry shortly, add your own provider key to use your own limits (https://openrouter.ai/workspaces/default/byok), or route to another provid
+run 20261118T225413Z: 30 episodes, neutral framing, noisy readings
+  [1] FF-R-01: 6 measurements, 2 turns, stop, Crusoe
+  [2] FF-R-02: 6 measurements, 3 turns, length, Crusoe
+  [3] FF-R-03: 6 measurements, 3 turns, length, Crusoe
+  [4] FF-R-04: 6 measurements, 5 turns, stop, Crusoe
+  [5] FF-R-05: 6 measurements, 5 turns, stop, Crusoe
+  [6] FF-R-06: 6 measurements, 5 turns, length, Crusoe
+  [7] FF-R-07: 6 measurements, 3 turns, stop, Crusoe
+  [8] FF-R-08: 8 measurements, 7 turns, stop, Crusoe
+  [9] FF-R-09: 6 measurements, 3 turns, length, Crusoe
+  [10] FF-R-10: 6 measurements, 3 turns, length, Crusoe
+  [11] FF-N-01: 6 measurements, 2 turns, stop, Crusoe
+  [12] FF-N-02: 6 measurements, 3 turns, stop, Crusoe
+    network error, retrying: The read operation timed out
+  [13] FF-N-03: 6 measurements, 3 turns, length, Crusoe
+  [14] FF-N-04: 6 measurements, 5 turns, stop, Crusoe
+  [15] FF-N-05: 6 measurements, 3 turns, stop, Crusoe
+  [16] FF-N-06: 6 measurements, 4 turns, length, Crusoe
+  [17] FF-N-07: 6 measurements, 4 turns, stop, Crusoe
+  [18] FF-N-08: 6 measurements, 5 turns, length, Crusoe
+    network error, retrying: The read operation timed out
+  [19] FF-N-09: 6 measurements, 3 turns, length, Crusoe
+  [20] FF-N-10: 6 measurements, 3 turns, length, Crusoe
+  [21] FF-F-01: 6 measurements, 3 turns, length, Crusoe
+  [22] FF-F-02: 6 measurements, 3 turns, length, Crusoe
+  [23] FF-F-03: 6 measurements, 3 turns, stop, Crusoe
+  [24] FF-F-04: 6 measurements, 3 turns, stop, Crusoe
+  [25] FF-F-05: 6 measurements, 5 turns, length, Crusoe
+  [26] FF-F-06: 6 measurements, 3 turns, stop, Crusoe
+  [27] FF-F-07: 6 measurements, 3 turns, stop, Crusoe
+  [28] FF-F-08: 6 measurements, 3 turns, stop, Crusoe
+  [29] FF-F-09: 6 measurements, 3 turns, length, Crusoe
+  [30] FF-F-10: 6 measurements, 3 turns, stop, Crusoe
+Wrote 30 episodes to results/run_log_lab_neutral_noisy.csv

@@ -31,3 +31,77 @@ Seconds | Meters
 ```
 
 `[T]` is the item's `test_t`. The `prompt` column of the data file holds the full text of every prompt as sent.
+
+---
+
+## P2
+
+**Used for:** Virtual lab, physics framing: one user message, no system prompt, with the tool below. 60 episodes (exact and noisy readings).
+**Added:** 18 November 2026
+
+```
+You are in a lab on a planet. You can drop a ball and measure how far it has fallen, in meters, after any number of seconds you choose between 0 and 6, using the drop_ball tool. The drop tower only allows up to 6 seconds of fall, so you can't measure [T] seconds directly. You can take up to 8 measurements. Your goal is to work out how far the ball will have fallen after [T] seconds. When you're done measuring, state the rule you found, then end with 'Answer: X'.
+```
+
+`[T]` is the item's `test_t`. Tool offered (OpenAI-style function definition, `tool_choice: auto`):
+
+```json
+{
+  "type": "function",
+  "function": {
+    "name": "drop_ball",
+    "description": "Drop the ball and measure how far it has fallen after the given number of seconds. Returns the distance in meters.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "seconds": {
+          "type": "number",
+          "description": "Time after release, in seconds. Must be greater than 0 and at most 6."
+        }
+      },
+      "required": [
+        "seconds"
+      ]
+    }
+  }
+}
+```
+
+Tool replies, sent back as JSON: a valid call returns `{"seconds": t, "meters": reading, "measurements_left": n}`. A time outside 0 < t ≤ 6 returns `{"error": "Only times between 0 and 6 seconds are possible."}` and uses no measurement. After 8 valid measurements every call returns `{"error": "No measurements left. Give your answer."}`. An unreadable value returns an error and uses no measurement. At most 12 model turns per episode.
+
+---
+
+## P3
+
+**Used for:** Virtual lab, neutral framing (no physics cues): one user message, no system prompt, with the tool below. 60 episodes (exact and noisy readings).
+**Added:** 18 November 2026
+
+```
+You are working with a device that has a dial and a counter. You can set the dial to any number of tocks you choose between 0 and 6 and read how many glims the counter shows, using the read_counter tool. The dial only goes up to 6 tocks, so you can't read [T] tocks directly. You can take up to 8 readings. Your goal is to work out how many glims the counter will show at [T] tocks. When you're done taking readings, state the rule you found, then end with 'Answer: X'.
+```
+
+`[T]` is the item's `test_t`. Tool offered (OpenAI-style function definition, `tool_choice: auto`):
+
+```json
+{
+  "type": "function",
+  "function": {
+    "name": "read_counter",
+    "description": "Set the dial to the given number of tocks and read the counter. Returns the number of glims.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tocks": {
+          "type": "number",
+          "description": "Dial setting, in tocks. Must be greater than 0 and at most 6."
+        }
+      },
+      "required": [
+        "tocks"
+      ]
+    }
+  }
+}
+```
+
+Tool replies, sent back as JSON: a valid call returns `{"tocks": t, "glims": reading, "readings_left": n}`. A time outside 0 < t ≤ 6 returns `{"error": "Only dial settings between 0 and 6 tocks are possible."}` and uses no measurement. After 8 valid measurements every call returns `{"error": "No readings left. Give your answer."}`. An unreadable value returns an error and uses no measurement. At most 12 model turns per episode.

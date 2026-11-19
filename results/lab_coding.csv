@@ -1,0 +1,121 @@
+framing,readings,run_id,item_id,first_hypothesis_t2,first_hypothesis_method,called_out,quote
+physics,exact,20261118T223625Z,FF-R-01,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-02,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-03,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-04,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-05,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-06,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-07,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-08,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-09,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-R-10,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-01,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-02,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-03,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-04,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-05,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-06,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-07,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-08,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-09,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-N-10,yes,auto (true law is t^2),no,
+physics,exact,20261118T223625Z,FF-F-01,yes,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-02,no,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-03,no,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-04,no,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-05,no,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-06,no,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-07,no,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-08,no,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-09,yes,read by hand,no,
+physics,exact,20261118T223625Z,FF-F-10,yes,read by hand,no,
+physics,noisy,20261118T224603Z,FF-R-01,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-02,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-03,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-04,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-05,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-06,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-07,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-08,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-09,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-R-10,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-01,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-02,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-03,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-04,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-05,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-06,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-07,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-08,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-09,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-N-10,yes,auto (true law is t^2),no,
+physics,noisy,20261118T224603Z,FF-F-01,yes,read by hand,borderline,"Tested the free-fall formula / gravity, found it did not fit, moved on without saying the physics differs"
+physics,noisy,20261118T224603Z,FF-F-02,yes,read by hand,borderline,"Tested the free-fall formula / gravity, found it did not fit, moved on without saying the physics differs"
+physics,noisy,20261118T224603Z,FF-F-03,yes,read by hand,yes,'This is not a standard gravity problem'
+physics,noisy,20261118T224603Z,FF-F-04,yes,read by hand,yes,'This is not a standard d = 0.5gt^2 gravity formula'
+physics,noisy,20261118T224603Z,FF-F-05,yes,read by hand,no,
+physics,noisy,20261118T224603Z,FF-F-06,yes,read by hand,yes,'these numbers are not following a standard d = 1/2 g t^2 pattern' ... 'noisy or non-standard'
+physics,noisy,20261118T224603Z,FF-F-07,yes,read by hand,yes,'seems inconsistent with a standard gravity formula'
+physics,noisy,20261118T224603Z,FF-F-08,no,read by hand,yes,'the environment is not a simple constant-gravity vacuum or there is noise'
+physics,noisy,20261118T224603Z,FF-F-09,yes,read by hand,borderline,"Tested the free-fall formula / gravity, found it did not fit, moved on without saying the physics differs"
+physics,noisy,20261118T224603Z,FF-F-10,no,read by hand,no,
+neutral,exact,20261118T223645Z,FF-R-01,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-02,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-03,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-04,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-05,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-06,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-07,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-08,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-09,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-R-10,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-01,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-02,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-03,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-04,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-05,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-06,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-07,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-08,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-09,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-N-10,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-F-01,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-F-02,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-F-03,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-F-04,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261118T223645Z,FF-F-05,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261119T004110Z,FF-F-06,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261119T004110Z,FF-F-07,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261119T004110Z,FF-F-08,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261119T004110Z,FF-F-09,yes,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,exact,20261119T004110Z,FF-F-10,yes,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-01,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-02,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-03,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-04,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-05,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-06,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-07,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-08,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-09,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-R-10,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-01,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-02,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-03,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-04,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-05,no,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-06,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-07,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-08,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-09,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-N-10,yes,auto (true law is t^2),n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-01,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-02,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-03,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-04,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-05,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-06,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-07,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-08,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-09,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics
+neutral,noisy,20261118T225413Z,FF-F-10,no,read by hand,n/a,neutral framing: no physics to call out; no reply mentions physics

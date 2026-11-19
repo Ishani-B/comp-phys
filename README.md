@@ -8,7 +8,7 @@
 
 **Domain:** Physics. Free fall, Hooke's law and Kepler's third law (free fall only in the Starter).
 
-**Status:** Plan approved by a co-lead. Starter run on 18 November 2026 (results below). Standard and Ambitious not started. See [What's left](#whats-left).
+**Status:** Plan approved by a co-lead. Starter, a harder-evidence pilot and a virtual lab (the model runs its own experiments) run on 18–19 November 2026 (results below). Standard and Ambitious not started. See [What's left](#whats-left).
 
 ## Overview
 
@@ -45,6 +45,25 @@ The full plan, grading rule and every dated change are in [`PLAN.md`](PLAN.md).
 | **Outcomes** | Real-law control on its own; for near and far, the mean normalized score plus counts of tracked, between, leaked, hedges and called out.<br>**Result:** control 10/10 exactly right. Near and far 10/10 tracked each, every score exactly 0.0, mean 0.00. No hedges. No call-outs (2 borderline). By the plan's own test, the hypothesis is not supported for free fall on this model. Details: [summary](results/run_log_gemma-4-31b-it_summary.md), [notes](results/NOTES.md). |
 
 An earlier run used Gemma 3 1B by mistake (local, through Ollama). It is kept as a smaller-model comparison: control 4/10, with errors that are pattern-fitting failures, not pulls toward real physics. See [notes](results/NOTES.md).
+
+### Pilot: Does the pull toward real physics appear when the evidence is weaker?
+
+Run after the Starter hit a ceiling, and locked in `PLAN.md` before any call. The same 30 laws and settings, with weaker evidence: six points with ±10% noise, or three exact points (60 calls).
+
+**Result:** three exact points changed nothing (30/30 exact). Noise did move the model. Near stayed tracked (mean 0.03), while far slipped to 8/10 tracked, with 1 leak and 1 hedge (mean 0.19, median 0.00). The leak was a pull toward the familiar t² shape, not Earth's numbers. Noise also made the model invoke real physics in 30 of 30 replies (5 of 30 on clean data). Details: [comparison](results/pilot_evidence_comparison.md), [notes](results/NOTES.md).
+
+### Virtual lab: Does a model that runs its own experiments still fall back on real physics?
+
+Locked in `PLAN.md` before any real episode. Gemma 4 31B gets a measurement tool (0 to 6 seconds, up to 8 measurements) in a world with one of the Starter's 30 laws, then predicts a time it never measured. That's 2 framings (falling ball / made-up names with no physics cues) × 2 kinds of reading (exact / ±10% noise) = 120 episodes. Code: [`scripts/lab.py`](scripts/lab.py).
+
+**Result:**
+- Exact readings are a ceiling in both framings: 60/60.
+- Noisy readings break the control (real law 4/10 physics, 3/10 neutral), so those cells are weak evidence.
+- No answer in any cell lands closest to Earth's law. The one "leak" is the quadratic through three noisy points.
+- What the physics story changes is the process. With noise, it makes the model test ½gt² first (8/10 far episodes, against 0/10 neutral), take fewer measurements, and commit instead of hedging (5 against 14 hedges). It also produces explicit call-outs ("This is not a standard gravity problem"), all on linear laws.
+- A pre-registered rerun of the 19 episodes cut off at 4096 tokens, given 16,384, turned 17 hedges into answers. Both framings then track far laws 8–9/10, and the hedge gap between framings mostly disappears. Still no answer reflects Earth's numbers.
+
+Details: [comparison](results/lab_comparison.md), [notes](results/NOTES.md).
 
 ### Standard: Does the result hold across three domains and two models?
 

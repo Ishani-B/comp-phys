@@ -69,3 +69,202 @@ run_id,item_id,called_out,quote
 20261118T204448Z,FF-F-08,no,
 20261118T204448Z,FF-F-09,borderline,"Tested 'the formula for free fall: d = 1/2 g t^2', found d/t^2 not constant, fitted 0.5t^3 without remarking on it"
 20261118T204448Z,FF-F-10,borderline,"Tested 'the formula for free fall ... (g is the acceleration due to gravity)', found d/t^2 not constant, fitted 1.5t^3 without remarking on it"
+20261118T212706Z,FFNZ-R-01,no,
+20261118T212706Z,FFNZ-R-02,no,
+20261118T212706Z,FFNZ-R-03,no,
+20261118T212706Z,FFNZ-R-04,no,
+20261118T212706Z,FFNZ-R-05,no,
+20261118T212706Z,FFNZ-R-06,no,
+20261118T212706Z,FFNZ-R-07,no,
+20261118T212706Z,FFNZ-R-08,no,
+20261118T212706Z,FFNZ-R-09,no,
+20261118T212706Z,FFNZ-R-10,no,
+20261118T212706Z,FFNZ-N-01,no,
+20261118T212706Z,FFNZ-N-02,no,
+20261118T212706Z,FFNZ-N-03,no,
+20261118T212706Z,FFNZ-N-04,no,
+20261118T212706Z,FFNZ-N-05,no,
+20261118T212706Z,FFNZ-N-06,no,
+20261118T212706Z,FFNZ-N-07,no,
+20261118T212706Z,FFNZ-N-08,no,
+20261118T212706Z,FFNZ-N-09,no,
+20261118T212706Z,FFNZ-N-10,no,
+20261118T212706Z,FFNZ-F-01,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T212706Z,FFNZ-F-02,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T212706Z,FFNZ-F-03,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T212706Z,FFNZ-F-04,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T212706Z,FFNZ-F-05,yes,'The data provided in the table is inconsistent for a standard physics problem'
+20261118T212706Z,FFNZ-F-06,borderline,Tested d = 1/2 g t^2; 'not following a perfect t^2 curve (it looks like there might be measurement errors or a different force)'
+20261118T212706Z,FFNZ-F-07,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T212706Z,FFNZ-F-08,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T212706Z,FFNZ-F-09,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T212706Z,FFNZ-F-10,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T214812Z,FFSP-R-01,no,
+20261118T214812Z,FFSP-R-02,no,
+20261118T214812Z,FFSP-R-03,no,
+20261118T214812Z,FFSP-R-04,no,
+20261118T214812Z,FFSP-R-05,no,
+20261118T214812Z,FFSP-R-06,no,
+20261118T214812Z,FFSP-R-07,no,
+20261118T214812Z,FFSP-R-08,no,
+20261118T214812Z,FFSP-R-09,no,
+20261118T214812Z,FFSP-R-10,no,
+20261118T214812Z,FFSP-N-01,no,
+20261118T214812Z,FFSP-N-02,no,
+20261118T214812Z,FFSP-N-03,no,
+20261118T214812Z,FFSP-N-04,no,
+20261118T214812Z,FFSP-N-05,no,
+20261118T214812Z,FFSP-N-06,no,
+20261118T214812Z,FFSP-N-07,no,
+20261118T214812Z,FFSP-N-08,no,
+20261118T214812Z,FFSP-N-09,no,
+20261118T214812Z,FFSP-N-10,no,
+20261118T214812Z,FFSP-F-01,no,
+20261118T214812Z,FFSP-F-02,no,
+20261118T214812Z,FFSP-F-03,no,
+20261118T214812Z,FFSP-F-04,no,
+20261118T214812Z,FFSP-F-05,no,
+20261118T214812Z,FFSP-F-06,no,
+20261118T214812Z,FFSP-F-07,no,
+20261118T214812Z,FFSP-F-08,no,
+20261118T214812Z,FFSP-F-09,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T214812Z,FFSP-F-10,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261118T223625Z,FF-R-01,no,
+20261118T223625Z,FF-R-02,no,
+20261118T223625Z,FF-R-03,no,
+20261118T223625Z,FF-R-04,no,
+20261118T223625Z,FF-R-05,no,
+20261118T223625Z,FF-R-06,no,
+20261118T223625Z,FF-R-07,no,
+20261118T223625Z,FF-R-08,no,
+20261118T223625Z,FF-R-09,no,
+20261118T223625Z,FF-R-10,no,
+20261118T223625Z,FF-N-01,no,
+20261118T223625Z,FF-N-02,no,
+20261118T223625Z,FF-N-03,no,
+20261118T223625Z,FF-N-04,no,
+20261118T223625Z,FF-N-05,no,
+20261118T223625Z,FF-N-06,no,
+20261118T223625Z,FF-N-07,no,
+20261118T223625Z,FF-N-08,no,
+20261118T223625Z,FF-N-09,no,
+20261118T223625Z,FF-N-10,no,
+20261118T223625Z,FF-F-01,no,
+20261118T223625Z,FF-F-02,no,
+20261118T223625Z,FF-F-03,no,
+20261118T223625Z,FF-F-04,no,
+20261118T223625Z,FF-F-05,no,
+20261118T223625Z,FF-F-06,no,
+20261118T223625Z,FF-F-07,no,
+20261118T223625Z,FF-F-08,no,
+20261118T223625Z,FF-F-09,no,
+20261118T223625Z,FF-F-10,no,
+20261118T224603Z,FF-R-01,no,
+20261118T224603Z,FF-R-02,no,
+20261118T224603Z,FF-R-03,no,
+20261118T224603Z,FF-R-04,no,
+20261118T224603Z,FF-R-05,no,
+20261118T224603Z,FF-R-06,no,
+20261118T224603Z,FF-R-07,no,
+20261118T224603Z,FF-R-08,no,
+20261118T224603Z,FF-R-09,no,
+20261118T224603Z,FF-R-10,no,
+20261118T224603Z,FF-N-01,no,
+20261118T224603Z,FF-N-02,no,
+20261118T224603Z,FF-N-03,no,
+20261118T224603Z,FF-N-04,no,
+20261118T224603Z,FF-N-05,no,
+20261118T224603Z,FF-N-06,no,
+20261118T224603Z,FF-N-07,no,
+20261118T224603Z,FF-N-08,no,
+20261118T224603Z,FF-N-09,no,
+20261118T224603Z,FF-N-10,no,
+20261118T224603Z,FF-F-01,borderline,"Tested the free-fall formula / gravity, found it did not fit, moved on without saying the physics differs"
+20261118T224603Z,FF-F-02,borderline,"Tested the free-fall formula / gravity, found it did not fit, moved on without saying the physics differs"
+20261118T224603Z,FF-F-03,yes,'This is not a standard gravity problem'
+20261118T224603Z,FF-F-04,yes,'This is not a standard d = 0.5gt^2 gravity formula'
+20261118T224603Z,FF-F-05,no,
+20261118T224603Z,FF-F-06,yes,'these numbers are not following a standard d = 1/2 g t^2 pattern' ... 'noisy or non-standard'
+20261118T224603Z,FF-F-07,yes,'seems inconsistent with a standard gravity formula'
+20261118T224603Z,FF-F-08,yes,'the environment is not a simple constant-gravity vacuum or there is noise'
+20261118T224603Z,FF-F-09,borderline,"Tested the free-fall formula / gravity, found it did not fit, moved on without saying the physics differs"
+20261118T224603Z,FF-F-10,no,
+20261118T223645Z,FF-R-01,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-04,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-05,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-07,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-08,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-R-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-01,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-04,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-05,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-07,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-08,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-N-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-F-01,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-F-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-F-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-F-04,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T223645Z,FF-F-05,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T004110Z,FF-F-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T004110Z,FF-F-07,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T004110Z,FF-F-08,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T004110Z,FF-F-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T004110Z,FF-F-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-01,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-04,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-05,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-07,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-08,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-R-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-01,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-04,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-05,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-07,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-08,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-N-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-01,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-04,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-05,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-07,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-08,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261118T225413Z,FF-F-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T004925Z,FF-R-03,no,
+20261119T004925Z,FF-R-07,no,
+20261119T024302Z,FF-N-10,no,
+20261119T024302Z,FF-F-01,borderline,"Tested the free-fall formula d = 1/2 g t^2, found it did not fit, moved on without saying the physics differs"
+20261119T024302Z,FF-F-10,no,
+20261119T004935Z,FF-R-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T004935Z,FF-R-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-R-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-R-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-R-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-N-03,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-N-06,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-N-08,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-N-09,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-N-10,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-F-01,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-F-02,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-F-05,n/a,neutral framing: no physics to call out; no reply mentions physics
+20261119T024312Z,FF-F-09,n/a,neutral framing: no physics to call out; no reply mentions physics

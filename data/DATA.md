@@ -38,5 +38,24 @@ Declare your dataset here before you collect any model output.
 
 [`scripts/check_items.py`](../scripts/check_items.py) recomputes every table value and both answers from the stated formula without using the generator's code, confirms the 5 sample items match the plan, and confirms no prompt contains a physics term (gravity, acceleration, physics, Earth). Run it with `python3 scripts/check_items.py`.
 
+## Pilot: harder evidence
+
+Two more files, generated 18 November 2026 by [`scripts/generate_pilot.py`](../scripts/generate_pilot.py) (fixed seed 20261118, so rerunning gives identical files) and checked by [`scripts/check_pilot.py`](../scripts/check_pilot.py). Both use the Starter's 30 laws and test times; only the points shown differ. Design: "Pilot: harder evidence" in [`PLAN.md`](../PLAN.md).
+
+| File | Points shown | SHA-256 |
+|---|---|---|
+| [`freefall_pilot_noisy.csv`](freefall_pilot_noisy.csv) | t = 1 to 6, each value × a random factor in [0.9, 1.1], rounded to one decimal | `c4a2788eb5343c8bf82456f846f8c909d9e80bf1f240bce6f65892ded44c5c29` |
+| [`freefall_pilot_sparse.csv`](freefall_pilot_sparse.csv) | t = 1 to 3, exact | `e0b66b078ccc11e6752f0cff81c29a172e162201913092025f908d7b7ee00dc6` |
+
+Columns are the Starter's, plus:
+
+| Column | Meaning |
+|---|---|
+| `evidence_level` | `noisy` or `sparse` |
+| `t2_fit_answer` | What d = k·t², with k fitted by least squares to the points shown, gives at `test_t`. Descriptive only. |
+| `quad_fit_answer` | What a least-squares fit of a·t² + b·t + c gives at `test_t`. Descriptive only. |
+
+Item IDs are `FFNZ-…` (noisy) and `FFSP-…` (sparse). `cf_answer` still comes from the noise-free law.
+
 [Declaring your data](https://github.com/Princeton-AI-Exploration-Lab/kits-catalog/blob/main/GITHUB.md#declaring-your-data)
 explains each field and how to compute the checksum.

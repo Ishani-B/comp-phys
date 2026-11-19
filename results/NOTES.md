@@ -31,6 +31,83 @@ Run 18 November 2026. These notes come from reading every response (written up b
 
 **Ceiling, not a gradient.** With every score at 0, the Starter can't show *how* fallback grows with distance, because there is no fallback to measure. The data are noise-free and fit simple formulas exactly (six points, clean constants, whole-number exponents), which makes the counterfactual law as easy to read as the real one. Harder evidence, such as noisy points, fewer points, or a less familiar form, is where a difference between near and far could show up.
 
+## Pilot: harder evidence (Gemma 4 31B)
+
+Same 30 laws and test times, same settings. Only the evidence changes. Design: "Pilot: harder evidence" in `PLAN.md`. Tables: [`pilot_evidence_comparison.md`](pilot_evidence_comparison.md). Cost $0.0175 for 60 calls.
+
+| Evidence | Real-law control | Near: mean score | Far: mean (median) | Far tracked | Hedges | Called out | Replies invoking real physics |
+|---|---|---|---|---|---|---|---|
+| Exact, 6 points (Starter) | 10/10 | 0.00 | 0.00 (0.00) | 10/10 | 0 | 0 (2 borderline) | 5/30 |
+| Noisy (±10%), 6 points | 9/10 | 0.03 | 0.19 (0.00) | 8/10 | 1 | 1 (9 borderline) | 30/30 |
+| Exact, 3 points | 10/10 | 0.00 | 0.00 (0.00) | 10/10 | 0 | 0 (2 borderline) | 14/30 |
+
+**Noise moves the model; fewer points don't.** With three exact points the model was perfect again, picking t³ from just three cubic points every time. With noisy points, far items slip: one leaked and one hedged.
+
+**The direction matches the prediction, but weakly.** Under noise the far mean (0.19) sits above the near mean (0.03), as the hypothesis predicts. But the far mean rests on one item, and both medians are about 0. Ten items per cell can't call this a real effect.
+
+**The only leak is a pull toward the familiar shape, not Earth's numbers.** In FFNZ-F-09 (true law d = 0.5t³) the model tries a cubic close to the truth (0.45t³ gives 1518.75), then drops it for a quadratic and answers 612.3. That is closest to the t² fit of the points (574), not to Earth's answer (1102.5). The normalized score calls it "leaked" (1.84, outside 0 to 1) because it only measures distance from the data's answer toward Earth's. No far answer at any evidence level is closest to Earth's answer.
+
+**Noise is what brings the physics in.** With clean data the model mentions real physics in 5 of 30 replies. With noise it does in 30 of 30: almost every reply opens "In physics, the distance an object falls under constant gravity is d = ½gt²". It then blames deviations on "measurement error", and on near items it uses the physics as a tie-breaker ("typically these problems follow d = kt²", "the t² relationship is the standard for falling objects"). Replies are about 2.5 times longer (median 910 tokens vs 391). On near items the prior agrees with the data, so it does no harm. On the 5 cubic items it conflicts: one ended on the t² shape and one ran out of tokens switching between polynomial fits.
+
+**The failures are all cubic.** All 5 linear far items stayed tracked under noise (one drifted toward the quadratic fit: 142.1 vs 108, score 0.12). Both failures were among the 5 cubic items.
+
+**Called out.** One clear call-out (FFNZ-F-05: the data are "inconsistent for a standard physics problem"). Nine noisy far replies test ½gt², find it doesn't fit and move on; they are coded borderline, the same rule as the Starter. All quoted in `called_out_coding.csv`.
+
+**What it suggests next.** The pull toward real physics shows up when the evidence is ambiguous, and as a familiar shape rather than a recalled constant. A cleaner test would raise the noise in steps (5%, 10%, 20%, 40%) on cubic and other non-t² laws, and score against the t² fit as well as Earth's answer.
+
+## Virtual lab: the model runs its own experiments (Gemma 4 31B)
+
+Design: "Virtual lab" in `PLAN.md` (locked before the run). 120 episodes: the Starter's 30 laws × 2 framings (falling ball / made-up "tocks" and "glims") × 2 kinds of reading (exact / ±10% noise, matched across conditions). The model gets a measurement tool for 0 to 6 seconds, up to 8 measurements, then predicts T = 7 to 16. Full tables: [`lab_comparison.md`](lab_comparison.md). Cost $0.094. Coding: [`lab_coding.csv`](lab_coding.csv).
+
+| Framing | Readings | Real-law control | Near mean | Far mean (median) | Far tracked | Hedges | Called out | Mean measurements | Mentions real physics | Far: tests t² first |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Physics | exact | 10/10 | 0.00 | 0.00 (0.00) | 10/10 | 0 | 0 | 3.0 | 0/30 | 3/10 |
+| Physics | noisy | 4/10 | 0.00 | 0.13 (0.01) | 7/10 | 5 | 5 (+3 borderline) | 4.9 | 28/30 | 8/10 |
+| Neutral | exact | 10/10 | 0.00 | 0.00 (0.00) | 10/10 | 0 | n/a | 3.7 | 0/30 | 2/10 |
+| Neutral | noisy | 3/10 | −0.01 | 0.02 (0.01) | 6/10 | 14 | n/a | 6.1 | 0/30 | 0/10 |
+
+**Exact readings are a ceiling in both framings.** Running its own experiments, the model typically measures at 1, 2 and 3 seconds (merging them into one turn), reads off the law and is exactly right: 60 of 60 episodes, cubics included.
+
+**Noisy readings break the control, more than a noisy table did.** With a noisy table (pilot) the real law was right 9/10 times. In the lab it is 4/10 (physics) and 3/10 (neutral). Two reasons:
+- The model rarely repeats a measurement to average out noise (4 of 60 noisy episodes). It spreads its readings across times and fits the noise.
+- Its final message often keeps re-fitting until it hits the 4096-token limit without an answer. All 19 noisy hedges are this; none hit the turn cap.
+
+Because the control fails under noise, the noisy cells' counterfactual scores are weak evidence either way.
+
+**The physics story sets the first guess.** With noisy readings, 8 of 10 far episodes in the physics framing open by testing ½gt² ("The distance a ball falls under constant gravity is d = ½gt²"). In the neutral framing, 0 of 10 do; it starts from differences or polynomial fits. With exact readings the gap is small (3/10 against 2/10, all on cubic laws), because the data settle it at once. No neutral reply mentions physics at all.
+
+**It also changes how much evidence the model gathers and whether it commits.**
+- *Measurements:* the physics framing takes fewer (3.0 against 3.7 exact, 4.9 against 6.1 noisy).
+- *Commitment:* with noise, the physics framing commits to an answer far more often (5 hedges against 14). With a familiar law to fall back on, it settles. Without one, it keeps fitting.
+- *On cubic laws with noise:* physics tracked 2, leaked 1, hedged 2; neutral tracked 1, hedged 4.
+- *On linear laws:* both framings tracked 5/5.
+
+**The one leak is a shape default, not Earth's numbers.** FF-F-05 (true law t³), physics framing, noisy: the model starts "proportional to the square of the time", takes only 3 readings, and answers 572.5, exactly the quadratic through its three noisy points. That happens to sit near Earth's 592.9, so the normalized score says "leaked" (1.03). The second measure says otherwise: it lands closest to the quadratic fit. **No near or far answer in any of the four cells lands closest to Earth's law.**
+
+**Called out, only with noise and only on linear laws.** Five physics-framing far replies say outright that the data don't fit standard physics: "This is not a standard gravity problem", "inconsistent with a standard gravity formula", "the environment is not a simple constant-gravity vacuum or there is noise". All five are linear laws (d = c·t), where ½gt² fails visibly. On the cubic laws the model tests ½gt², drops it and moves on without comment (3 borderline).
+
+**Against the pre-registered prediction.**
+- *Far above near:* holds directionally in the physics-noisy cell (0.13 against 0.00), resting on one episode.
+- *Noisy above exact:* holds. Exact is a ceiling, and noise is the only place anything moves.
+- *Physics above neutral:* holds directionally on the locked mean (0.13 against 0.02). But by the pre-registered rule the physics story counts as pulling toward real physics only if physics-framing answers land closest to Earth's law more often than neutral ones, and that count is 0 against 0. So: **not supported as a pull toward real physics.** What the framing does change is the model's first hypothesis, how much evidence it gathers, and whether it commits.
+- With 10 episodes per cell this is exploratory.
+
+**Supplementary rerun of the 19 token-limited episodes at 16,384 tokens.** Pre-registered in `PLAN.md`. The 4096 results above stay primary. Cost $0.066. Full table: "Supplementary" in [`lab_comparison.md`](lab_comparison.md).
+
+17 of the 19 now answer (2 neutral ones ran past even 16,384). Several needed 8,000–16,000 tokens, so the 4096 limit was cutting off real answers.
+
+| Noisy cell, hedges replaced by rerun answers | Real-law control | Near tracked | Far: mean (median) | Far tracked | Hedges left |
+|---|---|---|---|---|---|
+| Physics | 6/10 (was 4/10) | 8/10 | 0.12 (0.01) | 9/10 (was 7/10) | 0 |
+| Neutral | 5/10 (was 3/10) | 9/10 (was 5/10) | 0.05 (0.01) | 8/10 (was 6/10) | 2 |
+
+- **The hedges mostly hid answers, not failures.** With room to finish, both framings track far laws 8–9 times in 10, and both controls rise to about half. The hedge gap between framings (5 against 14) was largely a token-limit effect: without a familiar law to anchor on, the neutral framing reasons longer, and with more room it mostly gets there.
+- **No real framing difference in accuracy remains.** Control 6/10 against 5/10. The far means (0.12 against 0.05) still rest on the single physics "leak", the quadratic through three noisy points.
+- **Still no recall of Earth's numbers.** One rerun (physics FF-N-10, true law 1.2t²) is the first answer in the project that the pre-registered measure places closest to Earth's law. Its reasoning shows why that's misleading: it opens with ½gt², takes g ≈ 2.2 from the data (never 9.8), then overfits the noisy readings with d = t² + 0.08t³ and answers 583.7. That is 53% off Earth's answer and 90% off the data's. It counts as "closest to Earth" only because distance is measured in relative terms.
+- **Reruns take different paths.** Hosted temperature 0 is not deterministic: some reruns answered in under 4096 tokens (physics FF-R-03 used 1,932) where the original ran past the limit.
+
+**Net result of the lab, with the rerun:** the physics story changes how the model experiments (its first guess, how much it measures, how quickly it commits) but not where it ends up. When the model controls its own evidence, it follows the world's law, not real physics, as long as it has room to finish reasoning.
+
 ## Gemma 3 1B (earlier run, smaller model)
 
 | Condition | Result |

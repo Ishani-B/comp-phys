@@ -1,0 +1,37 @@
+run 20261119T004935Z: 14 episodes, neutral framing, noisy readings
+  [1] FF-R-02: 6 measurements, 3 turns, stop, Crusoe
+  [2] FF-R-03: 6 measurements, 3 turns, stop, Crusoe
+run 20261119T024312Z: 12 episodes, neutral framing, noisy readings (skipping 2 done)
+  [3] FF-R-06: 6 measurements, 4 turns, stop, Crusoe
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 60s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [4] FF-R-09: 6 measurements, 3 turns, stop, Crusoe
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 60s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 75s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [5] FF-R-10: 6 measurements, 3 turns, length, Crusoe
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 45s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 60s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 75s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [6] FF-N-03: 6 measurements, 3 turns, length, Crusoe
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [7] FF-N-06: 6 measurements, 4 turns, stop, Crusoe
+  [8] FF-N-08: 6 measurements, 5 turns, stop, Crusoe
+  [9] FF-N-09: 6 measurements, 3 turns, stop, Crusoe
+  [10] FF-N-10: 6 measurements, 3 turns, stop, Crusoe
+  [11] FF-F-01: 6 measurements, 2 turns, length, Crusoe
+    HTTP 429, retrying in 15s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+    HTTP 429, retrying in 30s: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it is temporarily rate-li
+  [12] FF-F-02: 6 measurements, 3 turns, stop, Crusoe
+  [13] FF-F-05: 6 measurements, 5 turns, stop, Crusoe
+  [14] FF-F-09: 6 measurements, 3 turns, stop, Crusoe
+Wrote 12 episodes to results/run_log_lab_neutral_noisy_cap16k.csv
